@@ -8,7 +8,7 @@ const QUESTIONS = [
   { q: "¿Cuál es el elemento químico con símbolo O?", answers: ["Oro", "Osmio", "Oxígeno", "Oganesón"], correct: 2, category: "Ciencia" },
 ];
 
-const DELAY_MS = 1000; // 10 segundos — cambia a 5000 para demo más rápida
+const DELAY_MS = 10; 
 
 const BLOCKED_SITES = ["instagram.com", "tiktok.com", "x.com", "twitter.com", "facebook.com", "youtube.com"];
 const isBlockedSite = BLOCKED_SITES.some(site => location.hostname.includes(site));
