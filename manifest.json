@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Focus Friends",
+  "version": "1.0",
+  "description": "Demuestra que puedes resistir.",
+  "permissions": ["storage"],
+  "host_permissions": ["<all_urls>"],
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["content.js"],
+    "css": ["style.css"]
+  }],
+  "action": { "default_popup": "popup.html" }
+}
