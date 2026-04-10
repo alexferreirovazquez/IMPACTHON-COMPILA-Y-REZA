@@ -13,16 +13,72 @@ const DELAY_MS = 10;
 const BLOCKED_SITES = ["instagram.com", "tiktok.com", "x.com", "twitter.com", "facebook.com", "youtube.com"];
 const isBlockedSite = BLOCKED_SITES.some(site => location.hostname.includes(site));
 
-if (isBlockedSite) {
-  setTimeout(showPopup, DELAY_MS);
+// 1. COMPROBACIÓN INICIAL AL CARGAR LA PÁGINA
+chrome.storage.local.get(["lockedUntil"], (data) => {
+  const now = Date.now();
+  
+  // Si está castigado y el tiempo aún no ha pasado, mostramos el bloqueo
+  if (data.lockedUntil && data.lockedUntil > now) {
+    const secondsLeft = Math.ceil((data.lockedUntil - now) / 1000);
+    showLockScreen(secondsLeft);
+  } 
+  // Si no está castigado y es una página bloqueada, mostramos la pregunta
+  else if (isBlockedSite) {
+    setTimeout(showPopup, DELAY_MS);
 
-  document.addEventListener("visibilitychange", () => {
-    if (document.visibilityState === "visible") {
-      setTimeout(showPopup, DELAY_MS);
+    // Si cambia de pestaña y vuelve, comprobamos de nuevo
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState === "visible") {
+        chrome.storage.local.get(["lockedUntil"], (d) => {
+          if (!d.lockedUntil || d.lockedUntil <= Date.now()) {
+            setTimeout(showPopup, DELAY_MS);
+          }
+        });
+      }
+    });
+  }
+});
+
+
+// 2. FUNCIÓN PARA MOSTRAR LA PANTALLA DE BLOQUEO PURO (SEPARADA)
+function showLockScreen(lockLeft) {
+  // Si no hay overlay, lo creamos (por si el usuario ha recargado con F5)
+  let overlay = document.getElementById("ff-overlay");
+  if (!overlay) {
+    overlay = document.createElement("div");
+    overlay.id = "ff-overlay";
+    document.body.appendChild(overlay);
+  }
+
+  overlay.innerHTML = `
+    <div class="ff-card ff-lockout">
+      <div class="ff-lock-icon">🔒</div>
+      <p class="ff-lock-title">Acceso bloqueado</p>
+      <p class="ff-lock-sub">Has fallado o recargado la página. Espera para continuar.</p>
+      <div class="ff-lock-bar-wrap">
+        <div class="ff-lock-bar" id="ff-lock-bar"></div>
+      </div>
+      <div class="ff-lock-countdown" id="ff-lock-countdown">${lockLeft}s</div>
+    </div>`;
+
+  const lockCountEl = document.getElementById("ff-lock-countdown");
+  const lockBarEl = document.getElementById("ff-lock-bar");
+  const initialLock = lockLeft; 
+
+  const lockInterval = setInterval(() => {
+    lockLeft--;
+    lockCountEl.textContent = lockLeft + "s";
+    lockBarEl.style.width = ((initialLock - lockLeft) / initialLock * 100) + "%";
+    
+    if (lockLeft <= 0) {
+      clearInterval(lockInterval);
+      overlay.remove();
     }
-  });
+  }, 1000);
 }
 
+
+// 3. FUNCIÓN PRINCIPAL PARA MOSTRAR LA PREGUNTA
 function showPopup() {
   if (document.getElementById("ff-overlay")) return;
   if (!chrome?.storage?.local) return;
@@ -95,6 +151,7 @@ function showPopup() {
         clearInterval(interval);
         const chosen = parseInt(btn.dataset.index);
         const allBtns = document.querySelectorAll(".ff-ans");
+        
         if (chosen === q.correct) {
           allBtns[chosen].classList.add("ff-correct");
           chrome.storage.local.set({ score: myScore + 10, streak: streak + 1 });
@@ -107,38 +164,22 @@ function showPopup() {
       });
     });
 
+    // Función de castigo actualizada (ahora guarda la hora límite en storage)
     function penalize() {
+      const lockTimeSeconds = 30; // Castigado 30 segundos
+      const lockedUntil = Date.now() + (lockTimeSeconds * 1000);
+
       chrome.storage.local.get(["dailyMinutes"], (d) => {
         chrome.storage.local.set({
           dailyMinutes: Math.max(0, (d.dailyMinutes || 30) - 5),
           score: Math.max(0, myScore - 15),
-          streak: 0
+          streak: 0,
+          lockedUntil: lockedUntil // Guardamos cuándo acaba el castigo
         });
       });
 
-      let lockLeft = 30;
-      overlay.innerHTML = `
-        <div class="ff-card ff-lockout">
-          <div class="ff-lock-icon">🔒</div>
-          <p class="ff-lock-title">Acceso bloqueado</p>
-          <p class="ff-lock-sub">Fallaste la pregunta. Espera para continuar.</p>
-          <div class="ff-lock-bar-wrap">
-            <div class="ff-lock-bar" id="ff-lock-bar"></div>
-          </div>
-          <div class="ff-lock-countdown" id="ff-lock-countdown">${lockLeft}s</div>
-        </div>`;
-
-      const lockCountEl = document.getElementById("ff-lock-countdown");
-      const lockBarEl = document.getElementById("ff-lock-bar");
-      const lockInterval = setInterval(() => {
-        lockLeft--;
-        lockCountEl.textContent = lockLeft + "s";
-        lockBarEl.style.width = ((30 - lockLeft) / 30 * 100) + "%";
-        if (lockLeft <= 0) {
-          clearInterval(lockInterval);
-          overlay.remove();
-        }
-      }, 1000);
+      // Llamamos a la pantalla de bloqueo pasando los 30 segundos
+      showLockScreen(lockTimeSeconds);
     }
   });
 }
