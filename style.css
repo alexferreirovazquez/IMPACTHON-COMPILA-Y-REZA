@@ -16,6 +16,12 @@
   width: 90vw;
   color: #1a1a1a;
 }
+@media (min-width: 768px) {
+  .ff-card {
+    max-width: 680px;   /* ← más ancho */
+    padding: 40px 48px; /* ← más espacio interior */
+  }
+}
 .ff-top {
   display: flex;
   justify-content: space-between;
