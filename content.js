@@ -115,9 +115,30 @@ function showPopup() {
           streak: 0
         });
       });
-      timerEl.textContent = "✗";
-      timerEl.style.background = "#FCEBEB";
-      setTimeout(() => overlay.remove(), 2000);
+
+      let lockLeft = 30;
+      overlay.innerHTML = `
+        <div class="ff-card ff-lockout">
+          <div class="ff-lock-icon">🔒</div>
+          <p class="ff-lock-title">Acceso bloqueado</p>
+          <p class="ff-lock-sub">Fallaste la pregunta. Espera para continuar.</p>
+          <div class="ff-lock-bar-wrap">
+            <div class="ff-lock-bar" id="ff-lock-bar"></div>
+          </div>
+          <div class="ff-lock-countdown" id="ff-lock-countdown">${lockLeft}s</div>
+        </div>`;
+
+      const lockCountEl = document.getElementById("ff-lock-countdown");
+      const lockBarEl = document.getElementById("ff-lock-bar");
+      const lockInterval = setInterval(() => {
+        lockLeft--;
+        lockCountEl.textContent = lockLeft + "s";
+        lockBarEl.style.width = ((30 - lockLeft) / 30 * 100) + "%";
+        if (lockLeft <= 0) {
+          clearInterval(lockInterval);
+          overlay.remove();
+        }
+      }, 1000);
     }
   });
 }

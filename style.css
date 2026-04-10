@@ -130,3 +130,43 @@
   border-radius: 4px;
   margin-left: 4px;
 }
+
+/* Lockout screen */
+.ff-lockout {
+  text-align: center;
+  padding: 40px 32px;
+}
+.ff-lock-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+.ff-lock-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #A32D2D;
+  margin: 0 0 8px;
+}
+.ff-lock-sub {
+  font-size: 13px;
+  color: #666;
+  margin: 0 0 24px;
+}
+.ff-lock-bar-wrap {
+  background: #f0f0f0;
+  border-radius: 99px;
+  height: 8px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+.ff-lock-bar {
+  height: 100%;
+  width: 0%;
+  background: #E24B4A;
+  border-radius: 99px;
+  transition: width 1s linear;
+}
+.ff-lock-countdown {
+  font-size: 28px;
+  font-weight: 700;
+  color: #E24B4A;
+}
