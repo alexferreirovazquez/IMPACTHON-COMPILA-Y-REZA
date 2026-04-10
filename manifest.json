@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Brain Gate",
+  "version": "1.0",
+  "description": "Responde una pregunta antes de entrar en redes sociales",
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.tiktok.com/*",
+        "*://*.instagram.com/*",
+        "*://*.youtube.com/*",
+        "*://*.twitter.com/*",
+        "*://*.x.com/*",
+        "*://*.reddit.com/*",
+        "*://*.pornhub.com/*",
+        "*://*.snapchat.com/*",
+        "*://*.facebook.com/*",
+        "*://*.twitch.tv/*",
+        "*://*.threads.net/*"
+      ],
+      "js": ["questions.js", "content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
