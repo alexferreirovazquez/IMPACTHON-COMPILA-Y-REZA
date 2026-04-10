@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BrainGate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #050510;
+      color: #fff;
+      width: 320px;
+      min-height: 420px;
+      overflow: hidden;
+    }
+
+    .bg {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      opacity: 0.3;
+    }
+    .orb1 { width: 250px; height: 250px; background: #6c3fff; top: -80px; left: -60px; }
+    .orb2 { width: 200px; height: 200px; background: #ff3fa4; bottom: -60px; right: -50px; }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      padding: 24px;
+    }
+
+    .logo-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+    .logo-icon { font-size: 26px; }
+    .logo-text {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 20px;
+      letter-spacing: -0.5px;
+    }
+    .tagline {
+      color: rgba(255,255,255,0.45);
+      font-size: 12px;
+      margin-bottom: 24px;
+    }
+
+    .toggle-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin-bottom: 20px;
+    }
+    .toggle-label {
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .toggle-sub {
+      font-size: 11px;
+      color: rgba(255,255,255,0.4);
+      margin-top: 2px;
+    }
+
+    .toggle {
+      position: relative;
+      width: 44px;
+      height: 24px;
+      flex-shrink: 0;
+    }
+    .toggle input { opacity: 0; width: 0; height: 0; }
+    .slider {
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0.15);
+      border-radius: 100px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .slider:before {
+      content: '';
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      background: #fff;
+      border-radius: 50%;
+      top: 3px;
+      left: 3px;
+      transition: 0.3s;
+    }
+    input:checked + .slider {
+      background: linear-gradient(135deg, #6c3fff, #ff3fa4);
+    }
+    input:checked + .slider:before {
+      transform: translateX(20px);
+    }
+
+    .section-title {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 10px;
+    }
+
+    .sites-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .site-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 10px 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+      user-select: none;
+    }
+    .site-item:hover {
+      background: rgba(108,63,255,0.15);
+      border-color: rgba(108,63,255,0.4);
+    }
+    .site-item.active {
+      background: rgba(108,63,255,0.2);
+      border-color: rgba(108,63,255,0.5);
+    }
+    .site-emoji { font-size: 16px; }
+    .site-name { font-size: 13px; font-weight: 500; }
+
+    .site-check {
+      margin-left: auto;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(255,255,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      transition: all 0.2s;
+    }
+    .site-item.active .site-check {
+      background: linear-gradient(135deg, #6c3fff, #ff3fa4);
+      border-color: transparent;
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .stat-box {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 14px;
+      text-align: center;
+    }
+    .stat-number {
+      font-family: 'Syne', sans-serif;
+      font-size: 28px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #6c3fff, #ff3fa4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .stat-label {
+      font-size: 11px;
+      color: rgba(255,255,255,0.4);
+      margin-top: 2px;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+  </div>
+  <div class="content">
+    <div class="logo-row">
+      <div class="logo-icon">🧠</div>
+      <div class="logo-text">BrainGate</div>
+    </div>
+    <div class="tagline">Trivia obligatoria para redes sociales</div>
+
+    <div class="toggle-row">
+      <div>
+        <div class="toggle-label">Extensión activa</div>
+        <div class="toggle-sub" id="status-text">Bloqueando sitios seleccionados</div>
+      </div>
+      <label class="toggle">
+        <input type="checkbox" id="main-toggle">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="section-title">Sitios bloqueados</div>
+    <div class="sites-grid" id="sites-grid"></div>
+
+    <div class="section-title">Estadísticas</div>
+    <div class="stats-row">
+      <div class="stat-box">
+        <div class="stat-number" id="stat-correct">0</div>
+        <div class="stat-label">Aciertos</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number" id="stat-wrong">0</div>
+        <div class="stat-label">Fallos</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

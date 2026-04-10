@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+
+#braingate-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 2147483647 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 20px !important;
+  box-sizing: border-box !important;
+  font-family: 'DM Sans', sans-serif !important;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+#braingate-overlay.fade-out {
+  opacity: 0 !important;
+}
+
+#braingate-overlay .bg-panel {
+  position: absolute !important;
+  inset: 0 !important;
+  background: #050510 !important;
+  overflow: hidden !important;
+}
+
+#braingate-overlay .bg-orb {
+  position: absolute !important;
+  border-radius: 50% !important;
+  filter: blur(80px) !important;
+  opacity: 0.35 !important;
+  animation: orb-float 8s ease-in-out infinite !important;
+}
+
+#braingate-overlay .orb1 {
+  width: 500px !important;
+  height: 500px !important;
+  background: #6c3fff !important;
+  top: -150px !important;
+  left: -100px !important;
+  animation-delay: 0s !important;
+}
+
+#braingate-overlay .orb2 {
+  width: 400px !important;
+  height: 400px !important;
+  background: #ff3fa4 !important;
+  bottom: -100px !important;
+  right: -80px !important;
+  animation-delay: 3s !important;
+}
+
+#braingate-overlay .orb3 {
+  width: 300px !important;
+  height: 300px !important;
+  background: #3fddff !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  animation-delay: 6s !important;
+}
+
+@keyframes orb-float {
+  0%, 100% { transform: scale(1) translate(0, 0); }
+  33% { transform: scale(1.1) translate(20px, -20px); }
+  66% { transform: scale(0.95) translate(-15px, 15px); }
+}
+
+#braingate-overlay .card {
+  position: relative !important;
+  z-index: 2 !important;
+  background: rgba(255,255,255,0.04) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  border: 1px solid rgba(255,255,255,0.12) !important;
+  border-radius: 28px !important;
+  padding: 40px !important;
+  max-width: 520px !important;
+  width: 100% !important;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.15) !important;
+  animation: card-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both !important;
+}
+
+@keyframes card-in {
+  from { opacity: 0; transform: scale(0.85) translateY(30px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+#braingate-overlay .logo-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  margin-bottom: 20px !important;
+}
+
+#braingate-overlay .logo-icon {
+  font-size: 28px !important;
+  line-height: 1 !important;
+}
+
+#braingate-overlay .logo-text {
+  font-family: 'Syne', sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 20px !important;
+  color: #fff !important;
+  letter-spacing: -0.5px !important;
+}
+
+#braingate-overlay .site-badge {
+  display: inline-block !important;
+  background: linear-gradient(135deg, #6c3fff, #ff3fa4) !important;
+  color: #fff !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
+  padding: 5px 14px !important;
+  border-radius: 100px !important;
+  margin-bottom: 8px !important;
+}
+
+#braingate-overlay .card-subtitle {
+  color: rgba(255,255,255,0.5) !important;
+  font-size: 14px !important;
+  margin: 0 0 20px 0 !important;
+}
+
+#braingate-overlay .category-tag {
+  font-size: 12px !important;
+  color: #3fddff !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+  margin-bottom: 10px !important;
+  text-transform: uppercase !important;
+}
+
+#braingate-overlay .question-text {
+  font-family: 'Syne', sans-serif !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: #fff !important;
+  line-height: 1.4 !important;
+  margin-bottom: 28px !important;
+}
+
+#braingate-overlay .options-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 12px !important;
+  margin-bottom: 20px !important;
+}
+
+#braingate-overlay .option-btn {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 14px 16px !important;
+  background: rgba(255,255,255,0.06) !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+  border-radius: 14px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  text-align: left !important;
+  color: #fff !important;
+  font-family: 'DM Sans', sans-serif !important;
+}
+
+#braingate-overlay .option-btn:hover:not(:disabled) {
+  background: rgba(108,63,255,0.3) !important;
+  border-color: rgba(108,63,255,0.6) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 24px rgba(108,63,255,0.25) !important;
+}
+
+#braingate-overlay .option-btn:disabled {
+  cursor: not-allowed !important;
+}
+
+#braingate-overlay .option-btn.correct {
+  background: rgba(34,197,94,0.2) !important;
+  border-color: #22c55e !important;
+  box-shadow: 0 0 20px rgba(34,197,94,0.3) !important;
+}
+
+#braingate-overlay .option-btn.wrong {
+  background: rgba(239,68,68,0.2) !important;
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 20px rgba(239,68,68,0.3) !important;
+  animation: shake 0.4s ease !important;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-8px); }
+  40% { transform: translateX(8px); }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(5px); }
+}
+
+#braingate-overlay .option-letter {
+  width: 26px !important;
+  height: 26px !important;
+  background: rgba(255,255,255,0.12) !important;
+  border-radius: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  flex-shrink: 0 !important;
+  font-family: 'Syne', sans-serif !important;
+}
+
+#braingate-overlay .option-text {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 1.3 !important;
+}
+
+#braingate-overlay .result-msg {
+  text-align: center !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  padding: 12px !important;
+  border-radius: 12px !important;
+  opacity: 0 !important;
+  transition: opacity 0.3s ease !important;
+  color: #fff !important;
+}
+
+#braingate-overlay .result-msg.show {
+  opacity: 1 !important;
+}
+
+#braingate-overlay .result-msg.success {
+  background: rgba(34,197,94,0.15) !important;
+  border: 1px solid rgba(34,197,94,0.3) !important;
+}
+
+#braingate-overlay .result-msg.error {
+  background: rgba(239,68,68,0.15) !important;
+  border: 1px solid rgba(239,68,68,0.3) !important;
+}
+
+/* Cooldown styles */
+#braingate-overlay .cooldown-container {
+  text-align: center !important;
+  padding: 20px 0 !important;
+}
+
+#braingate-overlay .cooldown-icon {
+  font-size: 56px !important;
+  margin-bottom: 16px !important;
+  animation: pulse-icon 2s ease-in-out infinite !important;
+}
+
+@keyframes pulse-icon {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+#braingate-overlay .cooldown-label {
+  font-family: 'Syne', sans-serif !important;
+  font-size: 22px !important;
+  font-weight: 800 !important;
+  color: #fff !important;
+  margin-bottom: 8px !important;
+}
+
+#braingate-overlay .cooldown-timer {
+  font-family: 'Syne', sans-serif !important;
+  font-size: 64px !important;
+  font-weight: 800 !important;
+  background: linear-gradient(135deg, #ff3fa4, #6c3fff) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  line-height: 1 !important;
+  margin: 16px 0 !important;
+}
+
+#braingate-overlay .cooldown-desc {
+  color: rgba(255,255,255,0.5) !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  margin-bottom: 24px !important;
+}
+
+#braingate-overlay .cooldown-bar-wrap {
+  background: rgba(255,255,255,0.08) !important;
+  border-radius: 100px !important;
+  height: 6px !important;
+  overflow: hidden !important;
+}
+
+#braingate-overlay .cooldown-bar {
+  height: 100% !important;
+  background: linear-gradient(90deg, #6c3fff, #ff3fa4) !important;
+  border-radius: 100px !important;
+  transition: width 1s linear !important;
+}
