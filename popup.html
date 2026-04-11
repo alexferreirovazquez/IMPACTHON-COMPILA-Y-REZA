@@ -3,46 +3,154 @@
 <head>
   <meta charset="UTF-8">
   <style>
-    body { font-family: Arial, sans-serif; width: 220px; padding: 16px; margin: 0; background: #fff; }
-    h3 { margin: 0 0 12px; font-size: 15px; color: #1a1a1a; }
-    .stat { display: flex; justify-content: space-between; font-size: 13px; padding: 7px 0; border-bottom: 1px solid #f0f0f0; color: #555; }
-    .val { font-weight: bold; color: #185FA5; }
-    .settings-btn {
-      display: block;
-      width: 100%;
-      margin-top: 14px;
-      padding: 9px 0;
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, 'Segoe UI', Arial, sans-serif;
+      width: 260px;
       background: #0f0f0f;
-      color: #b4f264;
-      border: none;
-      border-radius: 8px;
-      font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
-      text-align: center;
-      letter-spacing: 0.01em;
+      color: #f0f0f0;
+      padding: 16px;
     }
-    .settings-btn:hover { opacity: 0.85; }
-    .footer { font-size: 11px; color: #aaa; margin-top: 10px; text-align: center; }
+
+    /* ── Header ── */
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid #222;
+    }
+    .header img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+    }
+    .header-text h1 {
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+    }
+    .header-text h1 span { color: #f5e642; }
+    .header-text p {
+      font-size: 10px;
+      color: #666;
+      margin-top: 1px;
+    }
+
+    /* ── Stats ── */
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .stat-card {
+      background: #1a1a1a;
+      border-radius: 10px;
+      padding: 10px 8px;
+      text-align: center;
+    }
+    .stat-card .icon { font-size: 16px; margin-bottom: 4px; }
+    .stat-card .val  {
+      font-size: 17px;
+      font-weight: 800;
+      color: #f5e642;
+      line-height: 1;
+    }
+    .stat-card .lbl {
+      font-size: 9px;
+      color: #555;
+      margin-top: 3px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Room chip ── */
+    .room-chip {
+      background: #1a1a1a;
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 12px;
+      color: #888;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .room-chip .room-val {
+      font-weight: 700;
+      color: #f0f0f0;
+      font-size: 13px;
+    }
+
+    /* ── Buttons ── */
+    .btn-settings {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      width: 100%;
+      padding: 11px 0;
+      background: #f5e642;
+      color: #0f0f0f;
+      border: none;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+      letter-spacing: 0.01em;
+      transition: opacity 0.15s;
+    }
+    .btn-settings:hover { opacity: 0.85; }
   </style>
 </head>
 <body>
-  <h3>🎯 Focus Friends</h3>
-  <div class="stat"><span>Puntuación</span><span class="val" id="score">—</span></div>
-  <div class="stat"><span>Racha</span><span class="val" id="streak">—</span></div>
-  <div class="stat"><span>Penalización</span><span class="val" id="penalty">—</span></div>
-  <button class="settings-btn" id="openOptions">⚙ Ajustes</button>
-  <p class="footer">El pop-up aparece a los 10s</p>
+  <div class="header">
+    <img src="icon128.png" alt="FF">
+    <div class="header-text">
+      <h1>Focus <span>Friends</span></h1>
+      <p>Anti-distracción activo</p>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat-card">
+      <div class="icon">🏆</div>
+      <div class="val" id="score">0</div>
+      <div class="lbl">Puntos</div>
+    </div>
+    <div class="stat-card">
+      <div class="icon">🔥</div>
+      <div class="val" id="streak">0</div>
+      <div class="lbl">Racha</div>
+    </div>
+    <div class="stat-card">
+      <div class="icon">⏱</div>
+      <div class="val" id="penalty">—</div>
+      <div class="lbl">Penaliz.</div>
+    </div>
+  </div>
+
+  <div class="room-chip">
+    <span>🎮 Sala</span>
+    <span class="room-val" id="room">—</span>
+  </div>
+
+  <button class="btn-settings" id="openOptions">
+    ⚙️ Abrir ajustes
+  </button>
+
   <script>
-    chrome.storage.local.get(["score","streak","ff_penalty"], (d) => {
-      document.getElementById("score").textContent   = (d.score   || 0)  + " pts";
-      document.getElementById("streak").textContent  = (d.streak  || 0)  + " días";
+    chrome.storage.local.get(["score","streak","ff_penalty","ff_roomCode"], (d) => {
+      document.getElementById("score").textContent  = d.score  || 0;
+      document.getElementById("streak").textContent = (d.streak || 0) + "d";
       const p = d.ff_penalty || 30;
-      const label = p < 60 ? p+"s" : Math.floor(p/60)+"m"+(p%60 ? " "+(p%60)+"s" : "");
-      document.getElementById("penalty").textContent = label;
+      document.getElementById("penalty").textContent = p < 60 ? p+"s" : Math.floor(p/60)+"m"+(p%60 ? (p%60)+"s" : "");
+      document.getElementById("room").textContent = d.ff_roomCode || "—";
     });
     document.getElementById("openOptions").addEventListener("click", () => {
-      chrome.runtime.openOptionsPage();
+      chrome.tabs.create({ url: chrome.runtime.getURL('options.html') });
     });
   </script>
 </body>

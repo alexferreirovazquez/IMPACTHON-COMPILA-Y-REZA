@@ -3,7 +3,7 @@
   "name": "FocusFriends",
   "version": "1.0",
   "description": "Bloquea distracciones con trivial y multijugador",
-  "permissions": ["storage", "scripting"],
+  "permissions": ["storage", "scripting", "tabs"],
   "host_permissions": ["<all_urls>"],
   "icons": {
     "16":  "icon16.png",
@@ -31,7 +31,10 @@
       "128": "icon128.png"
     }
   },
-  "options_page": "options.html",
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
   "web_accessible_resources": [
     {
       "resources": ["questions.txt"],
