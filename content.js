@@ -43,11 +43,14 @@ function onScroll() {
 }
  
 // 1. COMPROBACIÓN INICIAL AL CARGAR LA PÁGINA
-chrome.storage.local.get(["lockedUntil"], (data) => {
+const currentSite = location.hostname; // Detecta si es "tiktok.com", "instagram.com", etc.
+
+chrome.storage.local.get([currentSite], (data) => {
   const now = Date.now();
- 
-  if (data.lockedUntil && data.lockedUntil > now) {
-    const secondsLeft = Math.ceil((data.lockedUntil - now) / 1000);
+  const siteLockTime = data[currentSite]; // Busca el bloqueo específico de este sitio
+
+  if (siteLockTime && siteLockTime > now) {
+    const secondsLeft = Math.ceil((siteLockTime - now) / 1000);
     showLockScreen(secondsLeft);
   } else if (isBlockedSite) {
     setTimeout(showPopup, DELAY_MS);
@@ -70,7 +73,7 @@ chrome.storage.local.get(["lockedUntil"], (data) => {
     document.addEventListener("scroll", onScroll, true);
     document.addEventListener("wheel", onScroll, { passive: true });
   }
-});
+})  ;
  
  
 // 2. PANTALLA DE BLOQUEO PURO
@@ -202,15 +205,16 @@ function showPopup() {
     function penalize() {
       const lockTimeSeconds = 30;
       const lockedUntil = Date.now() + (lockTimeSeconds * 1000);
- 
-      chrome.storage.local.get(["dailyMinutes"], (d) => {
-        chrome.storage.local.set({
-          dailyMinutes: Math.max(0, (d.dailyMinutes || 30) - 5),
-          score: Math.max(0, myScore - 15),
-          streak: 0,
-          lockedUntil: lockedUntil
-        });
-      });
+      const currentSite = location.hostname; // "tiktok.com"
+
+      sessionStorage.setItem("lockedUntil", lockedUntil.toString());
+    
+    // Si aún quieres guardar el score globalmente, deja el chrome.storage solo para eso:
+    chrome.storage.local.set({ 
+    [currentSite]: lockedUntil, // Esto crea una entrada tipo {"tiktok.com": 12345678}
+    score: Math.max(0, (myScore || 0) - 15),
+    streak: 0
+  });
  
       showLockScreen(lockTimeSeconds);
     }
