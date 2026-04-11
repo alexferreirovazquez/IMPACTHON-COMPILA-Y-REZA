@@ -288,6 +288,61 @@
       color: #333;
       text-align: center;
     }
+    /* ── Reto mensual ── */
+    .challenge-card {
+      background: #0d1f0d;
+      border: 1px solid #1e3d1e;
+      border-radius: 10px;
+      padding: 10px 12px;
+      margin-bottom: 10px;
+    }
+    .challenge-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .challenge-icon { font-size: 22px; flex-shrink: 0; }
+    .challenge-title {
+      font-size: 11px;
+      font-weight: 800;
+      color: #a8d86e;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+    .challenge-subtitle {
+      font-size: 10px;
+      color: #4a7a4a;
+      margin-top: 1px;
+    }
+    .challenge-pts-label {
+      margin-left: auto;
+      font-size: 15px;
+      font-weight: 900;
+      color: #a8d86e;
+    }
+    .challenge-bar-wrap {
+      background: #1a2e1a;
+      border-radius: 99px;
+      height: 6px;
+      overflow: hidden;
+      margin-bottom: 6px;
+    }
+    .challenge-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #4a9a2a, #a8d86e);
+      border-radius: 99px;
+      transition: width 0.6s ease;
+      max-width: 100%;
+    }
+    .challenge-footer {
+      font-size: 10px;
+      color: #4a7a4a;
+      display: flex;
+      gap: 4px;
+    }
+    .challenge-footer span:first-child { color: #a8d86e; font-weight: 700; }
+
   </style>
 </head>
 <body>
@@ -324,6 +379,25 @@
     <div class="room-chip">
       <span>🎮 Sala</span>
       <span class="room-val" id="room">—</span>
+    </div>
+
+    <!-- RETO MENSUAL -->
+    <div class="challenge-card">
+      <div class="challenge-header">
+        <span class="challenge-icon">🌳</span>
+        <div>
+          <div class="challenge-title">Reto mensual global</div>
+          <div class="challenge-subtitle">Plantar 10.000 árboles</div>
+        </div>
+        <div class="challenge-pts-label" id="challenge-pct">—%</div>
+      </div>
+      <div class="challenge-bar-wrap">
+        <div class="challenge-bar" id="challenge-bar" style="width:0%"></div>
+      </div>
+      <div class="challenge-footer">
+        <span id="challenge-current">—</span>
+        <span style="color:#444">/ 50.000.000 pts</span>
+      </div>
     </div>
 
     <div class="btn-row">

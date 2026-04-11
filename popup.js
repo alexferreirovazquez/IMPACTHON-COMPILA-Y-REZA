@@ -99,6 +99,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   );
 
+  // ── Reto mensual global ────────────────────────────────
+  const GOAL = 50_000_000;
+  chrome.runtime.sendMessage({ action: "getGlobalPoints" }, (resp) => {
+    const pts = (resp && !resp.error) ? resp.total_points : 0;
+    const pct = Math.min(100, (pts / GOAL) * 100);
+
+    document.getElementById("challenge-bar").style.width = pct.toFixed(2) + "%";
+    document.getElementById("challenge-pct").textContent = pct.toFixed(1) + "%";
+    document.getElementById("challenge-current").textContent = pts.toLocaleString("es-ES") + " pts";
+  });
+
   // ── Botón Ajustes ──────────────────────────────────────
   document.getElementById("openOptions").addEventListener("click", () => {
     chrome.tabs.create({ url: chrome.runtime.getURL("options.html") });

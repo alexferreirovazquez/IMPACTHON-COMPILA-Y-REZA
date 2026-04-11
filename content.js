@@ -449,6 +449,8 @@ function showPopup() {
       });
 
       saveScoreToCloud(myName, myScore, streak, myRoom);
+      // Sumamos los puntos del bonus diario al reto global
+      chrome.runtime.sendMessage({ action: "addGlobalPoints", name: myName, score: myScore });
       alert(`¡Día nuevo, racha nueva! 🔥 Has ganado ${reward} puntos extra por tu racha de ${streak} días.`);
     }
 
@@ -530,9 +532,12 @@ function showPopup() {
           allBtns[chosen].classList.add("ff-correct");
           playCorrectSound();
 
-          // REGLA 3: Aciertas -> Conservas la racha, sin puntos extra por pregunta
+          // REGLA 3: Aciertas -> +10 puntos y conservas la racha
+          myScore += 10;
           chrome.storage.local.set({ score: myScore });
           saveScoreToCloud(myName, myScore, streak, myRoom);
+          // Sumamos 10 puntos al reto global por respuesta correcta
+          chrome.runtime.sendMessage({ action: "addGlobalPoints", name: myName, score: myScore });
 
           // ── Acertaste: el intervalo empieza a contar desde ahora
           chrome.storage.local.set({ ff_last_popup_time: Date.now() });
@@ -567,6 +572,7 @@ function showPopup() {
         });
 
         saveScoreToCloud(myName, newScore, 1, myRoom);
+        chrome.runtime.sendMessage({ action: "addGlobalPoints", name: myName, score: newScore });
         showMinusPointsToast();
         setTimeout(() => showLockScreen(PENALTY_SECONDS), 900);
       });
