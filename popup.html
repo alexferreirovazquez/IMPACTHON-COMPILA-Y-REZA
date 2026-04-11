@@ -12,7 +12,6 @@
       padding: 16px;
     }
 
-    /* ── Header ── */
     .header {
       display: flex;
       align-items: center;
@@ -21,24 +20,11 @@
       padding-bottom: 14px;
       border-bottom: 1px solid #222;
     }
-    .header img {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-    }
-    .header-text h1 {
-      font-size: 15px;
-      font-weight: 800;
-      letter-spacing: -0.3px;
-    }
+    .header img { width: 32px; height: 32px; border-radius: 50%; }
+    .header-text h1 { font-size: 15px; font-weight: 800; letter-spacing: -0.3px; }
     .header-text h1 span { color: #f5e642; }
-    .header-text p {
-      font-size: 10px;
-      color: #666;
-      margin-top: 1px;
-    }
+    .header-text p { font-size: 10px; color: #666; margin-top: 1px; }
 
-    /* ── Stats ── */
     .stats {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
@@ -52,7 +38,7 @@
       text-align: center;
     }
     .stat-card .icon { font-size: 16px; margin-bottom: 4px; }
-    .stat-card .val  {
+    .stat-card .val {
       font-size: 17px;
       font-weight: 800;
       color: #f5e642;
@@ -66,7 +52,6 @@
       letter-spacing: 0.05em;
     }
 
-    /* ── Room chip ── */
     .room-chip {
       background: #1a1a1a;
       border-radius: 8px;
@@ -77,14 +62,17 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 8px;
     }
-    .room-chip .room-val {
+    .room-val {
       font-weight: 700;
-      color: #f0f0f0;
+      color: #f5e642;
       font-size: 13px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
-    /* ── Buttons ── */
     .btn-settings {
       display: flex;
       align-items: center;
@@ -99,13 +87,13 @@
       font-size: 13px;
       font-weight: 800;
       cursor: pointer;
-      letter-spacing: 0.01em;
       transition: opacity 0.15s;
     }
     .btn-settings:hover { opacity: 0.85; }
   </style>
 </head>
 <body>
+
   <div class="header">
     <img src="icon128.png" alt="FF">
     <div class="header-text">
@@ -117,12 +105,12 @@
   <div class="stats">
     <div class="stat-card">
       <div class="icon">🏆</div>
-      <div class="val" id="score">0</div>
+      <div class="val" id="score">—</div>
       <div class="lbl">Puntos</div>
     </div>
     <div class="stat-card">
       <div class="icon">🔥</div>
-      <div class="val" id="streak">0</div>
+      <div class="val" id="streak">—</div>
       <div class="lbl">Racha</div>
     </div>
     <div class="stat-card">
@@ -137,21 +125,8 @@
     <span class="room-val" id="room">—</span>
   </div>
 
-  <button class="btn-settings" id="openOptions">
-    ⚙️ Abrir ajustes
-  </button>
+  <button class="btn-settings" id="openOptions">⚙️ Abrir ajustes</button>
 
-  <script>
-    chrome.storage.local.get(["score","streak","ff_penalty","ff_roomCode"], (d) => {
-      document.getElementById("score").textContent  = (d.score != null) ? d.score : 100;
-      document.getElementById("streak").textContent = (d.streak || 0) + "d";
-      const p = d.ff_penalty || 30;
-      document.getElementById("penalty").textContent = p < 60 ? p+"s" : Math.floor(p/60)+"m"+(p%60 ? (p%60)+"s" : "");
-      document.getElementById("room").textContent = d.ff_roomCode || "—";
-    });
-    document.getElementById("openOptions").addEventListener("click", () => {
-      chrome.tabs.create({ url: chrome.runtime.getURL('options.html') });
-    });
-  </script>
+  <script src="popup.js"></script>
 </body>
 </html>

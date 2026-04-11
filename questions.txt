@@ -3152,6 +3152,1174 @@ C: Mayotte
 D: San Bartolomé
 CORRECTA: B
 
+CATEGORIA: Historia
+PREGUNTA: ¿Qué rey francés fue conocido como el «Rey Sol»?
+A: Luis XIV
+B: Luis XV
+C: Luis XVI
+D: Felipe II
+CORRECTA: A
+
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué unidad mide la frecuencia?
+A: El vatio
+B: El julio
+C: El hercio
+D: El newton
+CORRECTA: C
+
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es el río más largo de América del Sur?
+A: El Orinoco
+B: El Paraguay
+C: El Amazonas
+D: El Paraná
+CORRECTA: C
+
+CATEGORIA: Arte
+PREGUNTA: ¿Qué artista cortó su propia oreja?
+A: Van Gogh
+B: Monet
+C: Degas
+D: Cézanne
+CORRECTA: A
+
+CATEGORIA: Literatura
+PREGUNTA: ¿Quién escribió «La metamorfosis»?
+A: Thomas Mann
+B: Hermann Hesse
+C: Franz Kafka
+D: Stefan Zweig
+CORRECTA: C
+
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué país ganó la Copa del Mundo de fútbol de 2010?
+A: Países Bajos
+B: Alemania
+C: España
+D: Uruguay
+CORRECTA: C
+
+CATEGORIA: Tecnología
+PREGUNTA: ¿Qué empresa creó el sistema operativo MS-DOS?
+A: Apple
+B: IBM
+C: Microsoft
+D: Digital Research
+CORRECTA: C
+
+CATEGORIA: Filosofía
+PREGUNTA: ¿Quién escribió «El malestar en la cultura»?
+A: Carl Jung
+B: Sigmund Freud
+C: Erich Fromm
+D: Jacques Lacan
+CORRECTA: B
+
+CATEGORIA: Cultura
+PREGUNTA: ¿Qué país tiene la tradición del «Día de los Muertos»?
+A: España
+B: Perú
+C: México
+D: Guatemala
+CORRECTA: C
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué actor interpretó a «Wolverine» en las películas de X-Men?
+A: Hugh Jackman
+B: Christian Bale
+C: Ryan Reynolds
+D: Tom Hardy
+CORRECTA: A
+
+CATEGORIA: Mates
+PREGUNTA: ¿Cuál es la raíz cuadrada de 625?
+A: 23
+B: 24
+C: 25
+D: 26
+CORRECTA: C
+
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué científico descubrió la penicilina?
+A: Pasteur
+B: Fleming
+C: Koch
+D: Ehrlich
+CORRECTA: B
+
+CATEGORIA: Historia
+PREGUNTA: ¿En qué año comenzó la Revolución Rusa?
+A: 1905
+B: 1917
+C: 1921
+D: 1924
+CORRECTA: B
+
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es el punto más bajo de la Tierra?
+A: Fosa de las Marianas
+B: Mar Muerto
+C: Lago Assal
+D: Depresión de Danakil
+CORRECTA: B
+
+CATEGORIA: Arte
+PREGUNTA: ¿Quién pintó «La persistencia de la memoria» (los relojes blandos)?
+A: Dalí
+B: Miró
+C: Picasso
+D: Magritte
+CORRECTA: A
+
+CATEGORIA: Literatura
+PREGUNTA: ¿Quién escribió «Moby Dick»?
+A: Nathaniel Hawthorne
+B: Herman Melville
+C: Edgar Allan Poe
+D: Mark Twain
+CORRECTA: B
+
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué tenista ganó más títulos de Grand Slam en individuales masculinos?
+A: Roger Federer
+B: Rafael Nadal
+C: Novak Djokovic
+D: Pete Sampras
+CORRECTA: C
+
+CATEGORIA: Tecnología
+PREGUNTA: ¿Qué significa «HTTP»?
+A: HyperText Transfer Protocol
+B: High Transfer Text Protocol
+C: Hyper Transfer Text Protocol
+D: HighText Transfer Protocol
+CORRECTA: A
+
+CATEGORIA: Filosofía
+PREGUNTA: ¿Qué filósofo escribió «El contrato social»?
+A: Voltaire
+B: Montesquieu
+C: Rousseau
+D: Diderot
+CORRECTA: C
+
+CATEGORIA: Cultura
+PREGUNTA: ¿En qué país se originó la ópera?
+A: Francia
+B: Alemania
+C: Italia
+D: Austria
+CORRECTA: C
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué banda de rock lanzó el álbum «Abbey Road»?
+A: The Rolling Stones
+B: The Who
+C: The Beatles
+D: Pink Floyd
+CORRECTA: C
+
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué planeta tiene el día más corto del sistema solar?
+A: Mercurio
+B: Venus
+C: Júpiter
+D: Saturno
+CORRECTA: C
+
+CATEGORIA: Historia
+PREGUNTA: ¿Quién fue el primer presidente de Estados Unidos?
+A: John Adams
+B: Thomas Jefferson
+C: George Washington
+D: Benjamin Franklin
+CORRECTA: C
+
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es el desierto más grande del mundo (no polar)?
+A: Gobi
+B: Sahara
+C: Kalahari
+D: Patagonia
+CORRECTA: B
+
+CATEGORIA: Arte
+PREGUNTA: ¿Quién esculpió «El David»?
+A: Donatello
+B: Miguel Ángel
+C: Bernini
+D: Cellini
+CORRECTA: B
+
+CATEGORIA: Literatura
+PREGUNTA: ¿Quién escribió «En busca del tiempo perdido»?
+A: James Joyce
+B: Marcel Proust
+C: Virginia Woolf
+D: Franz Kafka
+CORRECTA: B
+
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué boxeador se llamó «Muhammad Ali» antes de convertirse al Islam?
+A: Joe Frazier
+B: George Foreman
+C: Cassius Clay
+D: Sonny Liston
+CORRECTA: C
+
+CATEGORIA: Tecnología
+PREGUNTA: ¿Qué empresa creó el lenguaje de programación Java?
+A: Microsoft
+B: Apple
+C: Sun Microsystems
+D: IBM
+CORRECTA: C
+
+CATEGORIA: Filosofía
+PREGUNTA: ¿Qué filósofo dijo «El hombre es la medida de todas las cosas»?
+A: Sócrates
+B: Platón
+C: Protágoras
+D: Gorgias
+CORRECTA: C
+
+CATEGORIA: Cultura
+PREGUNTA: ¿Qué instrumento musical usa una lengüeta doble?
+A: Clarinete
+B: Saxofón
+C: Oboe
+D: Flauta
+CORRECTA: C
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué actor interpretó a «Neo» en Matrix?
+A: Keanu Reeves
+B: Laurence Fishburne
+C: Hugo Weaving
+D: Brad Pitt
+CORRECTA: A
+
+CATEGORIA: Mates
+PREGUNTA: ¿Cuál es el valor de Pi (π) redondeado a dos decimales?
+A: 3.12
+B: 3.14
+C: 3.16
+D: 3.18
+CORRECTA: B
+
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué tipo de célula es la más grande del cuerpo humano?
+A: Neurona
+B: Óvulo
+C: Glóbulo rojo
+D: Hepatocito
+CORRECTA: B
+
+CATEGORIA: Historia
+PREGUNTA: ¿En qué año se firmó la Carta Magna en Inglaterra?
+A: 1066
+B: 1215
+C: 1415
+D: 1517
+CORRECTA: B
+
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Mongolia?
+A: Ulán Bator
+B: Taskent
+C: Biskek
+D: Astaná
+CORRECTA: A
+
+CATEGORIA: Arte
+PREGUNTA: ¿Qué pintor español es famoso por sus obras cubistas como «Guernica»?
+A: Juan Gris
+B: Salvador Dalí
+C: Pablo Picasso
+D: Joan Miró
+CORRECTA: C
+
+CATEGORIA: Literatura
+PREGUNTA: ¿Quién escribió «La divina comedia»?
+A: Petrarca
+B: Boccaccio
+C: Dante Alighieri
+D: Ariosto
+CORRECTA: C
+
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué país ha ganado más Copas del Mundo de fútbol masculino?
+A: Alemania
+B: Italia
+C: Argentina
+D: Brasil
+CORRECTA: D
+
+CATEGORIA: Tecnología
+PREGUNTA: ¿Qué empresa creó la consola PlayStation?
+A: Nintendo
+B: Sega
+C: Sony
+D: Microsoft
+CORRECTA: C
+
+CATEGORIA: Filosofía
+PREGUNTA: ¿Qué filósofo escribió «El mundo como voluntad y representación»?
+A: Hegel
+B: Schopenhauer
+C: Nietzsche
+D: Kant
+CORRECTA: B
+
+CATEGORIA: Cultura
+PREGUNTA: ¿Qué país celebra el «Holi», el festival de los colores?
+A: China
+B: Tailandia
+C: India
+D: Nepal
+CORRECTA: C
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué película de Disney tiene la canción «El ciclo de la vida»?
+A: La sirenita
+B: El rey león
+C: Aladdín
+D: La bella y la bestia
+CORRECTA: B
+
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué elemento químico tiene el símbolo «K»?
+A: Fósforo
+B: Potasio
+C: Calcio
+D: Magnesio
+CORRECTA: B
+
+CATEGORIA: Historia
+PREGUNTA: ¿Quién fue el emperador romano que dividió el Imperio en dos?
+A: Constantino
+B: Justiniano
+C: Diocleciano
+D: Teodosio
+CORRECTA: D
+
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es el lago más profundo del mundo?
+A: Tanganica
+B: Superior
+C: Baikal
+D: Vostok
+CORRECTA: C
+
+CATEGORIA: Arte
+PREGUNTA: ¿Quién pintó «El grito»?
+A: Munch
+B: Klimt
+C: Kandinsky
+D: Klee
+CORRECTA: A
+
+CATEGORIA: Literatura
+PREGUNTA: ¿Quién escribió «Cumbres borrascosas»?
+A: Charlotte Brontë
+B: Emily Brontë
+C: Anne Brontë
+D: Jane Austen
+CORRECTA: B
+
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué nadador olímpico ha ganado más medallas de oro?
+A: Mark Spitz
+B: Michael Phelps
+C: Ian Thorpe
+D: Caeleb Dressel
+CORRECTA: B
+
+CATEGORIA: Tecnología
+PREGUNTA: ¿Qué significa «Wi-Fi» oficialmente?
+A: Wireless Fidelity
+B: Wireless Finder
+C: No significa nada
+D: Wide Fidelity
+CORRECTA: C
+
+CATEGORIA: Filosofía
+PREGUNTA: ¿Qué filósofo escribió «La ética protestante y el espíritu del capitalismo»?
+A: Karl Marx
+B: Émile Durkheim
+C: Max Weber
+D: Georg Simmel
+CORRECTA: C
+
+CATEGORIA: Cultura
+PREGUNTA: ¿Qué país es famoso por el baile «Capoeira»?
+A: Cuba
+B: República Dominicana
+C: Brasil
+D: Colombia
+CORRECTA: C
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué cantante es conocido como «El Rey del Pop»?
+A: Prince
+B: Michael Jackson
+C: Freddie Mercury
+D: Elvis Presley
+CORRECTA: B
+
+CATEGORIA: Mates
+PREGUNTA: ¿Cuánto es 2 elevado a la 8ª potencia?
+A: 128
+B: 256
+C: 512
+D: 64
+CORRECTA: B
+
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué hormona regula el sueño?
+A: Adrenalina
+B: Cortisol
+C: Melatonina
+D: Insulina
+CORRECTA: C
+
+CATEGORIA: Historia
+PREGUNTA: ¿En qué año cayó el Imperio Bizantino?
+A: 1204
+B: 1453
+C: 1492
+D: 1526
+CORRECTA: B
+
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la montaña más alta de África?
+A: Monte Kenia
+B: Monte Kilimanjaro
+C: Monte Stanley
+D: Monte Meru
+CORRECTA: B
+
+CATEGORIA: Arte
+PREGUNTA: ¿Quién esculpió «La Piedad»?
+A: Donatello
+B: Miguel Ángel
+C: Bernini
+D: Rodin
+CORRECTA: B
+
+CATEGORIA: Literatura
+PREGUNTA: ¿Quién escribió «Fahrenheit 451»?
+A: Ray Bradbury
+B: Isaac Asimov
+C: Arthur C. Clarke
+D: Philip K. Dick
+CORRECTA: A
+
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué ciclista ganó 7 Tour de Francia (todos anulados después)?
+A: Alberto Contador
+B: Jan Ullrich
+C: Lance Armstrong
+D: Miguel Induráin
+CORRECTA: C
+
+CATEGORIA: Tecnología
+PREGUNTA: ¿Qué empresa creó el lenguaje de programación Python?
+A: Google
+B: Microsoft
+C: Guido van Rossum (no empresa)
+D: Apple
+CORRECTA: C
+
+CATEGORIA: Filosofía
+PREGUNTA: ¿Qué filósofo escribió «Ser y tiempo»?
+A: Jean-Paul Sartre
+B: Martin Heidegger
+C: Edmund Husserl
+D: Maurice Merleau-Ponty
+CORRECTA: B
+
+CATEGORIA: Cultura
+PREGUNTA: ¿Qué país inventó el sushi?
+A: China
+B: Corea
+C: Japón
+D: Tailandia
+CORRECTA: C
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué actor interpretó a «Jack Sparrow»?
+A: Orlando Bloom
+B: Johnny Depp
+C: Geoffrey Rush
+D: Keira Knightley
+CORRECTA: B
+
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué órgano del cuerpo humano produce la bilis?
+A: Páncreas
+B: Riñón
+C: Hígado
+D: Vesícula biliar
+CORRECTA: C
+
+CATEGORIA: Historia
+PREGUNTA: ¿Quién fue el primer emperador de China?
+A: Lao Tsé
+B: Confucio
+C: Qin Shi Huang
+D: Sun Yat-sen
+CORRECTA: C
+
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es el país más densamente poblado del mundo (no microestado)?
+A: Bangladés
+B: India
+C: Países Bajos
+D: Corea del Sur
+CORRECTA: A
+
+CATEGORIA: Arte
+PREGUNTA: ¿Qué artista pintó la Capilla Sixtina?
+A: Leonardo da Vinci
+B: Rafael
+C: Miguel Ángel
+D: Botticelli
+CORRECTA: C
+
+CATEGORIA: Literatura
+PREGUNTA: ¿Quién escribió «Orgullo y prejuicio»?
+A: Jane Austen
+B: Emily Brontë
+C: Charlotte Brontë
+D: Louisa May Alcott
+CORRECTA: A
+
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué tenista femenina ganó 24 Grand Slams individuales?
+A: Serena Williams
+B: Margaret Court
+C: Steffi Graf
+D: Martina Navratilova
+CORRECTA: B
+
+CATEGORIA: Tecnología
+PREGUNTA: ¿Qué empresa fundó Steve Jobs además de Apple?
+A: Microsoft
+B: NeXT
+C: Pixar
+D: NeXT y Pixar
+CORRECTA: D
+
+CATEGORIA: Filosofía
+PREGUNTA: ¿Qué filósofo escribió «El Príncipe»?
+A: Maquiavelo
+B: Tomás Moro
+C: Erasmo de Róterdam
+D: Thomas Hobbes
+CORRECTA: A
+
+CATEGORIA: Cultura
+PREGUNTA: ¿Qué país tiene el templo de Angkor Wat?
+A: Tailandia
+B: Vietnam
+C: Laos
+D: Camboya
+CORRECTA: D
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué banda de rock lideró Freddie Mercury?
+A: The Rolling Stones
+B: The Who
+C: Queen
+D: Led Zeppelin
+CORRECTA: C
+
+CATEGORIA: Mates
+PREGUNTA: ¿Cuál es el área de un triángulo con base 10 y altura 5?
+A: 50
+B: 25
+C: 30
+D: 15
+CORRECTA: B
+
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué virus causa el SIDA?
+A: VPH
+B: VHB
+C: VIH
+D: VHS
+CORRECTA: C
+
+CATEGORIA: Historia
+PREGUNTA: ¿En qué año se produjo el ataque a Pearl Harbor?
+A: 1939
+B: 1940
+C: 1941
+D: 1942
+CORRECTA: C
+
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Islandia?
+A: Reikiavik
+B: Akureyri
+C: Keflavík
+D: Hafnarfjörður
+CORRECTA: A
+
+CATEGORIA: Arte
+PREGUNTA: ¿Qué movimiento artístico incluye a Andy Warhol?
+A: Pop Art
+B: Minimalismo
+C: Expresionismo abstracto
+D: Op Art
+CORRECTA: A
+
+CATEGORIA: Literatura
+PREGUNTA: ¿Quién escribió «El gran Gatsby»?
+A: Ernest Hemingway
+B: F. Scott Fitzgerald
+C: John Steinbeck
+D: William Faulkner
+CORRECTA: B
+
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué país ganó el Mundial de fútbol de 1950 con Maracanazo?
+A: Brasil
+B: Uruguay
+C: Argentina
+D: España
+CORRECTA: B
+
+CATEGORIA: Tecnología
+PREGUNTA: ¿Qué empresa creó el sistema operativo Android?
+A: Google
+B: Apple
+C: Microsoft
+D: Samsung
+CORRECTA: A
+
+CATEGORIA: Filosofía
+PREGUNTA: ¿Qué filósofo escribió «Así habló Zaratustra»?
+A: Schopenhauer
+B: Nietzsche
+C: Kierkegaard
+D: Jaspers
+CORRECTA: B
+
+CATEGORIA: Cultura
+PREGUNTA: ¿Qué país es famoso por las pirámides de Giza?
+A: Sudán
+B: Egipto
+C: Etiopía
+D: Libia
+CORRECTA: B
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué película de James Bond tiene a Sean Connery como 007?
+A: Dr. No
+B: GoldenEye
+C: Casino Royale
+D: Skyfall
+CORRECTA: A
+
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué tipo de energía proviene del núcleo de un átomo?
+A: Química
+B: Térmica
+C: Nuclear
+D: Cinética
+CORRECTA: C
+
+CATEGORIA: Historia
+PREGUNTA: ¿Quién fue el líder de los mongoles que conquistó gran parte de Asia?
+A: Kublai Kan
+B: Gengis Kan
+C: Tamerlán
+D: Atila
+CORRECTA: B
+
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Nueva Zelanda?
+A: Auckland
+B: Wellington
+C: Christchurch
+D: Hamilton
+CORRECTA: B
+
+CATEGORIA: Arte
+PREGUNTA: ¿Quién pintó «Las señoritas de Aviñón»?
+A: Picasso
+B: Matisse
+C: Braque
+D: Gris
+CORRECTA: A
+
+CATEGORIA: Literatura
+PREGUNTA: ¿Quién escribió «La isla del tesoro»?
+A: Jules Verne
+B: Robert Louis Stevenson
+C: Daniel Defoe
+D: Alexandre Dumas
+CORRECTA: B
+
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué equipo de la NBA tiene el récord de más victorias en temporada regular (73-9)?
+A: Chicago Bulls
+B: Los Angeles Lakers
+C: Golden State Warriors
+D: Boston Celtics
+CORRECTA: C
+
+CATEGORIA: Tecnología
+PREGUNTA: ¿Qué significa «URL»?
+A: Uniform Resource Locator
+B: Universal Resource Link
+C: Unified Resource Locator
+D: Universal Reference Link
+CORRECTA: A
+
+CATEGORIA: Filosofía
+PREGUNTA: ¿Qué filósofo escribió «La república»?
+A: Aristóteles
+B: Platón
+C: Sócrates
+D: Epicuro
+CORRECTA: B
+
+CATEGORIA: Cultura
+PREGUNTA: ¿Qué país inventó el papel?
+A: Egipto
+B: China
+C: India
+D: Japón
+CORRECTA: B
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué actor interpretó a «Tony Stark» / Iron Man?
+A: Chris Evans
+B: Chris Hemsworth
+C: Robert Downey Jr.
+D: Mark Ruffalo
+CORRECTA: C
+
+CATEGORIA: Mates
+PREGUNTA: ¿Cuál es la suma de los ángulos internos de un hexágono?
+A: 540°
+B: 720°
+C: 900°
+D: 1080°
+CORRECTA: B
+
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué gas hace que las estrellas brillen?
+A: Oxígeno
+B: Nitrógeno
+C: Hidrógeno
+D: Helio
+CORRECTA: C
+
+CATEGORIA: Historia
+PREGUNTA: ¿En qué año se firmó el Tratado de Versalles que terminó la I Guerra Mundial?
+A: 1917
+B: 1918
+C: 1919
+D: 1920
+CORRECTA: C
+
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Vietnam?
+A: Ho Chi Minh
+B: Hanói
+C: Da Nang
+D: Hue
+CORRECTA: B
+
+CATEGORIA: Arte
+PREGUNTA: ¿Quién esculpió «El beso»?
+A: Rodin
+B: Miguel Ángel
+C: Bernini
+D: Canova
+CORRECTA: A
+
+CATEGORIA: Literatura
+PREGUNTA: ¿Quién escribió «La letra escarlata»?
+A: Nathaniel Hawthorne
+B: Edgar Allan Poe
+C: Herman Melville
+D: Henry David Thoreau
+CORRECTA: A
+
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué futbolista ha ganado más Balones de Oro?
+A: Cristiano Ronaldo
+B: Lionel Messi
+C: Pelé
+D: Maradona
+CORRECTA: B
+
+CATEGORIA: Tecnología
+PREGUNTA: ¿Qué empresa creó la tarjeta gráfica GeForce?
+A: AMD
+B: Intel
+C: NVIDIA
+D: ATI
+CORRECTA: C
+
+CATEGORIA: Filosofía
+PREGUNTA: ¿Qué filósofo escribió «La crítica de la razón pura»?
+A: Hegel
+B: Kant
+C: Hume
+D: Descartes
+CORRECTA: B
+
+CATEGORIA: Cultura
+PREGUNTA: ¿En qué país se baila la «Samba»?
+A: Argentina
+B: Brasil
+C: Colombia
+D: Cuba
+CORRECTA: B
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué serie de TV terminó con «Felina» (Breaking Bad)?
+A: The Sopranos
+B: Breaking Bad
+C: Better Call Saul
+D: The Wire
+CORRECTA: B
+
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué metal es líquido a temperatura ambiente?
+A: Galio
+B: Mercurio
+C: Cesio
+D: Bromo
+CORRECTA: B
+
+CATEGORIA: Historia
+PREGUNTA: ¿Quién fue el primer hombre en pisar la Luna?
+A: Buzz Aldrin
+B: Neil Armstrong
+C: Michael Collins
+D: Yuri Gagarin
+CORRECTA: B
+
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Turquía?
+A: Estambul
+B: Ankara
+C: Esmirna
+D: Bursa
+CORRECTA: B
+
+CATEGORIA: Arte
+PREGUNTA: ¿Qué pintor es famoso por sus girasoles?
+A: Van Gogh
+B: Monet
+C: Renoir
+D: Cézanne
+CORRECTA: A
+
+CATEGORIA: Literatura
+PREGUNTA: ¿Quién escribió «Drácula»?
+A: Mary Shelley
+B: Bram Stoker
+C: Edgar Allan Poe
+D: H. P. Lovecraft
+CORRECTA: B
+
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué país ganó la Copa Mundial de Rugby 2019?
+A: Nueva Zelanda
+B: Inglaterra
+C: Sudáfrica
+D: Australia
+CORRECTA: C
+
+CATEGORIA: Tecnología
+PREGUNTA: ¿Qué empresa creó el primer microprocesador comercial?
+A: IBM
+B: Intel
+C: AMD
+D: Texas Instruments
+CORRECTA: B
+
+CATEGORIA: Filosofía
+PREGUNTA: ¿Qué filósofo dijo «Dios ha muerto»?
+A: Schopenhauer
+B: Nietzsche
+C: Heidegger
+D: Sartre
+CORRECTA: B
+
+CATEGORIA: Cultura
+PREGUNTA: ¿Qué país tiene el «Oktoberfest» más famoso?
+A: Austria
+B: Suiza
+C: Alemania
+D: República Checa
+CORRECTA: C
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué cantante femenina lanzó el álbum «21»?
+A: Taylor Swift
+B: Adele
+C: Lady Gaga
+D: Beyoncé
+CORRECTA: B
+
+CATEGORIA: Mates
+PREGUNTA: ¿Cuál es la derivada de x²?
+A: x
+B: 2x
+C: 2
+D: x/2
+CORRECTA: B
+
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué partícula subatómica tiene carga negativa?
+A: Protón
+B: Neutrón
+C: Electrón
+D: Positrón
+CORRECTA: C
+
+CATEGORIA: Historia
+PREGUNTA: ¿En qué año se produjo la Revolución Francesa?
+A: 1776
+B: 1789
+C: 1799
+D: 1804
+CORRECTA: B
+
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Pakistán?
+A: Karachi
+B: Lahore
+C: Islamabad
+D: Rawalpindi
+CORRECTA: C
+
+CATEGORIA: Arte
+PREGUNTA: ¿Quién pintó «El jardín de las delicias»?
+A: El Bosco
+B: Brueghel
+C: Van Eyck
+D: Memling
+CORRECTA: A
+
+CATEGORIA: Literatura
+PREGUNTA: ¿Quién escribió «Las aventuras de Huckleberry Finn»?
+A: Mark Twain
+B: Charles Dickens
+C: Edgar Allan Poe
+D: Walt Whitman
+CORRECTA: A
+
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué piloto de Fórmula 1 tiene más campeonatos mundiales?
+A: Lewis Hamilton
+B: Michael Schumacher
+C: Juan Manuel Fangio
+D: Alain Prost
+CORRECTA: B (7, igualado con Hamilton pero Schumacher primero en tiempo)
+
+CATEGORIA: Tecnología
+PREGUNTA: ¿Qué significa «PDF»?
+A: Portable Document Format
+B: Printable Document Format
+C: Public Document Format
+D: Personal Document Format
+CORRECTA: A
+
+CATEGORIA: Filosofía
+PREGUNTA: ¿Qué filósofo escribió «El ser y la nada»?
+A: Camus
+B: Sartre
+C: Beauvoir
+D: Merleau-Ponty
+CORRECTA: B
+
+CATEGORIA: Cultura
+PREGUNTA: ¿Qué país es famoso por la «Tomatina»?
+A: Italia
+B: México
+C: España
+D: Portugal
+CORRECTA: C
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué película ganó el Oscar a Mejor Película en 2019 (ceremonia 2020)?
+A: 1917
+B: Joker
+C: Parásitos
+D: Once Upon a Time in Hollywood
+CORRECTA: C
+
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué órgano del cuerpo humano nunca descansa?
+A: Pulmones
+B: Riñones
+C: Corazón
+D: Hígado
+CORRECTA: C
+
+CATEGORIA: Historia
+PREGUNTA: ¿Quién fue el fundador del Imperio Persa?
+A: Darío I
+B: Ciro el Grande
+C: Jerjes
+D: Cambises II
+CORRECTA: B
+
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Argentina?
+A: Buenos Aires
+B: Córdoba
+C: Rosario
+D: Mendoza
+CORRECTA: A
+
+CATEGORIA: Arte
+PREGUNTA: ¿Quién pintó «La noche estrellada»?
+A: Gauguin
+B: Van Gogh
+C: Cézanne
+D: Seurat
+CORRECTA: B
+
+CATEGORIA: Literatura
+PREGUNTA: ¿Quién escribió «El proceso»?
+A: Franz Kafka
+B: Thomas Mann
+C: Hermann Hesse
+D: Stefan Zweig
+CORRECTA: A
+
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué país ganó la Eurocopa 2016?
+A: Francia
+B: Portugal
+C: Alemania
+D: España
+CORRECTA: B
+
+CATEGORIA: Tecnología
+PREGUNTA: ¿Qué empresa creó el asistente de voz Alexa?
+A: Google
+B: Apple
+C: Amazon
+D: Microsoft
+CORRECTA: C
+
+CATEGORIA: Filosofía
+PREGUNTA: ¿Qué filósofo escribió «La sociedad abierta y sus enemigos»?
+A: Karl Popper
+B: Theodor Adorno
+C: Herbert Marcuse
+D: Jürgen Habermas
+CORRECTA: A
+
+CATEGORIA: Cultura
+PREGUNTA: ¿Qué país es famoso por el «Carnaval de Río»?
+A: Brasil
+B: Colombia
+C: Venezuela
+D: Argentina
+CORRECTA: A
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué actor interpretó a «El Joker» en The Dark Knight?
+A: Jack Nicholson
+B: Heath Ledger
+C: Joaquin Phoenix
+D: Jared Leto
+CORRECTA: B
+
+CATEGORIA: Mates
+PREGUNTA: ¿Cuál es el resultado de 10! (10 factorial)?
+A: 3.628.800
+B: 3.628.000
+C: 3.600.000
+D: 3.628.500
+CORRECTA: A
+
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué tipo de radiación tiene la longitud de onda más larga?
+A: Rayos gamma
+B: Rayos X
+C: Ondas de radio
+D: Luz visible
+CORRECTA: C
+
+CATEGORIA: Historia
+PREGUNTA: ¿En qué año se descubrió América (llegada de Colón)?
+A: 1492
+B: 1498
+C: 1500
+D: 1494
+CORRECTA: A
+
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es el río más largo de Europa?
+A: Danubio
+B: Volga
+C: Rin
+D: Dniéper
+CORRECTA: B
+
+CATEGORIA: Arte
+PREGUNTA: ¿Quién pintó «Los comedores de patatas»?
+A: Van Gogh
+B: Rembrandt
+C: Vermeer
+D: Hals
+CORRECTA: A
+
+CATEGORIA: Literatura
+PREGUNTA: ¿Quién escribió «El retrato de Dorian Gray»?
+A: Bram Stoker
+B: Oscar Wilde
+C: Edgar Allan Poe
+D: Mary Shelley
+CORRECTA: B
+
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué tenista femenina ganó el Golden Slam en 1988?
+A: Steffi Graf
+B: Serena Williams
+C: Martina Navratilova
+D: Chris Evert
+CORRECTA: A
+
+CATEGORIA: Tecnología
+PREGUNTA: ¿Qué significa «BIOS» en informática?
+A: Basic Input Output System
+B: Basic Internal Operating System
+C: Binary Input Output System
+D: Built In Operating System
+CORRECTA: A
+
+CATEGORIA: Filosofía
+PREGUNTA: ¿Qué filósofo escribió «La fenomenología del espíritu»?
+A: Kant
+B: Hegel
+C: Fichte
+D: Schelling
+CORRECTA: B
+
+CATEGORIA: Cultura
+PREGUNTA: ¿En qué país se come «Kimchi» a diario?
+A: China
+B: Japón
+C: Corea del Sur
+D: Tailandia
+CORRECTA: C
+
  /*questions.txt — todas las preguntas originales migradas al nuevo formato. Cada bloque
   tiene CATEGORIA:, PREGUNTA:, A: B: C: D: y CORRECTA:. Para añadir una pregunta nueva, copias un bloque, lo editas y guardas. Para crear una categoría nueva 
   (por ejemplo CATEGORIA: Programación) simplemente la escribes y aparecerá sola en el panel de opciones.
