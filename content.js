@@ -207,7 +207,7 @@ function showConfirm() {
           border-radius:10px; padding:12px 0;
           font-size:14px; font-weight:600; color:#555;
           cursor:pointer;">
-          No, salir
+          Salir
         </button>
         <button id="ff-confirm-yes" style="
           flex:1; max-width:140px;
@@ -215,7 +215,7 @@ function showConfirm() {
           border-radius:10px; padding:12px 0;
           font-size:14px; font-weight:600; color:#fff;
           cursor:pointer;">
-          Sí, entrar
+          Entrar
         </button>
       </div>
     </div>`; 
