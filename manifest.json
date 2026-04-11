@@ -1,42 +1,41 @@
 {
   "manifest_version": 3,
-  "name": "Focus Friends",
-  "version": "1.2",
-  "description": "Demuestra que puedes resistir.",
-  "permissions": [
-    "storage"
-  ],
+  "name": "FocusFriends",
+  "version": "1.0",
+  "description": "Bloquea distracciones con trivial y multijugador",
+  "permissions": ["storage", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "icons": {
+    "16":  "icon16.png",
+    "32":  "icon32.png",
+    "48":  "icon48.png",
+    "128": "icon128.png"
+  },
   "background": {
     "service_worker": "background.js"
   },
-  "host_permissions": [
-    "<all_urls>"
-  ],
   "content_scripts": [
     {
-      "matches": [
-        "<all_urls>"
-      ],
-      "js": [
-        "content.js"
-      ],
-      "css": [
-        "style.css"
-      ]
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["style.css"],
+      "run_at": "document_start"
     }
   ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16":  "icon16.png",
+      "32":  "icon32.png",
+      "48":  "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "options_page": "options.html",
   "web_accessible_resources": [
     {
-      "resources": [
-        "questions.txt"
-      ],
-      "matches": [
-        "<all_urls>"
-      ]
+      "resources": ["questions.txt"],
+      "matches": ["<all_urls>"]
     }
-  ],
-  "options_page": "options.html",
-  "action": {
-    "default_popup": "popup.html"
-  }
+  ]
 }

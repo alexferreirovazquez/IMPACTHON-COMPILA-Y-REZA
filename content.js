@@ -1,30 +1,47 @@
-const FIREBASE_PROJECT_ID = "focus-friends-a6d19"; 
-
 // ── Config defaults ───────────────────────────────────────
 const DEFAULT_PENALTY  = 30;
 const DEFAULT_SITES    = ["instagram.com","tiktok.com","x.com","twitter.com","facebook.com","youtube.com"];
+const DEFAULT_INTERVAL_MS = 5 * 60 * 1000; // 5 minutos por defecto
 const CONFIRM_MESSAGES = [
   { t: "¿De verdad quieres entrar?", s: "Es una distracción. ¿Tienes algo mejor que hacer?" },
   { t: "¿Seguro que es necesario?", s: "Tu 'yo' del futuro te agradecería que cerraras esta pestaña." },
   { t: "¡Alto ahí!", s: "Solo ibas a mirar un minuto, pero ambos sabemos cómo termina esto." },
   { t: "¿Dopamina barata?", s: "Aprender algo nuevo te hará sentirte mejor a largo plazo." },
-  { t: "Tu tiempo vale oro", s: "¿Quieres regalárselo a un algoritmo de recomendación?" }
+  { t: "Tu tiempo vale oro", s: "¿Quieres regalárselo a un algoritmo de recomendación?" },
+  { t: "Pausa de reflexión", s: "¿Entras por aburrimiento o por necesidad real?" },
+  { t: "Modo Enfoque activado", s: "Si entras ahora, romperás tu ritmo de trabajo." },
+  { t: "Cuidado con el agujero negro", s: "Esta web está diseñada para que no salgas. ¿Te arriesgas?" },
+  { t: "¿Y si mejor no?", s: "Haz 10 sentadillas o bebe agua antes de decidir." },
+  { t: "Productividad en peligro", s: "Estás a un click de perder 30 minutos de tu vida." },
+  { t: "Solo una pregunta...", s: "¿Esta página te ayuda a conseguir tus metas de hoy?" },
+  { t: "¡No te rindas!", s: "La tentación es grande, pero tu voluntad es mayor." },
+  { t: "Atención plena", s: "Respira hondo tres veces antes de pulsar 'Sí'." },
+  { t: "Efecto scroll infinito", s: "Recuerda: el contenido nunca se acaba, pero tu tiempo sí." },
+  { t: "Zona de distracciones", s: "Mañana desearás haber tenido más tiempo. Empieza por hoy." },
+  { t: "¿Buscas escapar?", s: "Afrontar la tarea difícil es más gratificante que este sitio." },
+  { t: "Misión: Concentración", s: "Si entras, al menos que sea con un objetivo claro." },
+  { t: "Pensándolo bien...", s: "¿Hay algo en tu lista de tareas que sea más importante?" },
+  { t: "Cierra la puerta", s: "Las redes sociales son el ruido; el silencio es donde creces." },
+  { t: "Última oportunidad", s: "¿Estás eligiendo esto conscientemente o por inercia?" }
 ];
 
 const DELAY_MS = 10;
-const SCROLL_TIME_LIMIT_MS = 5 * 60 * 1000;
- 
+const SCROLL_TIME_LIMIT_MS = 30 * 1000;
+let PERIODIC_INTERVAL_MS = DEFAULT_INTERVAL_MS; // ── Se actualiza desde storage
+
 // ── State ─────────────────────────────────────────────────
 let questions        = [];
 let BLOCKED_SITES    = [...DEFAULT_SITES];
 let PENALTY_SECONDS  = DEFAULT_PENALTY;
 let ENABLED_CATS     = null;
- 
+
 let scrollTimeAccum  = 0;
 let lastScrollTime   = null;
 let scrollDecayTimer = null;
 let scrollLocked     = false;
- 
+
+let periodicTimer    = null; // ── Referencia al intervalo periódico
+
 // ── Parse questions.txt ───────────────────────────────────
 function parseQuestions(text) {
   return text
@@ -47,7 +64,7 @@ function parseQuestions(text) {
     })
     .filter(q => q.q && q.answers.some(a => a) && q.correct >= 0);
 }
- 
+
 async function loadQuestions() {
   try {
     const url  = chrome.runtime.getURL("questions.txt");
@@ -61,13 +78,10 @@ async function loadQuestions() {
 
 // ── FUNCIONES DE MULTIJUGADOR Y FIREBASE ──────────────────
 function getPlayerInfo(callback) {
-  // Miramos si ya tenemos guardado el nombre y la sala en esta extensión
   chrome.storage.local.get(["ff_playerName", "ff_roomCode"], (data) => {
     if (data.ff_playerName && data.ff_roomCode) {
-      // Si ya los tenemos, vamos directos a jugar
       callback(data.ff_playerName, data.ff_roomCode);
     } else {
-      // Si no los tenemos, le mostramos la pantalla para pedirlos
       const mainOverlay = document.getElementById("ff-overlay");
       if (mainOverlay) mainOverlay.style.display = "none";
 
@@ -83,12 +97,12 @@ function getPlayerInfo(callback) {
 
           <div style="text-align: left; margin-bottom: 12px;">
             <label style="font-size: 12px; font-weight: bold; color: #185FA5; margin-left: 4px;">Tu Nombre</label>
-            <input type="text" id="ff-name-input" placeholder="Ej: Alex..." style="width: 100%; padding: 12px; border: 2px solid rgba(0,0,0,0.1); border-radius: 8px; font-size: 16px; box-sizing: border-box; background: rgba(255,255,255,0.6); margin-top: 4px;">
+            <input type="text" id="ff-name-input" placeholder="Ej: Alex..." style="width: 100%; padding: 12px; border: 2px solid rgba(0,0,0,0.1); border-radius: 8px; font-size: 16px; box-sizing: border-box; background: rgba(255,255,255,0.6); margin-top: 4px; color: #1a1a1a;">
           </div>
 
           <div style="text-align: left; margin-bottom: 24px;">
             <label style="font-size: 12px; font-weight: bold; color: #185FA5; margin-left: 4px;">Código de Sala</label>
-            <input type="text" id="ff-room-input" placeholder="Ej: IMPACTHON24..." style="width: 100%; padding: 12px; border: 2px solid rgba(0,0,0,0.1); border-radius: 8px; font-size: 16px; box-sizing: border-box; background: rgba(255,255,255,0.6); margin-top: 4px; text-transform: uppercase;">
+            <input type="text" id="ff-room-input" placeholder="Ej: IMPACTHON24..." style="width: 100%; padding: 12px; border: 2px solid rgba(0,0,0,0.1); border-radius: 8px; font-size: 16px; box-sizing: border-box; background: rgba(255,255,255,0.6); margin-top: 4px; text-transform: uppercase; color: #1a1a1a;">
           </div>
 
           <button id="ff-start-btn" style="background: #185FA5; color: white; border: none; padding: 12px 24px; border-radius: 8px; font-size: 16px; cursor: pointer; font-weight: bold; width: 100%;">¡Entrar a la Sala!</button>
@@ -101,13 +115,12 @@ function getPlayerInfo(callback) {
         let name = document.getElementById("ff-name-input").value.trim();
         let room = document.getElementById("ff-room-input").value.trim().toUpperCase();
 
-        if (!name) name = "Jugador_" + Math.floor(Math.random() * 1000); 
-        if (!room) room = "GLOBAL"; // Si no ponen sala, los metemos en la general
+        if (!name) name = "Jugador_" + Math.floor(Math.random() * 1000);
+        if (!room) room = "GLOBAL";
 
-        // Guardamos los datos para no volver a preguntarlos mañana
         chrome.storage.local.set({ ff_playerName: name, ff_roomCode: room }, () => {
             nameOverlay.remove();
-            if (mainOverlay) mainOverlay.style.display = "flex"; 
+            if (mainOverlay) mainOverlay.style.display = "flex";
             callback(name, room);
         });
       });
@@ -115,7 +128,7 @@ function getPlayerInfo(callback) {
   });
 }
 
-// Descarga el podio SOLO de tu sala (Le pide ayuda al background)
+// Descarga el podio SOLO de tu sala (Pide ayuda al background para saltar bloqueo)
 async function getRoomLeaderboard(roomCode) {
   return new Promise((resolve) => {
     const safeRoom = encodeURIComponent(roomCode.trim());
@@ -132,17 +145,18 @@ async function getRoomLeaderboard(roomCode) {
   });
 }
 
-// Sube tus puntos a TU sala (Le pide ayuda al background)
-function saveScoreToCloud(name, score, roomCode) {
-  chrome.runtime.sendMessage({ 
-    action: "saveScore", 
-    name: name, 
-    score: score, 
-    room: roomCode 
+// Sube tus puntos y racha a TU sala
+function saveScoreToCloud(name, score, streak, roomCode) {
+  chrome.runtime.sendMessage({
+    action: "saveScore",
+    name: name,
+    score: score,
+    streak: streak,
+    room: roomCode
   });
 }
- 
-// ── Boot logic (Wait for body, Observer, etc.) ────────────
+
+// ── Espera a que document.body exista ────────────────────
 function waitForBody() {
   return new Promise(resolve => {
     if (document.body) return resolve();
@@ -152,8 +166,10 @@ function waitForBody() {
     obs.observe(document.documentElement, { childList: true });
   });
 }
- 
+
+// ── MutationObserver: evita que SPAs eliminen el overlay ──
 let overlayGuard = null;
+
 function startOverlayGuard() {
   if (overlayGuard) return;
   overlayGuard = new MutationObserver(() => {
@@ -169,25 +185,38 @@ function startOverlayGuard() {
   });
   overlayGuard.observe(document.body, { childList: true, subtree: false });
 }
- 
+
+// ── Insertar overlay de forma segura ─────────────────────
 function mountOverlay(overlay) {
   const parent = document.body || document.documentElement;
   parent.appendChild(overlay);
 }
- 
+
+// ── Inicia (o reinicia) el temporizador periódico ─────────
+function startPeriodicTimer() {
+  if (periodicTimer) clearInterval(periodicTimer);
+  periodicTimer = setInterval(() => {
+    if (!document.getElementById("ff-overlay") && !scrollLocked) {
+      showPopup();
+    }
+  }, PERIODIC_INTERVAL_MS);
+}
+
+// ── Boot: load questions + settings then start ────────────
 loadQuestions().then(() => {
-  chrome.storage.local.get(["ff_penalty","ff_sites","ff_categories"], (d) => {
-    if (d.ff_penalty)    PENALTY_SECONDS = d.ff_penalty;
-    if (d.ff_sites)      BLOCKED_SITES   = d.ff_sites;
-    if (d.ff_categories) ENABLED_CATS    = new Set(d.ff_categories);
- 
+  chrome.storage.local.get(["ff_penalty","ff_interval","ff_sites","ff_categories"], (d) => {
+    if (d.ff_penalty)    PENALTY_SECONDS      = d.ff_penalty;
+    if (d.ff_interval)   PERIODIC_INTERVAL_MS = d.ff_interval * 1000;
+    if (d.ff_sites)      BLOCKED_SITES        = d.ff_sites;
+    if (d.ff_categories) ENABLED_CATS         = new Set(d.ff_categories);
+
     const currentSite   = location.hostname;
     const isBlockedSite = BLOCKED_SITES.some(site => currentSite.includes(site));
- 
+
     chrome.storage.local.get([currentSite], (data) => {
       const now          = Date.now();
       const siteLockTime = data[currentSite];
- 
+
       if (siteLockTime && siteLockTime > now) {
         const secondsLeft = Math.ceil((siteLockTime - now) / 1000);
         waitForBody().then(() => {
@@ -198,8 +227,9 @@ loadQuestions().then(() => {
         waitForBody().then(() => {
           setTimeout(showConfirm, DELAY_MS);
           startOverlayGuard();
+          startPeriodicTimer(); // ── Arranca el temporizador periódico
         });
- 
+
         document.addEventListener("visibilitychange", () => {
           if (document.visibilityState === "visible") {
             chrome.storage.local.get(["lockedUntil"], (d2) => {
@@ -208,7 +238,7 @@ loadQuestions().then(() => {
           }
           if (document.visibilityState === "hidden") lastScrollTime = null;
         });
- 
+
         window.addEventListener("scroll", onScroll, true);
         document.addEventListener("scroll", onScroll, true);
         document.addEventListener("wheel", onScroll, { passive: true });
@@ -216,18 +246,18 @@ loadQuestions().then(() => {
     });
   });
 });
- 
+
 // ── Scroll tracker ────────────────────────────────────────
 function onScroll() {
   if (scrollLocked || document.getElementById("ff-overlay")) return;
- 
+
   const now = Date.now();
   if (lastScrollTime !== null) scrollTimeAccum += now - lastScrollTime;
   lastScrollTime = now;
- 
+
   clearTimeout(scrollDecayTimer);
   scrollDecayTimer = setTimeout(() => { lastScrollTime = null; }, 500);
- 
+
   if (scrollTimeAccum >= SCROLL_TIME_LIMIT_MS) {
     scrollTimeAccum = 0;
     lastScrollTime  = null;
@@ -235,12 +265,13 @@ function onScroll() {
     showPopup();
   }
 }
- 
-// ── Pantallas UI ──────────────────────────────
+
+// ── Pantalla de confirmación ──────────────────────────────
 function showConfirm() {
   if (document.getElementById("ff-overlay")) return;
 
   const variant = CONFIRM_MESSAGES[Math.floor(Math.random() * CONFIRM_MESSAGES.length)];
+
   const overlay = document.createElement("div");
   overlay.id = "ff-overlay";
 
@@ -250,16 +281,34 @@ function showConfirm() {
       <p style="font-size:20px; font-weight:800; color:#1a1a1a; margin:0 0 8px;">${variant.t}</p>
       <p style="font-size:13px; color:#888; margin:0 0 32px;"><strong>${location.hostname}</strong> ${variant.s}</p>
       <div style="display:flex; gap:12px; justify-content:center;">
-        <button id="ff-confirm-no" style="flex:1; max-width:140px; background:#f1f1f0; border:1px solid #ddd; border-radius:10px; padding:12px 0; font-size:14px; font-weight:600; color:#555; cursor:pointer;">No, salir</button>
-        <button id="ff-confirm-yes" style="flex:1; max-width:140px; background:#185FA5; border:none; border-radius:10px; padding:12px 0; font-size:14px; font-weight:600; color:#fff; cursor:pointer;">Sí, entrar</button>
+        <button id="ff-confirm-no" style="
+          flex:1; max-width:140px;
+          background:#f1f1f0; border:1px solid #ddd;
+          border-radius:10px; padding:12px 0;
+          font-size:14px; font-weight:600; color:#555;
+          cursor:pointer;">
+          Salir
+        </button>
+        <button id="ff-confirm-yes" style="
+          flex:1; max-width:140px;
+          background:#185FA5; border:none;
+          border-radius:10px; padding:12px 0;
+          font-size:14px; font-weight:600; color:#fff;
+          cursor:pointer;">
+          Entrar
+        </button>
       </div>
-    </div>`; 
-  
+    </div>`;
+
   mountOverlay(overlay);
 
   document.getElementById("ff-confirm-no").addEventListener("click", () => {
     overlay.remove();
-    if (history.length > 1) { history.back(); } else { window.close(); }
+    if (history.length > 1) {
+      history.back();
+    } else {
+      window.close();
+    }
   });
 
   document.getElementById("ff-confirm-yes").addEventListener("click", () => {
@@ -267,7 +316,8 @@ function showConfirm() {
     showPopup();
   });
 }
- 
+
+// ── Lock screen ───────────────────────────────────────────
 function showLockScreen(lockLeft) {
   let overlay = document.getElementById("ff-overlay");
   if (!overlay) {
@@ -275,7 +325,7 @@ function showLockScreen(lockLeft) {
     overlay.id = "ff-overlay";
     mountOverlay(overlay);
   }
- 
+
   overlay.innerHTML = `
     <div class="ff-card ff-lockout">
       <div class="ff-lock-icon">🔒</div>
@@ -284,11 +334,11 @@ function showLockScreen(lockLeft) {
       <div class="ff-lock-bar-wrap"><div class="ff-lock-bar" id="ff-lock-bar"></div></div>
       <div class="ff-lock-countdown" id="ff-lock-countdown">${lockLeft}s</div>
     </div>`;
- 
+
   const lockCountEl = document.getElementById("ff-lock-countdown");
   const lockBarEl   = document.getElementById("ff-lock-bar");
   const initialLock = lockLeft;
- 
+
   const lockInterval = setInterval(() => {
     lockLeft--;
     if (lockCountEl) lockCountEl.textContent = lockLeft + "s";
@@ -296,32 +346,32 @@ function showLockScreen(lockLeft) {
     if (lockLeft <= 0) { clearInterval(lockInterval); overlay.remove(); scrollLocked = false; }
   }, 1000);
 }
- 
-// ── TRIVIA POPUP MULTIJUGADOR ──────────────────────────
+
+// ── TRIVIA POPUP MULTIJUGADOR ──────────────────────────────
 function showPopup() {
   if (document.getElementById("ff-overlay")) return;
   if (!chrome?.storage?.local) return;
- 
+
   if (!questions.length) {
     console.warn("[FocusFriends] Sin preguntas disponibles.");
     return;
   }
- 
+
   const pool       = ENABLED_CATS ? questions.filter(q => ENABLED_CATS.has(q.category)) : questions;
   const activePool = pool.length ? pool : questions;
   const q          = activePool[Math.floor(Math.random() * activePool.length)];
- 
+
   let timeLeft = 15;
   let answered = false;
 
   // 1. OBTENEMOS TUS PUNTOS LOCALES
   chrome.storage.local.get(["score","streak"], (data) => {
-    const myScore   = data.score  || 0;
-    const streak    = data.streak || 0;
+    const myScore = data.score  || 0;
+    const streak  = data.streak || 0;
 
     // 2. PEDIMOS NOMBRE Y SALA (Automático si ya los pusiste una vez)
     getPlayerInfo(async (myName, myRoom) => {
-      
+
       // 3. DESCARGAMOS EL PODIO DE TU SALA DESDE FIREBASE
       const leaderboard = await getRoomLeaderboard(myRoom);
 
@@ -335,7 +385,7 @@ function showPopup() {
       const uniquePlayers = Array.from(new Set(allPlayers.map(a => a.name)))
         .map(name => {
           return allPlayers.find(a => a.name === name);
-        }).slice(0, 4); 
+        }).slice(0, 4);
 
       const rankHTML = uniquePlayers.map((p, i) => {
         const medals = ["🥇","🥈","🥉"];
@@ -364,23 +414,20 @@ function showPopup() {
           </div>
           <div class="ff-warning">⚠️ Si fallas, <strong>${formatSeconds(PENALTY_SECONDS)}</strong> de bloqueo</div>
           <div class="ff-podium">
-            
             <p class="ff-podium-label" style="display: flex; justify-content: space-between; align-items: center;">
               <span>SALA: <strong>${myRoom}</strong></span>
               <span id="ff-change-room" style="color: #185FA5; cursor: pointer; text-transform: none;">Cambiar sala</span>
             </p>
-
             ${rankHTML}
           </div>
         </div>`;
 
       mountOverlay(overlay);
 
-      // Botón para cambiar de sala (borra la memoria y te vuelve a pedir los datos)
+      // Botón para cambiar de sala (borra memoria, puntos y recarga la página de golpe)
       document.getElementById("ff-change-room").addEventListener("click", () => {
-        chrome.storage.local.remove(["ff_playerName", "ff_roomCode"], () => {
-          overlay.remove();
-          showPopup(); 
+        chrome.storage.local.remove(["ff_playerName", "ff_roomCode", "score", "streak"], () => {
+          window.location.reload();
         });
       });
 
@@ -402,11 +449,16 @@ function showPopup() {
 
           if (chosen === q.correct) {
             allBtns[chosen].classList.add("ff-correct");
-            const newScore = myScore + 10;
-            chrome.storage.local.set({ score: newScore, streak: streak + 1 });
-            
-            // 4. SUBIMOS LOS PUNTOS A TU SALA DE FIREBASE
-            saveScoreToCloud(myName, newScore, myRoom);
+
+            const newScore  = myScore + 10;
+            const newStreak = streak + 1;
+
+            chrome.storage.local.set({ score: newScore, streak: newStreak });
+
+            // 4. SUBIMOS LOS PUNTOS Y LA RACHA A TU SALA DE FIREBASE
+            saveScoreToCloud(myName, newScore, newStreak, myRoom);
+
+            startPeriodicTimer(); // ── Reinicia el contador tras respuesta correcta
 
             setTimeout(() => { showSuccessScreen(); }, 600);
           } else {
@@ -431,17 +483,18 @@ function showPopup() {
     });
   });
 }
- 
+
 function formatSeconds(s) {
   if (s < 60) return s + "s";
   const m = Math.floor(s / 60), r = s % 60;
   return m + "m" + (r ? " " + r + "s" : "");
 }
- 
+
+// ── Pantalla de éxito ─────────────────────────────────────
 function showSuccessScreen() {
   let overlay = document.getElementById("ff-overlay");
   if (!overlay) return;
- 
+
   overlay.innerHTML = `
     <div class="ff-card" style="text-align: center; padding: 50px 32px;">
       <div style="font-size: 64px; margin-bottom: 16px;">🎉</div>
@@ -451,7 +504,7 @@ function showSuccessScreen() {
         +10 Puntos 🔥
       </div>
     </div>`;
- 
+
   setTimeout(() => {
     const el = document.getElementById("ff-overlay");
     if (el) el.remove();

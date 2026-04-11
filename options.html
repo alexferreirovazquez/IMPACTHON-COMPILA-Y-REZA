@@ -11,8 +11,8 @@
       --surface: #1a1a1a;
       --surface2: #232323;
       --border: #2e2e2e;
-      --accent: #b4f264;
-      --accent2: #4d9fff;
+      --accent: #f5e642;
+      --accent2: #f5e642;
       --danger: #ff5c5c;
       --text: #f0f0f0;
       --muted: #777;
@@ -44,10 +44,11 @@
     }
     .logo {
       width: 36px; height: 36px;
-      background: var(--accent);
-      border-radius: 8px;
       display: flex; align-items: center; justify-content: center;
-      font-size: 18px;
+    }
+    .logo img {
+      width: 36px; height: 36px;
+      border-radius: 50%;
     }
     header h1 {
       font-family: 'Syne', sans-serif;
@@ -241,7 +242,7 @@
       background: var(--accent2);
       border: none;
       border-radius: 8px;
-      color: #fff;
+      color: #0f0f0f;
       font-size: 18px;
       width: 42px;
       cursor: pointer;
@@ -323,9 +324,9 @@
 <body>
 
 <header>
-  <div class="logo">🎯</div>
+  <div class="logo"><img src="icon128.png" alt="FocusFriends"></div>
   <h1>Focus <span>Friends</span></h1>
-  <button class="save-btn" onclick="saveAll()">Guardar cambios</button>
+  <button class="save-btn" id="saveBtn">Guardar cambios</button>
 </header>
 
 <main>
@@ -340,17 +341,42 @@
       <div class="penalty-display" id="penaltyDisplay">30s</div>
       <div class="penalty-label">Bloqueo tras fallo o tiempo agotado</div>
       <div class="slider-wrap">
-        <input type="range" id="penaltySlider" min="30" max="600" step="10" value="30" oninput="updatePenalty(this.value)">
+        <input type="range" id="penaltySlider" min="30" max="600" step="10" value="30">
         <div class="slider-ticks">
           <span>30s</span><span>2m</span><span>5m</span><span>10m</span>
         </div>
       </div>
       <div class="preset-row">
-        <button class="preset-btn" onclick="setPreset(30)">30s</button>
-        <button class="preset-btn" onclick="setPreset(60)">1 min</button>
-        <button class="preset-btn" onclick="setPreset(120)">2 min</button>
-        <button class="preset-btn" onclick="setPreset(300)">5 min</button>
-        <button class="preset-btn" onclick="setPreset(600)">10 min</button>
+        <button class="preset-btn" data-preset="30">30s</button>
+        <button class="preset-btn" data-preset="60">1 min</button>
+        <button class="preset-btn" data-preset="120">2 min</button>
+        <button class="preset-btn" data-preset="300">5 min</button>
+        <button class="preset-btn" data-preset="600">10 min</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTERVALO ENTRE PREGUNTAS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">🔁</div>
+      <h2>Intervalo entre preguntas</h2>
+    </div>
+    <div class="section-body">
+      <div class="penalty-display" id="intervalDisplay">5m</div>
+      <div class="penalty-label">Tiempo entre preguntas periódicas en sitios bloqueados</div>
+      <div class="slider-wrap">
+        <input type="range" id="intervalSlider" min="60" max="900" step="60" value="300">
+        <div class="slider-ticks">
+          <span>1m</span><span>5m</span><span>10m</span><span>15m</span>
+        </div>
+      </div>
+      <div class="preset-row">
+        <button class="preset-btn interval-preset-btn" data-preset="60">1 min</button>
+        <button class="preset-btn interval-preset-btn" data-preset="120">2 min</button>
+        <button class="preset-btn interval-preset-btn active" data-preset="300">5 min</button>
+        <button class="preset-btn interval-preset-btn" data-preset="600">10 min</button>
+        <button class="preset-btn interval-preset-btn" data-preset="900">15 min</button>
       </div>
     </div>
   </div>
@@ -364,8 +390,8 @@
     <div class="section-body">
       <div class="sites-list" id="sitesList"></div>
       <div class="add-row">
-        <input class="add-input" id="siteInput" type="text" placeholder="ejemplo: reddit.com" onkeydown="if(event.key==='Enter') addSite()">
-        <button class="add-btn" onclick="addSite()">+</button>
+        <input class="add-input" id="siteInput" type="text" placeholder="ejemplo: reddit.com">
+        <button class="add-btn" id="addSiteBtn">+</button>
       </div>
     </div>
   </div>
