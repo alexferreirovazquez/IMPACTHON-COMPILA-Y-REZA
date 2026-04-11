@@ -136,10 +136,19 @@ function getPlayerInfo(callback) {
         if (!name) name = "Jugador_" + Math.floor(Math.random() * 1000);
         if (!room) room = "GLOBAL";
 
+        const today = new Date().toDateString();
         const initialScore = 100;
-        chrome.storage.local.set({ ff_playerName: name, ff_roomCode: room, score: initialScore, streak: 0 }, () => {
-          // Subir los 100 puntos iniciales al servidor nada más unirse
-          saveScoreToCloud(name, initialScore, 0, room);
+        
+        // REGLA 1: Guardamos racha en 1 y la fecha de hoy
+        chrome.storage.local.set({ 
+            ff_playerName: name, 
+            ff_roomCode: room, 
+            score: initialScore, 
+            streak: 1,
+            lastClaimDate: today
+        }, () => {
+          // Subir los 100 puntos iniciales al servidor nada más unirse (con racha 1)
+          saveScoreToCloud(name, initialScore, 1, room);
           nameOverlay.remove();
           if (mainOverlay) mainOverlay.style.display = "flex";
           callback(name, room);
@@ -403,15 +412,31 @@ function showPopup() {
   let timeLeft = 15;
   let answered = false;
 
-  // 1. PEDIMOS NOMBRE Y SALA (Automático si ya los pusiste una vez)
-  // IMPORTANTE: leer el score DESPUÉS de getPlayerInfo, porque al unirse
-  // por primera vez getPlayerInfo escribe 100 pts en storage.
   getPlayerInfo(async (myName, myRoom) => {
 
-    // 2. OBTENEMOS TUS PUNTOS LOCALES (ya con los 100 iniciales si es la primera vez)
-    const freshData = await new Promise(res => chrome.storage.local.get(["score","streak"], res));
-    const myScore = (freshData.score != null) ? freshData.score : 0;
-    const streak  = freshData.streak || 0;
+    // Extraemos la información fresca (incluyendo la fecha del último premio)
+    const freshData = await new Promise(res => chrome.storage.local.get(["score","streak","lastClaimDate"], res));
+    let myScore = (freshData.score != null) ? freshData.score : 0;
+    let streak  = freshData.streak || 1;
+    let lastClaimDate = freshData.lastClaimDate;
+
+    // REGLA 2: RECOMPENSA DIARIA
+    const today = new Date().toDateString();
+    if (lastClaimDate && lastClaimDate !== today) {
+        // Multiplicador: 5 + 5 * racha (ej: racha 1 da 10pts, racha 2 da 15pts...)
+        const reward = 5 + (5 * streak);
+        myScore += reward;
+        streak += 1; // Sumamos 1 día a la racha por entrar hoy
+        
+        chrome.storage.local.set({ 
+            score: myScore, 
+            streak: streak,
+            lastClaimDate: today
+        });
+
+        saveScoreToCloud(myName, myScore, streak, myRoom);
+        alert(`¡Día nuevo, racha nueva! 🔥 Has ganado ${reward} puntos extra por tu racha de ${streak} días.`);
+    }
 
     // 3. DESCARGAMOS EL PODIO DE TU SALA DESDE FIREBASE
     const leaderboard = await getRoomLeaderboard(myRoom);
@@ -453,7 +478,7 @@ function showPopup() {
           <div class="ff-answers">
             ${q.answers.map((a, idx) => `<button class="ff-ans" data-index="${idx}">${a}</button>`).join("")}
           </div>
-          <div class="ff-warning">⚠️ Si fallas, <strong>${formatSeconds(PENALTY_SECONDS)}</strong> de bloqueo</div>
+          <div class="ff-warning">⚠️ Si fallas, <strong>${formatSeconds(PENALTY_SECONDS)}</strong> de bloqueo y pierdes la racha</div>
           <div class="ff-podium">
             <p class="ff-podium-label" style="display: flex; justify-content: space-between; align-items: center;">
               <span>SALA: <strong>${myRoom}</strong></span>
@@ -465,9 +490,9 @@ function showPopup() {
 
       mountOverlay(overlay);
 
-      // Botón para cambiar de sala (borra memoria, puntos y recarga la página de golpe)
+      // Botón para cambiar de sala (borra memoria y recarga)
       document.getElementById("ff-change-room").addEventListener("click", () => {
-        chrome.storage.local.remove(["ff_playerName", "ff_roomCode", "score", "streak"], () => {
+        chrome.storage.local.remove(["ff_playerName", "ff_roomCode", "score", "streak", "lastClaimDate"], () => {
           window.location.reload();
         });
       });
@@ -493,12 +518,11 @@ function showPopup() {
             playCorrectSound();
 
             const newScore  = myScore + 10;
-            const newStreak = streak + 1;
+            // REGLA 3: Aciertas -> Ganas 10 pts, PERO la racha no sube (es diaria)
+            chrome.storage.local.set({ score: newScore });
 
-            chrome.storage.local.set({ score: newScore, streak: newStreak });
-
-            // 4. SUBIMOS LOS PUNTOS Y LA RACHA A TU SALA DE FIREBASE
-            saveScoreToCloud(myName, newScore, newStreak, myRoom);
+            // Subimos los puntos a Firebase manteniendo la racha actual
+            saveScoreToCloud(myName, newScore, streak, myRoom);
 
             startPeriodicTimer(); // ── Reinicia el contador tras respuesta correcta
             chrome.storage.local.set({ ff_last_popup_time: Date.now() });
@@ -517,17 +541,22 @@ function showPopup() {
         const lockedUntil = Date.now() + (PENALTY_SECONDS * 1000);
         const currentSite = location.hostname;
         sessionStorage.setItem("lockedUntil", lockedUntil.toString());
-        // Leemos el score actual del storage para operar sobre el valor real, no el cacheado
+        
+        // Leemos el score actual del storage para operar sobre el valor real
         chrome.storage.local.get(["score"], (d) => {
           const currentScore = (d.score != null) ? d.score : 0;
           const newScore = Math.max(0, currentScore - 10);
+          
+          // REGLA 4: Fallas -> Pierdes 10 pts, Racha cae a 1 (no a 0)
           chrome.storage.local.set({
             [currentSite]: lockedUntil,
             score: newScore,
-            streak: 0
+            streak: 1
           });
-          // Subir el nuevo score al servidor inmediatamente
-          saveScoreToCloud(myName, newScore, 0, myRoom);
+          
+          // Subir el nuevo score y la racha rota a Firebase
+          saveScoreToCloud(myName, newScore, 1, myRoom);
+          
           showMinusPointsToast();
           setTimeout(() => showLockScreen(PENALTY_SECONDS), 900);
         });
