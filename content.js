@@ -138,16 +138,15 @@ function getPlayerInfo(callback) {
 
         const today = new Date().toDateString();
         const initialScore = 100;
-        
+
         // REGLA 1: Guardamos racha en 1 y la fecha de hoy
-        chrome.storage.local.set({ 
-            ff_playerName: name, 
-            ff_roomCode: room, 
-            score: initialScore, 
-            streak: 1,
-            lastClaimDate: today
+        chrome.storage.local.set({
+          ff_playerName: name,
+          ff_roomCode: room,
+          score: initialScore,
+          streak: 1,
+          lastClaimDate: today
         }, () => {
-          // Subir los 100 puntos iniciales al servidor nada más unirse (con racha 1)
           saveScoreToCloud(name, initialScore, 1, room);
           nameOverlay.remove();
           if (mainOverlay) mainOverlay.style.display = "flex";
@@ -391,7 +390,8 @@ function showLockScreen(lockLeft) {
     lockLeft--;
     if (lockCountEl) lockCountEl.textContent = lockLeft + "s";
     if (lockBarEl)   lockBarEl.style.width   = ((initialLock - lockLeft) / initialLock * 100) + "%";
-    if (lockLeft <= 0) { clearInterval(lockInterval); overlay.remove(); scrollLocked = false; }
+    // ── Al terminar el bloqueo, el timer empieza desde ahora
+    if (lockLeft <= 0) { clearInterval(lockInterval); overlay.remove(); scrollLocked = false; startPeriodicTimer(); }
   }, 1000);
 }
 
@@ -423,144 +423,141 @@ function showPopup() {
     // REGLA 2: RECOMPENSA DIARIA
     const today = new Date().toDateString();
     if (lastClaimDate && lastClaimDate !== today) {
-        // Multiplicador: 5 + 5 * racha (ej: racha 1 da 10pts, racha 2 da 15pts...)
-        const reward = 5 + (5 * streak);
-        myScore += reward;
-        streak += 1; // Sumamos 1 día a la racha por entrar hoy
-        
-        chrome.storage.local.set({ 
-            score: myScore, 
-            streak: streak,
-            lastClaimDate: today
-        });
+      // Multiplicador: 5 + 5 * racha (ej: racha 1 da 10pts, racha 2 da 15pts...)
+      const reward = 5 + (5 * streak);
+      myScore += reward;
+      streak += 1; // Sumamos 1 día a la racha por entrar hoy
 
-        saveScoreToCloud(myName, myScore, streak, myRoom);
-        alert(`¡Día nuevo, racha nueva! 🔥 Has ganado ${reward} puntos extra por tu racha de ${streak} días.`);
+      chrome.storage.local.set({
+        score: myScore,
+        streak: streak,
+        lastClaimDate: today
+      });
+
+      saveScoreToCloud(myName, myScore, streak, myRoom);
+      alert(`¡Día nuevo, racha nueva! 🔥 Has ganado ${reward} puntos extra por tu racha de ${streak} días.`);
     }
 
     // 3. DESCARGAMOS EL PODIO DE TU SALA DESDE FIREBASE
     const leaderboard = await getRoomLeaderboard(myRoom);
 
-      const overlay = document.createElement("div");
-      overlay.id = "ff-overlay";
+    const overlay = document.createElement("div");
+    overlay.id = "ff-overlay";
 
-      const allPlayers = [...leaderboard, { name: myName, score: myScore, isMe: true }]
-        .sort((a, b) => b.score - a.score);
+    const allPlayers = [...leaderboard, { name: myName, score: myScore, isMe: true }]
+      .sort((a, b) => b.score - a.score);
 
-      // Limpiamos duplicados y nos quedamos con el Top 4
-      const uniquePlayers = Array.from(new Set(allPlayers.map(a => a.name)))
-        .map(name => {
-          return allPlayers.find(a => a.name === name);
-        }).slice(0, 4);
+    // Limpiamos duplicados y nos quedamos con el Top 4
+    const uniquePlayers = Array.from(new Set(allPlayers.map(a => a.name)))
+      .map(name => allPlayers.find(a => a.name === name))
+      .slice(0, 4);
 
-      const rankHTML = uniquePlayers.map((p, i) => {
-        const medals = ["🥇","🥈","🥉"];
-        return `<div class="ff-row ${p.isMe ? "ff-me" : ""}">
-          <span class="ff-rank">${medals[i] || (i+1)}</span>
-          <span class="ff-name">${p.name}${p.isMe ? ' <span class="ff-tag">tú</span>' : ""}</span>
-          <span class="ff-pts">${p.score} pts</span>
-        </div>`;
-      }).join("");
+    const rankHTML = uniquePlayers.map((p, i) => {
+      const medals = ["🥇","🥈","🥉"];
+      return `<div class="ff-row ${p.isMe ? "ff-me" : ""}">
+        <span class="ff-rank">${medals[i] || (i+1)}</span>
+        <span class="ff-name">${p.name}${p.isMe ? ' <span class="ff-tag">tú</span>' : ""}</span>
+        <span class="ff-pts">${p.score} pts</span>
+      </div>`;
+    }).join("");
 
-      overlay.innerHTML = `
-        <div class="ff-card">
-          <div class="ff-top">
-            <div>
-              <span class="ff-site">${location.hostname}</span>
-              <span class="ff-streak">🔥 Racha: ${streak} días</span>
-            </div>
-            <div class="ff-timer" id="ff-timer">${timeLeft}</div>
+    overlay.innerHTML = `
+      <div class="ff-card">
+        <div class="ff-top">
+          <div>
+            <span class="ff-site">${location.hostname}</span>
+            <span class="ff-streak">🔥 Racha: ${streak} días</span>
           </div>
-          <div class="ff-question-box">
-            <span class="ff-cat">${q.category}</span>
-            <p class="ff-q">${q.q}</p>
-          </div>
-          <div class="ff-answers">
-            ${q.answers.map((a, idx) => `<button class="ff-ans" data-index="${idx}">${a}</button>`).join("")}
-          </div>
-          <div class="ff-warning">⚠️ Si fallas, <strong>${formatSeconds(PENALTY_SECONDS)}</strong> de bloqueo y pierdes la racha</div>
-          <div class="ff-podium">
-            <p class="ff-podium-label" style="display: flex; justify-content: space-between; align-items: center;">
-              <span>SALA: <strong>${myRoom}</strong></span>
-              <span id="ff-change-room" style="color: #185FA5; cursor: pointer; text-transform: none;">Cambiar sala</span>
-            </p>
-            ${rankHTML}
-          </div>
-        </div>`;
+          <div class="ff-timer" id="ff-timer">${timeLeft}</div>
+        </div>
+        <div class="ff-question-box">
+          <span class="ff-cat">${q.category}</span>
+          <p class="ff-q">${q.q}</p>
+        </div>
+        <div class="ff-answers">
+          ${q.answers.map((a, idx) => `<button class="ff-ans" data-index="${idx}">${a}</button>`).join("")}
+        </div>
+        <div class="ff-warning">⚠️ Si fallas, <strong>${formatSeconds(PENALTY_SECONDS)}</strong> de bloqueo y pierdes la racha</div>
+        <div class="ff-podium">
+          <p class="ff-podium-label" style="display: flex; justify-content: space-between; align-items: center;">
+            <span>SALA: <strong>${myRoom}</strong></span>
+            <span id="ff-change-room" style="color: #185FA5; cursor: pointer; text-transform: none;">Cambiar sala</span>
+          </p>
+          ${rankHTML}
+        </div>
+      </div>`;
 
-      mountOverlay(overlay);
+    mountOverlay(overlay);
 
-      // Botón para cambiar de sala (borra memoria y recarga)
-      document.getElementById("ff-change-room").addEventListener("click", () => {
-        chrome.storage.local.remove(["ff_playerName", "ff_roomCode", "score", "streak", "lastClaimDate"], () => {
-          window.location.reload();
-        });
+    // Botón para cambiar de sala
+    document.getElementById("ff-change-room").addEventListener("click", () => {
+      chrome.storage.local.remove(["ff_playerName", "ff_roomCode", "score", "streak", "lastClaimDate"], () => {
+        window.location.reload();
       });
+    });
 
-      const timerEl  = document.getElementById("ff-timer");
-      const interval = setInterval(() => {
-        timeLeft--;
-        if (timerEl) timerEl.textContent = timeLeft;
-        if (timeLeft <= 5 && timerEl) timerEl.style.color = "#E24B4A";
-        if (timeLeft <= 0) { clearInterval(interval); playErrorSound(); penalize(); }
-      }, 1000);
+    const timerEl  = document.getElementById("ff-timer");
+    const interval = setInterval(() => {
+      timeLeft--;
+      if (timerEl) timerEl.textContent = timeLeft;
+      if (timeLeft <= 5 && timerEl) timerEl.style.color = "#E24B4A";
+      if (timeLeft <= 0) { clearInterval(interval); playErrorSound(); penalize(); }
+    }, 1000);
 
-      overlay.querySelectorAll(".ff-ans").forEach(btn => {
-        btn.addEventListener("click", () => {
-          if (answered) return;
-          answered = true;
-          clearInterval(interval);
-          const chosen  = parseInt(btn.dataset.index);
-          const allBtns = overlay.querySelectorAll(".ff-ans");
+    overlay.querySelectorAll(".ff-ans").forEach(btn => {
+      btn.addEventListener("click", () => {
+        if (answered) return;
+        answered = true;
+        clearInterval(interval);
+        const chosen  = parseInt(btn.dataset.index);
+        const allBtns = overlay.querySelectorAll(".ff-ans");
 
-          if (chosen === q.correct) {
-            allBtns[chosen].classList.add("ff-correct");
-            playCorrectSound();
+        if (chosen === q.correct) {
+          allBtns[chosen].classList.add("ff-correct");
+          playCorrectSound();
 
-            const newScore  = myScore + 10;
-            // REGLA 3: Aciertas -> Ganas 10 pts, PERO la racha no sube (es diaria)
-            chrome.storage.local.set({ score: newScore });
+          const newScore = myScore + 10;
+          // REGLA 3: Aciertas -> Ganas 10 pts, la racha no sube (es diaria)
+          chrome.storage.local.set({ score: newScore });
+          saveScoreToCloud(myName, newScore, streak, myRoom);
 
-            // Subimos los puntos a Firebase manteniendo la racha actual
-            saveScoreToCloud(myName, newScore, streak, myRoom);
+          // ── Acertaste: el intervalo empieza a contar desde ahora
+          chrome.storage.local.set({ ff_last_popup_time: Date.now() });
+          startPeriodicTimer();
 
-            startPeriodicTimer(); // ── Reinicia el contador tras respuesta correcta
-            chrome.storage.local.set({ ff_last_popup_time: Date.now() });
-
-            setTimeout(() => { showSuccessScreen(); }, 600);
-          } else {
-            btn.classList.add("ff-wrong");
-            allBtns[q.correct].classList.add("ff-correct");
-            playErrorSound();
-            penalize();
-          }
-        });
+          setTimeout(() => { showSuccessScreen(); }, 600);
+        } else {
+          allBtns[chosen].classList.add("ff-wrong");
+          allBtns[q.correct].classList.add("ff-correct");
+          playErrorSound();
+          penalize();
+        }
       });
+    });
 
-      function penalize() {
-        const lockedUntil = Date.now() + (PENALTY_SECONDS * 1000);
-        const currentSite = location.hostname;
-        sessionStorage.setItem("lockedUntil", lockedUntil.toString());
-        
-        // Leemos el score actual del storage para operar sobre el valor real
-        chrome.storage.local.get(["score"], (d) => {
-          const currentScore = (d.score != null) ? d.score : 0;
-          const newScore = Math.max(0, currentScore - 10);
-          
-          // REGLA 4: Fallas -> Pierdes 10 pts, Racha cae a 1 (no a 0)
-          chrome.storage.local.set({
-            [currentSite]: lockedUntil,
-            score: newScore,
-            streak: 1
-          });
-          
-          // Subir el nuevo score y la racha rota a Firebase
-          saveScoreToCloud(myName, newScore, 1, myRoom);
-          
-          showMinusPointsToast();
-          setTimeout(() => showLockScreen(PENALTY_SECONDS), 900);
+    function penalize() {
+      const lockedUntil = Date.now() + (PENALTY_SECONDS * 1000);
+      const currentSite = location.hostname;
+      sessionStorage.setItem("lockedUntil", lockedUntil.toString());
+
+      chrome.storage.local.get(["score"], (d) => {
+        const currentScore = (d.score != null) ? d.score : 0;
+        const newScore = Math.max(0, currentScore - 10);
+
+        // REGLA 4: Fallas -> Pierdes 10 pts, racha cae a 1
+        // El intervalo empieza a contar desde que termina el bloqueo, no desde ahora
+        chrome.storage.local.set({
+          [currentSite]: lockedUntil,
+          score: newScore,
+          streak: 1,
+          ff_last_popup_time: lockedUntil
         });
-      }
+
+        saveScoreToCloud(myName, newScore, 1, myRoom);
+        showMinusPointsToast();
+        setTimeout(() => showLockScreen(PENALTY_SECONDS), 900);
+      });
+    }
   });
 }
 
@@ -617,7 +614,6 @@ function showMinusPointsToast() {
   toast.textContent = "−10 puntos 💀";
   document.body.appendChild(toast);
 
-  // Forzar reflow para que arranque la transición
   toast.getBoundingClientRect();
   toast.style.opacity = "1";
   toast.style.transform = "translateY(0) scale(1)";
