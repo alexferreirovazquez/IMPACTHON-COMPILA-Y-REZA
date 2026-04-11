@@ -216,9 +216,15 @@ function showPopup() {
         const allBtns = document.querySelectorAll(".ff-ans");
  
         if (chosen === q.correct) {
+          // Acierto
           allBtns[chosen].classList.add("ff-correct");
           chrome.storage.local.set({ score: myScore + 10, streak: streak + 1 });
-          setTimeout(() => { overlay.remove(); scrollLocked = false; }, 1500);
+          
+          // Esperamos medio segundo para que vea que el botón se ha puesto verde/azul...
+          // ...y le plantamos la pantalla de celebración.
+          setTimeout(() => {
+            showSuccessScreen();
+          }, 600); 
         } else {
           btn.classList.add("ff-wrong");
           allBtns[q.correct].classList.add("ff-correct");
@@ -246,4 +252,32 @@ function formatSeconds(s) {
   const m = Math.floor(s / 60), r = s % 60;
   return m + "m" + (r ? " " + r + "s" : "");
 }
- 
+
+
+
+// ==========================================
+// 5. PANTALLA DE ÉXITO (REFUERZO POSITIVO)
+// ==========================================
+function showSuccessScreen() {
+  let overlay = document.getElementById("ff-overlay");
+  if (!overlay) return;
+
+  // Reemplazamos el contenido de la tarjeta por una pantalla de celebración
+  overlay.innerHTML = `
+    <div class="ff-card" style="text-align: center; padding: 50px 32px;">
+      <div style="font-size: 64px; margin-bottom: 16px; animation: bounce 1s infinite;">🎉</div>
+      <p style="font-size: 24px; font-weight: 800; color: #185FA5; margin: 0 0 8px;">¡Respuesta Correcta!</p>
+      <p style="font-size: 14px; color: #666; margin: 0 0 24px;">Has defendido tu racha con éxito.</p>
+      
+      <div style="display: inline-block; background: #E6F1FB; color: #185FA5; padding: 8px 16px; border-radius: 99px; font-weight: bold; font-size: 16px;">
+        +10 Puntos 🔥
+      </div>
+    </div>`;
+
+  // Desaparece sola a los 2.5 segundos dejándoles navegar en paz
+  setTimeout(() => {
+    if (document.getElementById("ff-overlay")) {
+      document.getElementById("ff-overlay").remove();
+    }
+  }, 2500);
+}
