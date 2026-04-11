@@ -201,22 +201,8 @@ function showConfirm() {
       <p style="font-size:20px; font-weight:800; color:#1a1a1a; margin:0 0 8px;">${variant.t}</p>
       <p style="font-size:13px; color:#888; margin:0 0 32px;"><strong>${location.hostname}</strong> ${variant.s}</p>
       <div style="display:flex; gap:12px; justify-content:center;">
-        <button id="ff-confirm-no" style="
-          flex:1; max-width:140px;
-          background:#f1f1f0; border:1px solid #ddd;
-          border-radius:10px; padding:12px 0;
-          font-size:14px; font-weight:600; color:#555;
-          cursor:pointer;">
-          Salir
-        </button>
-        <button id="ff-confirm-yes" style="
-          flex:1; max-width:140px;
-          background:#185FA5; border:none;
-          border-radius:10px; padding:12px 0;
-          font-size:14px; font-weight:600; color:#fff;
-          cursor:pointer;">
-          Entrar
-        </button>
+        <button id="ff-confirm-no" class="ff-confirm-no">Salir</button>
+        <button id="ff-confirm-yes" class="ff-confirm-yes">Entrar</button>
       </div>
     </div>`; 
   
