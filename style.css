@@ -9,7 +9,7 @@
   font-family: -apple-system, Arial, sans-serif;
 }
 .ff-card {
-  background: oklab(87.603% -0.03785 0.10292);
+  background: #ffffff;
   border-radius: 16px;
   padding: 28px 32px;
   max-width: 480px;
@@ -58,9 +58,9 @@
   flex-shrink: 0;
 }
 .ff-question-box {
-  background: transparent;
+  background: #f7f7f5;
   border-radius: 10px;
-  padding: 16px 0;
+  padding: 16px;
   margin-bottom: 16px;
 }
 .ff-cat {
@@ -86,20 +86,16 @@
   margin-bottom: 14px;
 }
 .ff-ans {
-  background: rgba(255, 255, 255, 0.4); /* Blanco al 40% de opacidad */
-  border: 1px solid rgba(0, 0, 0, 0.08); /* Borde muy sutil */
+  background: #fff;
+  border: 1px solid #ddd;
   border-radius: 8px;
   padding: 12px;
   font-size: 13px;
   cursor: pointer;
   text-align: left;
-  transition: background 0.15s, transform 0.1s;
-  color: #1a1a1a;
-  font-weight: 500;
+  transition: background 0.15s;
 }
-.ff-ans:hover { 
-  background: rgba(255, 255, 255, 0.7); /* Se ilumina más al pasar el ratón */
-  transform: translateY(-1px); /* Efecto de que el botón se levanta un poquito */ }
+.ff-ans:hover { background: #f5f5f5; }
 .ff-correct { background: #EAF3DE !important; border-color: #639922 !important; color: #3B6D11 !important; }
 .ff-wrong   { background: #FCEBEB !important; border-color: #E24B4A !important; color: #A32D2D !important; }
 .ff-warning {
