@@ -37,7 +37,7 @@
   },
   "web_accessible_resources": [
     {
-      "resources": ["questions.txt"],
+      "resources": ["questions.txt", "error.mp3", "correct.mp3"],
       "matches": ["<all_urls>"]
     }
   ]
