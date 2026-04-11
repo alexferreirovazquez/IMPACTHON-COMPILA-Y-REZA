@@ -325,7 +325,7 @@
 <header>
   <div class="logo">🎯</div>
   <h1>Focus <span>Friends</span></h1>
-  <button class="save-btn" onclick="saveAll()">Guardar cambios</button>
+  <button class="save-btn" id="saveBtn">Guardar cambios</button>
 </header>
 
 <main>
@@ -340,17 +340,17 @@
       <div class="penalty-display" id="penaltyDisplay">30s</div>
       <div class="penalty-label">Bloqueo tras fallo o tiempo agotado</div>
       <div class="slider-wrap">
-        <input type="range" id="penaltySlider" min="30" max="600" step="10" value="30" oninput="updatePenalty(this.value)">
+        <input type="range" id="penaltySlider" min="30" max="600" step="10" value="30">
         <div class="slider-ticks">
           <span>30s</span><span>2m</span><span>5m</span><span>10m</span>
         </div>
       </div>
       <div class="preset-row">
-        <button class="preset-btn" onclick="setPreset(30)">30s</button>
-        <button class="preset-btn" onclick="setPreset(60)">1 min</button>
-        <button class="preset-btn" onclick="setPreset(120)">2 min</button>
-        <button class="preset-btn" onclick="setPreset(300)">5 min</button>
-        <button class="preset-btn" onclick="setPreset(600)">10 min</button>
+        <button class="preset-btn" data-preset="30">30s</button>
+        <button class="preset-btn" data-preset="60">1 min</button>
+        <button class="preset-btn" data-preset="120">2 min</button>
+        <button class="preset-btn" data-preset="300">5 min</button>
+        <button class="preset-btn" data-preset="600">10 min</button>
       </div>
     </div>
   </div>
@@ -364,8 +364,8 @@
     <div class="section-body">
       <div class="sites-list" id="sitesList"></div>
       <div class="add-row">
-        <input class="add-input" id="siteInput" type="text" placeholder="ejemplo: reddit.com" onkeydown="if(event.key==='Enter') addSite()">
-        <button class="add-btn" onclick="addSite()">+</button>
+        <input class="add-input" id="siteInput" type="text" placeholder="ejemplo: reddit.com">
+        <button class="add-btn" id="addSiteBtn">+</button>
       </div>
     </div>
   </div>

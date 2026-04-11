@@ -1,3 +1,4 @@
+// ── Config defaults ───────────────────────────────────────
 const DEFAULT_PENALTY  = 30;
 const DEFAULT_SITES    = ["instagram.com","tiktok.com","x.com","twitter.com","facebook.com","youtube.com"];
 const CONFIRM_MESSAGES = [
@@ -24,8 +25,7 @@ const CONFIRM_MESSAGES = [
 ];
 
 const DELAY_MS = 10;
-const SCROLL_TIME_LIMIT_MS = 30 * 1000;
-const PERIODIC_INTERVAL_MS = 60 * 1000; // ── Intervalo periódico: 5 minutos
+const SCROLL_TIME_LIMIT_MS = 5 * 60 * 1000;
  
 // ── State ─────────────────────────────────────────────────
 let questions        = [];
@@ -37,8 +37,6 @@ let scrollTimeAccum  = 0;
 let lastScrollTime   = null;
 let scrollDecayTimer = null;
 let scrollLocked     = false;
-
-let periodicTimer    = null; // ── Referencia al intervalo periódico
  
 // ── Parse questions.txt ───────────────────────────────────
 function parseQuestions(text) {
@@ -109,16 +107,6 @@ function mountOverlay(overlay) {
   const parent = document.body || document.documentElement;
   parent.appendChild(overlay);
 }
-
-// ── Inicia (o reinicia) el temporizador periódico ─────────
-function startPeriodicTimer() {
-  if (periodicTimer) clearInterval(periodicTimer);
-  periodicTimer = setInterval(() => {
-    if (!document.getElementById("ff-overlay") && !scrollLocked) {
-      showPopup();
-    }
-  }, PERIODIC_INTERVAL_MS);
-}
  
 // ── Boot: load questions + settings then start ────────────
 loadQuestions().then(() => {
@@ -144,7 +132,6 @@ loadQuestions().then(() => {
         waitForBody().then(() => {
           setTimeout(showConfirm, DELAY_MS);
           startOverlayGuard();
-          startPeriodicTimer(); // ── Arranca el temporizador periódico
         });
  
         document.addEventListener("visibilitychange", () => {
@@ -187,6 +174,7 @@ function onScroll() {
 function showConfirm() {
   if (document.getElementById("ff-overlay")) return;
 
+  // Seleccionamos una variante aleatoria
   const variant = CONFIRM_MESSAGES[Math.floor(Math.random() * CONFIRM_MESSAGES.length)];
 
   const overlay = document.createElement("div");
@@ -204,7 +192,7 @@ function showConfirm() {
           border-radius:10px; padding:12px 0;
           font-size:14px; font-weight:600; color:#555;
           cursor:pointer;">
-          Salir
+          No, salir
         </button>
         <button id="ff-confirm-yes" style="
           flex:1; max-width:140px;
@@ -212,7 +200,7 @@ function showConfirm() {
           border-radius:10px; padding:12px 0;
           font-size:14px; font-weight:600; color:#fff;
           cursor:pointer;">
-          Entrar
+          Sí, entrar
         </button>
       </div>
     </div>`; 
@@ -221,6 +209,7 @@ function showConfirm() {
 
   document.getElementById("ff-confirm-no").addEventListener("click", () => {
     overlay.remove();
+    // Intenta cerrar la pestaña o ir atrás
     if (history.length > 1) {
       history.back();
     } else {
@@ -349,7 +338,6 @@ function showPopup() {
         if (chosen === q.correct) {
           allBtns[chosen].classList.add("ff-correct");
           chrome.storage.local.set({ score: myScore + 10, streak: streak + 1 });
-          startPeriodicTimer(); // ── Reinicia el contador tras respuesta correcta
           setTimeout(() => { showSuccessScreen(); }, 600);
         } else {
           btn.classList.add("ff-wrong");
@@ -398,4 +386,4 @@ function showSuccessScreen() {
     const el = document.getElementById("ff-overlay");
     if (el) el.remove();
   }, 2500);
-} 
+}
