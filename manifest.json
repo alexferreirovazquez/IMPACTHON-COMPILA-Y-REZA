@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "FocusFriends",
-  "version": "alfa 0.1",
+  "version": "0.1",
   "description": "Bloquea distracciones con trivial y multijugador",
   "permissions": ["storage", "scripting", "tabs"],
   "host_permissions": ["<all_urls>"],
