@@ -1,4 +1,3 @@
-// ── Config defaults ───────────────────────────────────────
 const DEFAULT_PENALTY  = 30;
 const DEFAULT_SITES    = ["instagram.com","tiktok.com","x.com","twitter.com","facebook.com","youtube.com"];
 const CONFIRM_MESSAGES = [
@@ -25,7 +24,8 @@ const CONFIRM_MESSAGES = [
 ];
 
 const DELAY_MS = 10;
-const SCROLL_TIME_LIMIT_MS = 5 * 60 * 1000;
+const SCROLL_TIME_LIMIT_MS = 30 * 1000;
+const PERIODIC_INTERVAL_MS = 60 * 1000; // ── Intervalo periódico: 1 minuto
  
 // ── State ─────────────────────────────────────────────────
 let questions        = [];
@@ -37,6 +37,8 @@ let scrollTimeAccum  = 0;
 let lastScrollTime   = null;
 let scrollDecayTimer = null;
 let scrollLocked     = false;
+
+let periodicTimer    = null; // ── Referencia al intervalo periódico
  
 // ── Parse questions.txt ───────────────────────────────────
 function parseQuestions(text) {
@@ -107,6 +109,16 @@ function mountOverlay(overlay) {
   const parent = document.body || document.documentElement;
   parent.appendChild(overlay);
 }
+
+// ── Inicia (o reinicia) el temporizador periódico ─────────
+function startPeriodicTimer() {
+  if (periodicTimer) clearInterval(periodicTimer);
+  periodicTimer = setInterval(() => {
+    if (!document.getElementById("ff-overlay") && !scrollLocked) {
+      showPopup();
+    }
+  }, PERIODIC_INTERVAL_MS);
+}
  
 // ── Boot: load questions + settings then start ────────────
 loadQuestions().then(() => {
@@ -132,6 +144,7 @@ loadQuestions().then(() => {
         waitForBody().then(() => {
           setTimeout(showConfirm, DELAY_MS);
           startOverlayGuard();
+          startPeriodicTimer(); // ── Arranca el temporizador periódico
         });
  
         document.addEventListener("visibilitychange", () => {
@@ -338,6 +351,7 @@ function showPopup() {
         if (chosen === q.correct) {
           allBtns[chosen].classList.add("ff-correct");
           chrome.storage.local.set({ score: myScore + 10, streak: streak + 1 });
+          startPeriodicTimer(); // ── Reinicia el contador tras respuesta correcta
           setTimeout(() => { showSuccessScreen(); }, 600);
         } else {
           btn.classList.add("ff-wrong");
