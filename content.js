@@ -25,6 +25,20 @@ const CONFIRM_MESSAGES = [
   { t: "Última oportunidad", s: "¿Estás eligiendo esto conscientemente o por inercia?" }
 ];
 
+// ── Mensajes de acierto ───────────────────────────────────
+const SUCCESS_MESSAGES = [
+  { emoji: "🔥", title: "¡Racha conservada!", sub: "Sigues en racha. Así se hace." },
+  { emoji: "🧠", title: "¡Mente afilada!", sub: "Tu cerebro sigue funcionando bien." },
+  { emoji: "💪", title: "¡Bien jugado!", sub: "Nadie dijo que sería fácil, y lo has clavado." },
+  { emoji: "⚡", title: "¡Rapidísimo!", sub: "Eso es lo que se llama tener las ideas claras." },
+  { emoji: "🎯", title: "¡Diana!", sub: "Sin dudas. Sin errores. Perfecto." },
+  { emoji: "😎", title: "Demasiado fácil", sub: "Ni has sudado. Que no se note tanto." },
+  { emoji: "🏆", title: "¡En forma!", sub: "Tu racha sigue viva. No la desperdicies." },
+  { emoji: "✨", title: "¡Correctísimo!", sub: "Ahora a por lo siguiente. Sin distracciones." },
+  { emoji: "🚀", title: "¡Despegando!", sub: "Con este ritmo llegas lejos." },
+  { emoji: "🦾", title: "Modo bestia", sub: "Cada acierto es un paso más. Sigue." },
+];
+
 // ── Sonido de fallo ───────────────────────────────────────
 function playErrorSound() {
   try {
@@ -516,10 +530,9 @@ function showPopup() {
           allBtns[chosen].classList.add("ff-correct");
           playCorrectSound();
 
-          const newScore = myScore + 10;
-          // REGLA 3: Aciertas -> Ganas 10 pts, la racha no sube (es diaria)
-          chrome.storage.local.set({ score: newScore });
-          saveScoreToCloud(myName, newScore, streak, myRoom);
+          // REGLA 3: Aciertas -> Conservas la racha, sin puntos extra por pregunta
+          chrome.storage.local.set({ score: myScore });
+          saveScoreToCloud(myName, myScore, streak, myRoom);
 
           // ── Acertaste: el intervalo empieza a contar desde ahora
           chrome.storage.local.set({ ff_last_popup_time: Date.now() });
@@ -572,14 +585,13 @@ function showSuccessScreen() {
   let overlay = document.getElementById("ff-overlay");
   if (!overlay) return;
 
+  const msg = SUCCESS_MESSAGES[Math.floor(Math.random() * SUCCESS_MESSAGES.length)];
+
   overlay.innerHTML = `
     <div class="ff-card" style="text-align: center; padding: 50px 32px;">
-      <div style="font-size: 64px; margin-bottom: 16px;">🎉</div>
-      <p style="font-size: 24px; font-weight: 800; color: #185FA5; margin: 0 0 8px;">¡Respuesta Correcta!</p>
-      <p style="font-size: 14px; color: #666; margin: 0 0 24px;">Has defendido tu racha con éxito.</p>
-      <div style="display: inline-block; background: #E6F1FB; color: #185FA5; padding: 8px 16px; border-radius: 99px; font-weight: bold; font-size: 16px;">
-        +10 Puntos 🔥
-      </div>
+      <div style="font-size: 64px; margin-bottom: 16px;">${msg.emoji}</div>
+      <p style="font-size: 24px; font-weight: 800; color: #185FA5; margin: 0 0 8px;">${msg.title}</p>
+      <p style="font-size: 14px; color: #666; margin: 0 0 0;">${msg.sub}</p>
     </div>`;
 
   setTimeout(() => {
