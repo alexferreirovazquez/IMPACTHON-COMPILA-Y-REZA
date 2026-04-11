@@ -10,8 +10,14 @@
       background: #0f0f0f;
       color: #f0f0f0;
       padding: 16px;
+      overflow: hidden;
     }
 
+    /* ── Screens ── */
+    .screen { display: none; }
+    .screen.active { display: block; }
+
+    /* ── Header ── */
     .header {
       display: flex;
       align-items: center;
@@ -25,6 +31,7 @@
     .header-text h1 span { color: #f5e642; }
     .header-text p { font-size: 10px; color: #666; margin-top: 1px; }
 
+    /* ── Stats ── */
     .stats {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
@@ -52,13 +59,14 @@
       letter-spacing: 0.05em;
     }
 
+    /* ── Room chip ── */
     .room-chip {
       background: #1a1a1a;
       border-radius: 8px;
       padding: 8px 12px;
       font-size: 12px;
       color: #888;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -73,12 +81,35 @@
       white-space: nowrap;
     }
 
+    /* ── Button row ── */
+    .btn-row {
+      display: flex;
+      gap: 8px;
+    }
+    .btn-ranking {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 11px 0;
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      color: #f0f0f0;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .btn-ranking:hover { background: #222; border-color: #f5e642; }
+
     .btn-settings {
+      flex: 1;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 7px;
-      width: 100%;
       padding: 11px 0;
       background: #f5e642;
       color: #0f0f0f;
@@ -90,42 +121,242 @@
       transition: opacity 0.15s;
     }
     .btn-settings:hover { opacity: 0.85; }
+
+    /* ══════════════════════════════════════
+       LEADERBOARD SCREEN
+    ══════════════════════════════════════ */
+    .lb-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #222;
+    }
+    .btn-back {
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      color: #aaa;
+      border-radius: 7px;
+      width: 28px;
+      height: 28px;
+      font-size: 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.15s;
+    }
+    .btn-back:hover { background: #222; color: #fff; }
+
+    .lb-title {
+      flex: 1;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+    }
+    .lb-title span { color: #f5e642; }
+
+    .btn-refresh {
+      background: none;
+      border: none;
+      color: #555;
+      font-size: 15px;
+      cursor: pointer;
+      padding: 4px;
+      border-radius: 6px;
+      transition: color 0.15s, transform 0.3s;
+      line-height: 1;
+    }
+    .btn-refresh:hover { color: #f5e642; }
+    .btn-refresh.spinning { transform: rotate(360deg); }
+
+    /* Room badge */
+    .lb-room-badge {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #1a1a1a;
+      border-radius: 8px;
+      padding: 7px 11px;
+      font-size: 11px;
+      color: #666;
+      margin-bottom: 12px;
+    }
+    .lb-room-badge strong { color: #f5e642; font-size: 12px; }
+
+    /* Loading */
+    .lb-loading {
+      text-align: center;
+      padding: 28px 0;
+      color: #555;
+      font-size: 12px;
+    }
+    .lb-spinner {
+      font-size: 22px;
+      display: block;
+      margin-bottom: 8px;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Error / Empty */
+    .lb-error {
+      text-align: center;
+      padding: 20px 0;
+      color: #ff5c5c;
+      font-size: 12px;
+    }
+    .lb-empty {
+      text-align: center;
+      padding: 24px 0;
+      color: #555;
+      font-size: 12px;
+    }
+
+    /* Rows */
+    .lb-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .lb-row {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      background: #1a1a1a;
+      border-radius: 8px;
+      padding: 9px 11px;
+      border: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+    .lb-row.is-me {
+      background: #161f10;
+      border-color: #3a5a1a;
+    }
+    .lb-row:hover { border-color: #2a2a2a; }
+
+    .lb-medal { font-size: 16px; width: 22px; text-align: center; flex-shrink: 0; }
+    .lb-rank-num {
+      font-size: 12px;
+      font-weight: 700;
+      color: #555;
+      width: 22px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .lb-name {
+      flex: 1;
+      font-size: 12px;
+      font-weight: 600;
+      color: #e0e0e0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .lb-row.is-me .lb-name { color: #a8d86e; }
+
+    .lb-you-tag {
+      font-size: 9px;
+      background: #3a5a1a;
+      color: #a8d86e;
+      padding: 2px 5px;
+      border-radius: 4px;
+      margin-left: 4px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .lb-streak {
+      font-size: 10px;
+      color: #ff8c42;
+      flex-shrink: 0;
+    }
+    .lb-pts {
+      font-size: 13px;
+      font-weight: 800;
+      color: #f5e642;
+      flex-shrink: 0;
+      min-width: 36px;
+      text-align: right;
+    }
+
+    /* Timestamp */
+    .lb-updated {
+      margin-top: 10px;
+      font-size: 10px;
+      color: #333;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
 
-  <div class="header">
-    <img src="icon128.png" alt="FF">
-    <div class="header-text">
-      <h1>Focus <span>Friends</span></h1>
-      <p>Anti-distracción activo</p>
+  <!-- ══ PANTALLA 1: PRINCIPAL ══ -->
+  <div class="screen active" id="screen-main">
+
+    <div class="header">
+      <img src="icon128.png" alt="FF">
+      <div class="header-text">
+        <h1>Focus <span>Friends</span></h1>
+        <p>Anti-distracción activo</p>
+      </div>
     </div>
+
+    <div class="stats">
+      <div class="stat-card">
+        <div class="icon">🏆</div>
+        <div class="val" id="score">—</div>
+        <div class="lbl">Puntos</div>
+      </div>
+      <div class="stat-card">
+        <div class="icon">🔥</div>
+        <div class="val" id="streak">—</div>
+        <div class="lbl">Racha</div>
+      </div>
+      <div class="stat-card">
+        <div class="icon">⏱</div>
+        <div class="val" id="penalty">—</div>
+        <div class="lbl">Penaliz.</div>
+      </div>
+    </div>
+
+    <div class="room-chip">
+      <span>🎮 Sala</span>
+      <span class="room-val" id="room">—</span>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn-ranking" id="openRanking">🏅 Clasificación</button>
+      <button class="btn-settings" id="openOptions">⚙️ Ajustes</button>
+    </div>
+
   </div>
 
-  <div class="stats">
-    <div class="stat-card">
-      <div class="icon">🏆</div>
-      <div class="val" id="score">—</div>
-      <div class="lbl">Puntos</div>
-    </div>
-    <div class="stat-card">
-      <div class="icon">🔥</div>
-      <div class="val" id="streak">—</div>
-      <div class="lbl">Racha</div>
-    </div>
-    <div class="stat-card">
-      <div class="icon">⏱</div>
-      <div class="val" id="penalty">—</div>
-      <div class="lbl">Penaliz.</div>
-    </div>
-  </div>
+  <!-- ══ PANTALLA 2: CLASIFICACIÓN ══ -->
+  <div class="screen" id="screen-ranking">
 
-  <div class="room-chip">
-    <span>🎮 Sala</span>
-    <span class="room-val" id="room">—</span>
-  </div>
+    <div class="lb-header">
+      <button class="btn-back" id="btnBack">←</button>
+      <div class="lb-title">Sala <span id="lb-room-name">—</span></div>
+      <button class="btn-refresh" id="btnRefresh" title="Actualizar">↻</button>
+    </div>
 
-  <button class="btn-settings" id="openOptions">⚙️ Abrir ajustes</button>
+    <div class="lb-room-badge">
+      <span>🎮 Clasificación en tiempo real</span>
+      <span id="lb-player-count"></span>
+    </div>
+
+    <div id="lb-content">
+      <div class="lb-loading">
+        <span class="lb-spinner">⏳</span>
+        Cargando clasificación…
+      </div>
+    </div>
+
+    <div class="lb-updated" id="lb-updated"></div>
+
+  </div>
 
   <script src="popup.js"></script>
 </body>

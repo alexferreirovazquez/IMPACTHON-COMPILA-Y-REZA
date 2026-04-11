@@ -228,7 +228,7 @@ function startPeriodicTimer() {
   // Guardamos el timestamp de inicio solo si no hay uno previo
   // Así Reddit (y otras SPAs que recargan) no reinician el contador desde cero
   chrome.storage.local.get(["ff_last_popup_time"], (d) => {
-    if (!d.ff_last_popup_time) {
+    if (d.ff_last_popup_time === undefined) {
       chrome.storage.local.set({ ff_last_popup_time: Date.now() });
     }
   });
