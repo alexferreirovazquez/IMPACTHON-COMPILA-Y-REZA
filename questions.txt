@@ -1,0 +1,1693 @@
+CATEGORIA: Ciencia
+PREGUNTA: ¿Cuántos huesos tiene el cuerpo humano adulto?
+A: 198
+B: 206
+C: 215
+D: 189
+CORRECTA: B
+ 
+CATEGORIA: Historia
+PREGUNTA: ¿En qué año cayó el Muro de Berlín?
+A: 1987
+B: 1991
+C: 1989
+D: 1993
+CORRECTA: C
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es el país más grande del mundo?
+A: China
+B: Canadá
+C: EE.UU.
+D: Rusia
+CORRECTA: D
+ 
+CATEGORIA: Mates
+PREGUNTA: ¿Cuánto es la raíz cuadrada de 144?
+A: 11
+B: 12
+C: 13
+D: 14
+CORRECTA: B
+ 
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué planeta es el más cercano al Sol?
+A: Venus
+B: Marte
+C: Mercurio
+D: Tierra
+CORRECTA: C
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuántos continentes hay en el mundo?
+A: 5
+B: 6
+C: 7
+D: 8
+CORRECTA: C
+ 
+CATEGORIA: Ciencia
+PREGUNTA: ¿Cuál es el elemento químico con símbolo O?
+A: Oro
+B: Osmio
+C: Oxígeno
+D: Oganesón
+CORRECTA: C
+ 
+CATEGORIA: Arte
+PREGUNTA: ¿Quién pintó la Mona Lisa?
+A: Miguel Ángel
+B: Rafael
+C: Leonardo da Vinci
+D: Botticelli
+CORRECTA: C
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Australia?
+A: Sídney
+B: Melbourne
+C: Brisbane
+D: Canberra
+CORRECTA: D
+ 
+CATEGORIA: Historia
+PREGUNTA: ¿En qué año comenzó la Primera Guerra Mundial?
+A: 1912
+B: 1914
+C: 1916
+D: 1918
+CORRECTA: B
+ 
+CATEGORIA: Mates
+PREGUNTA: ¿Cuántos lados tiene un hexágono?
+A: 5
+B: 7
+C: 6
+D: 8
+CORRECTA: C
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es el océano más grande?
+A: Atlántico
+B: Índico
+C: Ártico
+D: Pacífico
+CORRECTA: D
+ 
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué gas es el más abundante en la atmósfera terrestre?
+A: Oxígeno
+B: Nitrógeno
+C: CO2
+D: Argón
+CORRECTA: B
+ 
+CATEGORIA: Literatura
+PREGUNTA: ¿Quién escribió 'Don Quijote de la Mancha'?
+A: Lope de Vega
+B: Quevedo
+C: Cervantes
+D: Góngora
+CORRECTA: C
+ 
+CATEGORIA: Deporte
+PREGUNTA: ¿Cuántos jugadores hay en un equipo de fútbol?
+A: 10
+B: 12
+C: 11
+D: 9
+CORRECTA: C
+ 
+CATEGORIA: Ciencia
+PREGUNTA: ¿Cuál es el símbolo químico del oro?
+A: Go
+B: Or
+C: Ag
+D: Au
+CORRECTA: D
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿En qué país se encuentra la Torre Eiffel?
+A: Italia
+B: Bélgica
+C: Francia
+D: España
+CORRECTA: C
+ 
+CATEGORIA: Ciencia
+PREGUNTA: ¿Cuál es el planeta más grande del sistema solar?
+A: Saturno
+B: Neptuno
+C: Júpiter
+D: Urano
+CORRECTA: C
+ 
+CATEGORIA: Literatura
+PREGUNTA: ¿Quién escribió 'Romeo y Julieta'?
+A: Dickens
+B: Shakespeare
+C: Wilde
+D: Chaucer
+CORRECTA: B
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es el país con más población del mundo?
+A: India
+B: EE.UU.
+C: China
+D: Indonesia
+CORRECTA: A
+ 
+CATEGORIA: Ciencia
+PREGUNTA: ¿Cuántos planetas tiene el sistema solar?
+A: 7
+B: 9
+C: 8
+D: 10
+CORRECTA: C
+ 
+CATEGORIA: Historia
+PREGUNTA: ¿En qué año terminó la Segunda Guerra Mundial?
+A: 1943
+B: 1944
+C: 1946
+D: 1945
+CORRECTA: D
+ 
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué animal es el más rápido en tierra?
+A: León
+B: Guepardo
+C: Antílope
+D: Caballo
+CORRECTA: B
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Alemania?
+A: Munich
+B: Hamburgo
+C: Berlín
+D: Frankfurt
+CORRECTA: C
+ 
+CATEGORIA: Tecnología
+PREGUNTA: ¿Qué significa CPU en informática?
+A: Control Power Unit
+B: Central Processing Unit
+C: Computer Program Unit
+D: Core Processing Unit
+CORRECTA: B
+ 
+CATEGORIA: Ciencia
+PREGUNTA: ¿Cuál es el símbolo químico del agua?
+A: HO
+B: H2O2
+C: H2O
+D: HO2
+CORRECTA: C
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de España?
+A: Barcelona
+B: Madrid
+C: Sevilla
+D: Valencia
+CORRECTA: B
+ 
+CATEGORIA: Arte
+PREGUNTA: ¿Qué instrumento musical tiene teclas blancas y negras?
+A: Violín
+B: Guitarra
+C: Piano
+D: Arpa
+CORRECTA: C
+ 
+CATEGORIA: Ciencia
+PREGUNTA: ¿Cuál es el animal terrestre más grande?
+A: Jirafa
+B: Hipopótamo
+C: Rinoceronte
+D: Elefante africano
+CORRECTA: D
+ 
+CATEGORIA: Historia
+PREGUNTA: ¿En qué año llegó el hombre a la Luna?
+A: 1967
+B: 1971
+C: 1965
+D: 1969
+CORRECTA: D
+ 
+CATEGORIA: Deporte
+PREGUNTA: ¿Cuántos jugadores hay en un equipo de baloncesto?
+A: 6
+B: 5
+C: 7
+D: 4
+CORRECTA: B
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de China?
+A: Shanghái
+B: Hong Kong
+C: Pekín
+D: Guangzhou
+CORRECTA: C
+ 
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué vitamina produce el cuerpo con el sol?
+A: Vitamina A
+B: Vitamina C
+C: Vitamina B12
+D: Vitamina D
+CORRECTA: D
+ 
+CATEGORIA: Cultura
+PREGUNTA: ¿Cuál es el idioma más hablado del mundo?
+A: Inglés
+B: Español
+C: Mandarín
+D: Hindi
+CORRECTA: C
+ 
+CATEGORIA: Arte
+PREGUNTA: ¿Quién pintó la Capilla Sixtina?
+A: Leonardo da Vinci
+B: Rafael
+C: Caravaggio
+D: Miguel Ángel
+CORRECTA: D
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿En qué país está Machu Picchu?
+A: Bolivia
+B: Colombia
+C: Ecuador
+D: Perú
+CORRECTA: D
+ 
+CATEGORIA: Ciencia
+PREGUNTA: ¿Cuál es la estrella más cercana a la Tierra?
+A: Próxima Centauri
+B: Sirio
+C: El Sol
+D: Betelgeuse
+CORRECTA: C
+ 
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué país tiene más medallas olímpicas históricas?
+A: China
+B: Rusia
+C: Gran Bretaña
+D: EE.UU.
+CORRECTA: D
+ 
+CATEGORIA: Literatura
+PREGUNTA: ¿Cuál es el libro más vendido de la historia?
+A: El Quijote
+B: La Biblia
+C: El Principito
+D: Harry Potter
+CORRECTA: B
+ 
+CATEGORIA: Tecnología
+PREGUNTA: ¿En qué país se inventó la imprenta?
+A: China
+B: Corea
+C: Alemania
+D: Italia
+CORRECTA: C
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es el país más pequeño del mundo?
+A: Mónaco
+B: San Marino
+C: Liechtenstein
+D: Ciudad del Vaticano
+CORRECTA: D
+ 
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué órgano filtra la sangre en el cuerpo?
+A: Hígado
+B: Riñón
+C: Bazo
+D: Páncreas
+CORRECTA: B
+ 
+CATEGORIA: Deporte
+PREGUNTA: ¿Cuántos jugadores hay en un equipo de béisbol?
+A: 10
+B: 11
+C: 9
+D: 8
+CORRECTA: C
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de México?
+A: Guadalajara
+B: Ciudad de México
+C: Monterrey
+D: Tijuana
+CORRECTA: B
+ 
+CATEGORIA: Ciencia
+PREGUNTA: ¿Quién desarrolló la teoría de la relatividad?
+A: Newton
+B: Bohr
+C: Einstein
+D: Planck
+CORRECTA: C
+ 
+CATEGORIA: Historia
+PREGUNTA: ¿En qué año se fundó la ONU?
+A: 1948
+B: 1939
+C: 1950
+D: 1945
+CORRECTA: D
+ 
+CATEGORIA: Cultura
+PREGUNTA: ¿Qué animal es el símbolo de la paz?
+A: Águila
+B: Paloma
+C: Cisne
+D: Cuervo
+CORRECTA: B
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿En qué país está el Coliseo Romano?
+A: Grecia
+B: Francia
+C: España
+D: Italia
+CORRECTA: D
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Canadá?
+A: Toronto
+B: Montreal
+C: Vancouver
+D: Ottawa
+CORRECTA: D
+ 
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué planeta es conocido como el planeta rojo?
+A: Júpiter
+B: Venus
+C: Marte
+D: Mercurio
+CORRECTA: C
+ 
+CATEGORIA: Literatura
+PREGUNTA: ¿Quién escribió '1984'?
+A: Aldous Huxley
+B: Ray Bradbury
+C: George Orwell
+D: Arthur Koestler
+CORRECTA: C
+ 
+CATEGORIA: Tecnología
+PREGUNTA: ¿En qué año se publicó el primer iPhone?
+A: 2005
+B: 2008
+C: 2009
+D: 2007
+CORRECTA: D
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de India?
+A: Mumbai
+B: Calcuta
+C: Nueva Delhi
+D: Chennai
+CORRECTA: C
+ 
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué célula transporta el oxígeno en la sangre?
+A: Glóbulo blanco
+B: Plaqueta
+C: Neurona
+D: Glóbulo rojo
+CORRECTA: D
+ 
+CATEGORIA: Deporte
+PREGUNTA: ¿Cuál es el deporte más popular del mundo?
+A: Baloncesto
+B: Tenis
+C: Fútbol
+D: Cricket
+CORRECTA: C
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Rusia?
+A: San Petersburgo
+B: Moscú
+C: Kiev
+D: Minsk
+CORRECTA: B
+ 
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué órgano bombea la sangre en el cuerpo?
+A: Pulmón
+B: Hígado
+C: Corazón
+D: Riñón
+CORRECTA: C
+ 
+CATEGORIA: Filosofía
+PREGUNTA: ¿Qué filósofo dijo 'Dios ha muerto'?
+A: Kant
+B: Hegel
+C: Nietzsche
+D: Schopenhauer
+CORRECTA: C
+ 
+CATEGORIA: Filosofía
+PREGUNTA: ¿Quién escribió 'El contrato social'?
+A: Voltaire
+B: Rousseau
+C: Montesquieu
+D: Diderot
+CORRECTA: B
+ 
+CATEGORIA: Filosofía
+PREGUNTA: ¿Qué filósofo fue condenado a muerte bebiendo cicuta?
+A: Platón
+B: Sócrates
+C: Aristóteles
+D: Epicuro
+CORRECTA: B
+ 
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué banda lanzó el álbum 'The Dark Side of the Moon'?
+A: Led Zeppelin
+B: The Beatles
+C: Pink Floyd
+D: Queen
+CORRECTA: C
+ 
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Cuál es el videojuego más vendido de la historia (sin contar free-to-play)?
+A: Minecraft
+B: GTA V
+C: Tetris
+D: Wii Sports
+CORRECTA: A
+ 
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué actor ganó 3 Oscars como protagonista?
+A: Daniel Day-Lewis
+B: Tom Hanks
+C: Jack Nicholson
+D: Marlon Brando
+CORRECTA: A
+ 
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué serie de TV terminó con el episodio 'Felina'?
+A: The Sopranos
+B: Breaking Bad
+C: Game of Thrones
+D: Mad Men
+CORRECTA: B
+ 
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué empresa creó la PlayStation?
+A: Nintendo
+B: Sega
+C: Sony
+D: Microsoft
+CORRECTA: C
+ 
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué cantante es conocido como 'El Rey del Pop'?
+A: Prince
+B: Michael Jackson
+C: Elvis Presley
+D: Freddie Mercury
+CORRECTA: B
+ 
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué película ganó el Oscar a Mejor Película en 2020?
+A: 1917
+B: Joker
+C: Parásitos
+D: Once Upon a Time in Hollywood
+CORRECTA: C
+ 
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué futbolista argentino ganó el Balón de Oro en 2023?
+A: Benzema
+B: Haaland
+C: Mbappé
+D: Messi
+CORRECTA: D
+ 
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué rapero lanzó el álbum 'To Pimp a Butterfly'?
+A: Kendrick Lamar
+B: J. Cole
+C: Drake
+D: Kanye West
+CORRECTA: A
+ 
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué país tiene la liga de fútbol llamada 'Premier League'?
+A: España
+B: Italia
+C: Inglaterra
+D: Alemania
+CORRECTA: C
+ 
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué actor interpretó a Iron Man?
+A: Chris Evans
+B: Robert Downey Jr.
+C: Chris Hemsworth
+D: Mark Ruffalo
+CORRECTA: B
+ 
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué actor interpretó a Jack Sparrow?
+A: Orlando Bloom
+B: Johnny Depp
+C: Geoffrey Rush
+D: Keira Knightley
+CORRECTA: B
+ 
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué tenista femenina ganó el Golden Slam en 1988?
+A: Steffi Graf
+B: Serena Williams
+C: Martina Hingis
+D: Chris Evert
+CORRECTA: A
+ 
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué serie de HBO mostró la boda roja?
+A: The Sopranos
+B: Game of Thrones
+C: Boardwalk Empire
+D: Rome
+CORRECTA: B
+ 
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué piloto de F1 murió en Imola 1994?
+A: Senna
+B: Ratzenberger
+C: Villeneuve
+D: Clark
+CORRECTA: A
+ 
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué actor interpretó al Joker en 'The Dark Knight'?
+A: Jack Nicholson
+B: Jared Leto
+C: Heath Ledger
+D: Joaquin Phoenix
+CORRECTA: C
+ 
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué cantante solista lanzó el álbum '1989'?
+A: Taylor Swift
+B: Katy Perry
+C: Lady Gaga
+D: Beyoncé
+CORRECTA: A
+ 
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué equipo de fútbol brasileño tiene a Pelé como leyenda?
+A: Flamengo
+B: Santos
+C: Corinthians
+D: São Paulo
+CORRECTA: B
+ 
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué consola de Nintendo es híbrida (portátil y sobremesa)?
+A: Switch
+B: Wii U
+C: 3DS
+D: Wii
+CORRECTA: A
+ 
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué boxeador peso pesado fue conocido como 'Iron Mike'?
+A: Mike Tyson
+B: Muhammad Ali
+C: Joe Frazier
+D: Lennox Lewis
+CORRECTA: A
+ 
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué película de Marvel recaudó más en taquilla?
+A: Endgame
+B: Infinity War
+C: Avengers
+D: No Way Home
+CORRECTA: A
+ 
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué cantante femenina lanzó 'Bad Guy'?
+A: Billie Eilish
+B: Ariana Grande
+C: Dua Lipa
+D: Olivia Rodrigo
+CORRECTA: A
+ 
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué serie de Netflix presentó a Joe Goldberg?
+A: You
+B: Stranger Things
+C: The Crown
+D: Ozark
+CORRECTA: A
+ 
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué piloto de F1 ganó el campeonato 2024?
+A: Verstappen
+B: Hamilton
+C: Norris
+D: Leclerc
+CORRECTA: A
+ 
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué tenista ganó Roland Garros 2024?
+A: Swiatek
+B: Gauff
+C: Sabalenka
+D: Rybakina
+CORRECTA: A
+ 
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué tenista ganó Wimbledon 2024?
+A: Alcaraz
+B: Djokovic
+C: Sinner
+D: Medvedev
+CORRECTA: A
+ 
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué equipo de la NFL ganó el Super Bowl 2024?
+A: Chiefs
+B: 49ers
+C: Eagles
+D: Ravens
+CORRECTA: A
+ 
+CATEGORIA: Arte
+PREGUNTA: ¿Quién compuso la Quinta Sinfonía?
+A: Mozart
+B: Bach
+C: Beethoven
+D: Schubert
+CORRECTA: C
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿En qué continente está Egipto?
+A: Asia
+B: Europa
+C: África
+D: Oceanía
+CORRECTA: C
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Japón?
+A: Osaka
+B: Kioto
+C: Hiroshima
+D: Tokio
+CORRECTA: D
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Brasil?
+A: Río de Janeiro
+B: São Paulo
+C: Brasilia
+D: Salvador
+CORRECTA: C
+ 
+CATEGORIA: Historia
+PREGUNTA: ¿En qué año se descubrió América?
+A: 1389
+B: 1492
+C: 1512
+D: 1476
+CORRECTA: B
+ 
+CATEGORIA: Ciencia
+PREGUNTA: ¿Cuántas patas tiene una araña?
+A: 6
+B: 10
+C: 8
+D: 12
+CORRECTA: C
+ 
+CATEGORIA: Tecnología
+PREGUNTA: ¿Qué significa HTML?
+A: HyperText Markup Language
+B: High Transfer Media Language
+C: Hyperlink Text Mode Language
+D: Home Tool Markup Language
+CORRECTA: A
+ 
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué animal es el más grande del mundo?
+A: Tiburón ballena
+B: Elefante africano
+C: Ballena azul
+D: Cocodrilo marino
+CORRECTA: C
+ 
+CATEGORIA: Tecnología
+PREGUNTA: ¿En qué año se fundó Google?
+A: 2000
+B: 1995
+C: 1996
+D: 1998
+CORRECTA: D
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuántos estados tiene EE.UU.?
+A: 48
+B: 52
+C: 50
+D: 49
+CORRECTA: C
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Grecia?
+A: Tesalónica
+B: Atenas
+C: Creta
+D: Esparta
+CORRECTA: B
+ 
+CATEGORIA: Ciencia
+PREGUNTA: ¿Cuál es el hueso más largo del cuerpo humano?
+A: Tibia
+B: Radio
+C: Húmero
+D: Fémur
+CORRECTA: D
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿En qué país está el Taj Mahal?
+A: Pakistán
+B: Bangladés
+C: Nepal
+D: India
+CORRECTA: D
+ 
+CATEGORIA: Literatura
+PREGUNTA: ¿Quién escribió 'Cien años de soledad'?
+A: Mario Vargas Llosa
+B: Pablo Neruda
+C: Gabriel García Márquez
+D: Jorge Luis Borges
+CORRECTA: C
+ 
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué velocidad alcanza la luz en el vacío?
+A: 200.000 km/s
+B: 400.000 km/s
+C: 300.000 km/s
+D: 250.000 km/s
+CORRECTA: C
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Polonia?
+A: Cracovia
+B: Lodz
+C: Varsovia
+D: Gdansk
+CORRECTA: C
+ 
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué proteína da color a la piel?
+A: Queratina
+B: Colágeno
+C: Melanina
+D: Elastina
+CORRECTA: C
+ 
+CATEGORIA: Historia
+PREGUNTA: ¿En qué año fue la Revolución Francesa?
+A: 1799
+B: 1776
+C: 1789
+D: 1804
+CORRECTA: C
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Suecia?
+A: Gotemburgo
+B: Malmö
+C: Estocolmo
+D: Uppsala
+CORRECTA: C
+ 
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué científico formuló las leyes de la gravedad?
+A: Galileo Galilei
+B: Albert Einstein
+C: Isaac Newton
+D: Nikola Tesla
+CORRECTA: C
+ 
+CATEGORIA: Mates
+PREGUNTA: ¿Cuánto es 7 × 8?
+A: 54
+B: 56
+C: 48
+D: 63
+CORRECTA: B
+ 
+CATEGORIA: Arte
+PREGUNTA: ¿Cuántas teclas tiene un piano estándar?
+A: 76
+B: 88
+C: 72
+D: 84
+CORRECTA: B
+ 
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué país ganó la Copa del Mundo de 2018?
+A: Croacia
+B: Bélgica
+C: Argentina
+D: Francia
+CORRECTA: D
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Portugal?
+A: Oporto
+B: Lisboa
+C: Braga
+D: Coímbra
+CORRECTA: B
+ 
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué órgano produce la insulina?
+A: Hígado
+B: Riñón
+C: Páncreas
+D: Suprarrenal
+CORRECTA: C
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Austria?
+A: Salzburgo
+B: Innsbruck
+C: Graz
+D: Viena
+CORRECTA: D
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Corea del Sur?
+A: Busan
+B: Incheon
+C: Seúl
+D: Daegu
+CORRECTA: C
+ 
+CATEGORIA: Literatura
+PREGUNTA: ¿Quién escribió 'El señor de los anillos'?
+A: C.S. Lewis
+B: J.R.R. Tolkien
+C: George R.R. Martin
+D: Terry Pratchett
+CORRECTA: B
+ 
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué elemento es el más abundante en el universo?
+A: Oxígeno
+B: Carbono
+C: Hidrógeno
+D: Helio
+CORRECTA: C
+ 
+CATEGORIA: Historia
+PREGUNTA: ¿En qué año fue asesinado John F. Kennedy?
+A: 1961
+B: 1965
+C: 1963
+D: 1967
+CORRECTA: C
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de los Países Bajos?
+A: Rotterdam
+B: La Haya
+C: Utrecht
+D: Ámsterdam
+CORRECTA: D
+ 
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué planeta es el más alejado del Sol?
+A: Urano
+B: Saturno
+C: Neptuno
+D: Plutón
+CORRECTA: C
+ 
+CATEGORIA: Cultura
+PREGUNTA: ¿Cuál es el país de origen del tango?
+A: España
+B: Uruguay y Argentina
+C: Brasil
+D: Cuba
+CORRECTA: B
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Suiza?
+A: Zúrich
+B: Ginebra
+C: Berna
+D: Basilea
+CORRECTA: C
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Nigeria?
+A: Lagos
+B: Ibadán
+C: Kano
+D: Abuya
+CORRECTA: D
+ 
+CATEGORIA: Cultura
+PREGUNTA: ¿En qué año murió Freddie Mercury?
+A: 1993
+B: 1989
+C: 1991
+D: 1995
+CORRECTA: C
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Irak?
+A: Mosul
+B: Basora
+C: Bagdad
+D: Erbil
+CORRECTA: C
+ 
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué tipo de sangre es el donante universal?
+A: A+
+B: AB+
+C: B-
+D: O-
+CORRECTA: D
+ 
+CATEGORIA: Literatura
+PREGUNTA: ¿En qué año se publicó 'Harry Potter y la piedra filosofal'?
+A: 1999
+B: 1995
+C: 2001
+D: 1997
+CORRECTA: D
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Irán?
+A: Isfahan
+B: Teherán
+C: Mashhad
+D: Shiraz
+CORRECTA: B
+ 
+CATEGORIA: Deporte
+PREGUNTA: ¿En qué ciudad se celebraron los primeros Juegos Olímpicos modernos?
+A: París
+B: Londres
+C: Atenas
+D: Roma
+CORRECTA: C
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Filipinas?
+A: Cebú
+B: Davao
+C: Quezon City
+D: Manila
+CORRECTA: D
+ 
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué gas produce el efecto invernadero principalmente?
+A: Nitrógeno
+B: Oxígeno
+C: Dióxido de carbono
+D: Argón
+CORRECTA: C
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿En qué país está la ciudad de Petra?
+A: Siria
+B: Líbano
+C: Jordania
+D: Israel
+CORRECTA: C
+ 
+CATEGORIA: Tecnología
+PREGUNTA: ¿Cuánto es 1 gigabyte en megabytes?
+A: 100
+B: 10.000
+C: 100.000
+D: 1.024
+CORRECTA: D
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Etiopía?
+A: Dire Dawa
+B: Adís Abeba
+C: Gondär
+D: Mekele
+CORRECTA: B
+ 
+CATEGORIA: Historia
+PREGUNTA: ¿Quién inventó el bombillo eléctrico?
+A: Nikola Tesla
+B: Alexander Graham Bell
+C: Thomas Edison
+D: Benjamin Franklin
+CORRECTA: C
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Vietnam?
+A: Ho Chi Minh
+B: Hue
+C: Da Nang
+D: Hanói
+CORRECTA: D
+ 
+CATEGORIA: Cultura
+PREGUNTA: ¿En qué país se originó el flamenco?
+A: Portugal
+B: España
+C: Argentina
+D: México
+CORRECTA: B
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Argelia?
+A: Orán
+B: Argel
+C: Constantine
+D: Annaba
+CORRECTA: B
+ 
+CATEGORIA: Historia
+PREGUNTA: ¿En qué año terminó la Guerra de Corea?
+A: 1950
+B: 1955
+C: 1953
+D: 1951
+CORRECTA: C
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Marruecos?
+A: Casablanca
+B: Marrakech
+C: Fez
+D: Rabat
+CORRECTA: D
+ 
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué músculo es el más grande del cuerpo humano?
+A: Cuádriceps
+B: Glúteo mayor
+C: Pectoral
+D: Deltoides
+CORRECTA: B
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Venezuela?
+A: Maracaibo
+B: Valencia
+C: Caracas
+D: Barquisimeto
+CORRECTA: C
+ 
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué tipo de onda es el sonido?
+A: Electromagnética
+B: Transversal
+C: Longitudinal
+D: De gravedad
+CORRECTA: C
+ 
+CATEGORIA: Deporte
+PREGUNTA: ¿En qué año se fundó la FIFA?
+A: 1904
+B: 1914
+C: 1894
+D: 1924
+CORRECTA: A
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Chile?
+A: Valparaíso
+B: Concepción
+C: Antofagasta
+D: Santiago
+CORRECTA: D
+ 
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué organismo produce el mayor volumen de oxígeno en la Tierra?
+A: Árboles tropicales
+B: Kelp marino
+C: Fitoplancton
+D: Algas de agua dulce
+CORRECTA: C
+ 
+CATEGORIA: Deporte
+PREGUNTA: ¿Cuántos colores tiene la bandera olímpica?
+A: 4
+B: 6
+C: 7
+D: 5
+CORRECTA: D
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Perú?
+A: Cusco
+B: Lima
+C: Arequipa
+D: Trujillo
+CORRECTA: B
+ 
+CATEGORIA: Deporte
+PREGUNTA: ¿En qué año se celebró la primera Copa del Mundo de fútbol?
+A: 1926
+B: 1930
+C: 1934
+D: 1928
+CORRECTA: B
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Dinamarca?
+A: Aarhus
+B: Copenhague
+C: Odense
+D: Aalborg
+CORRECTA: B
+ 
+CATEGORIA: Historia
+PREGUNTA: ¿Quién fue el primer Papa?
+A: Pedro
+B: Pablo
+C: Mateo
+D: Juan
+CORRECTA: A
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Finlandia?
+A: Tampere
+B: Turku
+C: Espoo
+D: Helsinki
+CORRECTA: D
+ 
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué tipo de animal es una ballena?
+A: Pez
+B: Reptil
+C: Anfibio
+D: Mamífero
+CORRECTA: D
+ 
+CATEGORIA: Deporte
+PREGUNTA: ¿En qué año se celebraron los Juegos Olímpicos de Barcelona?
+A: 1990
+B: 1988
+C: 1994
+D: 1992
+CORRECTA: D
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Israel?
+A: Tel Aviv
+B: Haifa
+C: Beersheba
+D: Jerusalén
+CORRECTA: D
+ 
+CATEGORIA: Cultura
+PREGUNTA: ¿En qué año nació Elvis Presley?
+A: 1940
+B: 1939
+C: 1935
+D: 1945
+CORRECTA: C
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Hungría?
+A: Debrecen
+B: Pécs
+C: Miskolc
+D: Budapest
+CORRECTA: D
+ 
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué planeta tiene la atmósfera más densa?
+A: Júpiter
+B: Marte
+C: Venus
+D: Saturno
+CORRECTA: C
+ 
+CATEGORIA: Historia
+PREGUNTA: ¿En qué país se inventó el papel?
+A: Japón
+B: China
+C: Egipto
+D: India
+CORRECTA: B
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Escocia?
+A: Glasgow
+B: Aberdeen
+C: Edimburgo
+D: Dundee
+CORRECTA: C
+ 
+CATEGORIA: Historia
+PREGUNTA: ¿Quién fue el último zar de Rusia?
+A: Alejandro III
+B: Nicolás II
+C: Pablo I
+D: Alejandro II
+CORRECTA: B
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Rumanía?
+A: Cluj-Napoca
+B: Timișoara
+C: Brasov
+D: Bucarest
+CORRECTA: D
+ 
+CATEGORIA: Cultura
+PREGUNTA: ¿En qué año se estrenó 'El Padrino'?
+A: 1970
+B: 1974
+C: 1972
+D: 1968
+CORRECTA: C
+ 
+CATEGORIA: Deporte
+PREGUNTA: ¿Cuántos jugadores hay en un equipo de voleibol?
+A: 5
+B: 7
+C: 6
+D: 8
+CORRECTA: C
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Eslovaquia?
+A: Košice
+B: Prešov
+C: Bratislava
+D: Žilina
+CORRECTA: C
+ 
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué elemento químico es el símbolo Pb?
+A: Paladio
+B: Platino
+C: Plomo
+D: Protactinio
+CORRECTA: C
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿En qué país está el templo de Borobudur?
+A: Tailandia
+B: Camboya
+C: India
+D: Indonesia
+CORRECTA: D
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Irlanda?
+A: Cork
+B: Belfast
+C: Galway
+D: Dublín
+CORRECTA: D
+ 
+CATEGORIA: Historia
+PREGUNTA: ¿En qué año se firmó la Declaración de Independencia de EE.UU.?
+A: 1783
+B: 1774
+C: 1776
+D: 1778
+CORRECTA: C
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Ucrania?
+A: Odesa
+B: Lviv
+C: Járkov
+D: Kiev
+CORRECTA: D
+ 
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué partícula subatómica tiene carga positiva?
+A: Neutrón
+B: Electrón
+C: Quark
+D: Protón
+CORRECTA: D
+ 
+CATEGORIA: Historia
+PREGUNTA: ¿En qué año se inauguró el Canal de Panamá?
+A: 1904
+B: 1919
+C: 1914
+D: 1924
+CORRECTA: C
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Afganistán?
+A: Kandahar
+B: Kabul
+C: Mazar-i-Sharif
+D: Herat
+CORRECTA: B
+ 
+CATEGORIA: Arte
+PREGUNTA: ¿Cuántas cuerdas tiene una guitarra estándar?
+A: 4
+B: 7
+C: 5
+D: 6
+CORRECTA: D
+ 
+CATEGORIA: Literatura
+PREGUNTA: ¿Quién escribió 'La Odisea'?
+A: Sófocles
+B: Virgilio
+C: Esquilo
+D: Homero
+CORRECTA: D
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Bangladesh?
+A: Chittagong
+B: Sylhet
+C: Rajshahi
+D: Daca
+CORRECTA: D
+ 
+CATEGORIA: Ciencia
+PREGUNTA: ¿En qué año se publicó 'El origen de las especies' de Darwin?
+A: 1871
+B: 1859
+C: 1845
+D: 1867
+CORRECTA: B
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Bolivia?
+A: Cochabamba
+B: La Paz y Sucre
+C: Santa Cruz
+D: Potosí
+CORRECTA: B
+ 
+CATEGORIA: Arte
+PREGUNTA: ¿Quién pintó 'Las Meninas'?
+A: Goya
+B: El Greco
+C: Murillo
+D: Velázquez
+CORRECTA: D
+ 
+CATEGORIA: Historia
+PREGUNTA: ¿En qué año se aprobó la Constitución Española actual?
+A: 1975
+B: 1982
+C: 1978
+D: 1980
+CORRECTA: C
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Myanmar?
+A: Rangún
+B: Mandalay
+C: Bago
+D: Naipyidó
+CORRECTA: D
+ 
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué tipo de sangre es el receptor universal?
+A: O+
+B: A+
+C: AB+
+D: B+
+CORRECTA: C
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Camerún?
+A: Douala
+B: Bamenda
+C: Bafoussam
+D: Yaundé
+CORRECTA: D
+ 
+CATEGORIA: Historia
+PREGUNTA: ¿En qué año nació Ada Lovelace, primera programadora?
+A: 1835
+B: 1852
+C: 1815
+D: 1825
+CORRECTA: C
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Colombia?
+A: Medellín
+B: Cali
+C: Bogotá
+D: Barranquilla
+CORRECTA: C
+ 
+CATEGORIA: Historia
+PREGUNTA: ¿Qué filósofo griego fue maestro de Platón?
+A: Aristóteles
+B: Tales de Mileto
+C: Sócrates
+D: Pitágoras
+CORRECTA: C
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Kenia?
+A: Mombasa
+B: Nairobi
+C: Kisumu
+D: Nakuru
+CORRECTA: B
+ 
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué equipo de la NBA tiene más anillos de campeonato?
+A: Lakers
+B: Celtics
+C: Bulls
+D: Warriors
+CORRECTA: B
+ 
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué tenista femenina tiene más Grand Slams individuales?
+A: Serena Williams
+B: Steffi Graf
+C: Margaret Court
+D: Martina Navratilova
+CORRECTA: C
+ 
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué tenista masculino tiene más Grand Slams?
+A: Federer
+B: Nadal
+C: Djokovic
+D: Sampras
+CORRECTA: C
+ 
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué selección de rugby ganó el Mundial 2019?
+A: Nueva Zelanda
+B: Inglaterra
+C: Sudáfrica
+D: Australia
+CORRECTA: C
+ 
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué país ganó el Mundial de fútbol de 1998?
+A: Brasil
+B: Italia
+C: Francia
+D: Alemania
+CORRECTA: C
+ 
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué país ganó la Copa América 2024?
+A: Argentina
+B: Brasil
+C: Uruguay
+D: Colombia
+CORRECTA: A
+ 
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué cantante pop tiene el álbum más vendido del siglo XXI ('21')?
+A: Beyoncé
+B: Adele
+C: Taylor Swift
+D: Lady Gaga
+CORRECTA: B
+ 
+CATEGORIA: Historia
+PREGUNTA: ¿En qué año cayó el Imperio Romano de Occidente?
+A: 410
+B: 450
+C: 476
+D: 500
+CORRECTA: C
+ 
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la capital de Arabia Saudí?
+A: Medina
+B: Riad
+C: La Meca
+D: Yeda
+CORRECTA: B
+ 
+CATEGORIA: Cultura
+PREGUNTA: ¿Quién dirigió la película 'Titanic' de 1997?
+A: Steven Spielberg
+B: Ridley Scott
+C: James Cameron
+D: Peter Jackson
+CORRECTA: C
+ 
+CATEGORIA: Ciencia
+PREGUNTA: ¿Cuántos músculos tiene el cuerpo humano aproximadamente?
+A: 150
+B: 300
+C: 600
+D: 200
+CORRECTA: C
+ 
+CATEGORIA: Ciencia
+PREGUNTA: ¿Cuántos litros de sangre tiene el cuerpo humano aproximadamente?
+A: 3-4
+B: 7-8
+C: 10-12
+D: 5-6
+CORRECTA: D
+ 
+CATEGORIA: Ciencia
+PREGUNTA: ¿Cuántos neutrones tiene el átomo de carbono-12?
+A: 8
+B: 6
+C: 12
+D: 4
+CORRECTA: B
+ 
+CATEGORIA: Ciencia
+PREGUNTA: ¿Cuántos huesos tiene la mano humana?
+A: 19
+B: 27
+C: 23
+D: 31
+CORRECTA: B
+ 
+CATEGORIA: Ciencia
+PREGUNTA: ¿Cuántos cromosomas tiene una célula humana normal?
+A: 23
+B: 48
+C: 46
+D: 36
+CORRECTA: C
+ 
+CATEGORIA: Ciencia
+PREGUNTA: ¿Cuál es el metal más abundante en la corteza terrestre?
+A: Hierro
+B: Aluminio
+C: Silicio
+D: Calcio
+CORRECTA: B
+ 
+CATEGORIA: Ciencia
+PREGUNTA: ¿Cuántos dientes tiene un adulto normalmente?
+A: 28
+B: 36
+C: 24
+D: 32
+CORRECTA: D
+ 
+CATEGORIA: Ciencia
+PREGUNTA: ¿Cuántas costillas tiene el ser humano normalmente?
+A: 20
+B: 22
+C: 18
+D: 24
+CORRECTA: D
+ 
+CATEGORIA: Arte
+PREGUNTA: ¿Cuántos colores tiene el arcoíris?
+A: 5
+B: 6
+C: 8
+D: 7
+CORRECTA: D
+ 
+CATEGORIA: Arte
+PREGUNTA: ¿Cuántas notas musicales hay en la escala básica?
+A: 5
+B: 8
+C: 7
+D: 12
+CORRECTA: C
+ 
+CATEGORIA: Arte
+PREGUNTA: ¿Quién pintó 'La noche estrellada'?
+A: Gauguin
+B: Monet
+C: Renoir
+D: Van Gogh
+CORRECTA: D
+ 
+CATEGORIA: General
+PREGUNTA: ¿Cuántos meses tiene un año?
+A: 10
+B: 11
+C: 13
+D: 12
+CORRECTA: D
+ 
+CATEGORIA: General
+PREGUNTA: ¿Cuántas horas tiene un día?
+A: 12
+B: 48
+C: 36
+D: 24
+CORRECTA: D
+ 
+CATEGORIA: General
+PREGUNTA: ¿Cuántos segundos tiene un minuto?
+A: 100
+B: 30
+C: 60
+D: 120
+CORRECTA: C
+ 
+CATEGORIA: General
+PREGUNTA: ¿Cuántas semanas tiene un año?
+A: 48
+B: 54
+C: 50
+D: 52
+CORRECTA: D
+ 
+ /*questions.txt — todas las preguntas originales migradas al nuevo formato. Cada bloque
+  tiene CATEGORIA:, PREGUNTA:, A: B: C: D: y CORRECTA:. Para añadir una pregunta nueva, copias un bloque, lo editas y guardas. Para crear una categoría nueva 
+  (por ejemplo CATEGORIA: Programación) simplemente la escribes y aparecerá sola en el panel de opciones.
+*/
+

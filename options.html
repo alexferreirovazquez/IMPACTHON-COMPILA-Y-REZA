@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Focus Friends – Ajustes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f0f0f;
+      --surface: #1a1a1a;
+      --surface2: #232323;
+      --border: #2e2e2e;
+      --accent: #b4f264;
+      --accent2: #4d9fff;
+      --danger: #ff5c5c;
+      --text: #f0f0f0;
+      --muted: #777;
+      --radius: 10px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      min-height: 100vh;
+      padding: 0 0 80px;
+    }
+
+    /* HEADER */
+    header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 28px 40px 22px;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: rgba(15,15,15,0.96);
+      backdrop-filter: blur(8px);
+      z-index: 10;
+    }
+    .logo {
+      width: 36px; height: 36px;
+      background: var(--accent);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+    }
+    header h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    header h1 span { color: var(--accent); }
+    .save-btn {
+      margin-left: auto;
+      background: var(--accent);
+      color: #0f0f0f;
+      border: none;
+      padding: 9px 22px;
+      border-radius: 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: opacity 0.15s, transform 0.1s;
+    }
+    .save-btn:hover { opacity: 0.85; }
+    .save-btn:active { transform: scale(0.97); }
+
+    /* LAYOUT */
+    main {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 36px 24px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    /* SECTION CARD */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 18px 22px;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface2);
+    }
+    .section-icon {
+      font-size: 16px;
+      background: var(--surface);
+      width: 32px; height: 32px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .section-header h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: -0.2px;
+    }
+    .section-body { padding: 22px; }
+
+    /* PENALTY SLIDER */
+    .penalty-display {
+      font-family: 'DM Mono', monospace;
+      font-size: 42px;
+      font-weight: 500;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .penalty-label {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 20px;
+      font-family: 'DM Mono', monospace;
+    }
+    .slider-wrap { position: relative; }
+    input[type=range] {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: 99px;
+      background: var(--border);
+      outline: none;
+      cursor: pointer;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: var(--accent);
+      cursor: pointer;
+      box-shadow: 0 0 0 4px rgba(180,242,100,0.15);
+      transition: box-shadow 0.15s;
+    }
+    input[type=range]::-webkit-slider-thumb:hover {
+      box-shadow: 0 0 0 8px rgba(180,242,100,0.2);
+    }
+    .slider-ticks {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 8px;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+    }
+    .preset-row {
+      display: flex;
+      gap: 8px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+    .preset-btn {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-family: 'DM Mono', monospace;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .preset-btn:hover, .preset-btn.active {
+      background: var(--accent);
+      color: #0f0f0f;
+      border-color: var(--accent);
+    }
+
+    /* SITES */
+    .sites-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .site-chip {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 13px;
+      font-family: 'DM Mono', monospace;
+      transition: border-color 0.15s;
+    }
+    .site-chip:hover { border-color: var(--danger); }
+    .site-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--danger);
+      flex-shrink: 0;
+    }
+    .site-name { flex: 1; color: var(--text); }
+    .remove-btn {
+      background: none;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 16px;
+      line-height: 1;
+      padding: 2px 4px;
+      border-radius: 4px;
+      transition: color 0.15s, background 0.15s;
+    }
+    .remove-btn:hover { color: var(--danger); background: rgba(255,92,92,0.12); }
+    .add-row {
+      display: flex;
+      gap: 8px;
+    }
+    .add-input {
+      flex: 1;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .add-input:focus { border-color: var(--accent2); }
+    .add-input::placeholder { color: var(--muted); }
+    .add-btn {
+      background: var(--accent2);
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 18px;
+      width: 42px;
+      cursor: pointer;
+      transition: opacity 0.15s;
+    }
+    .add-btn:hover { opacity: 0.8; }
+
+    /* CATEGORIES */
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 8px;
+    }
+    .cat-toggle {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 12px;
+      cursor: pointer;
+      transition: all 0.15s;
+      user-select: none;
+    }
+    .cat-toggle.enabled {
+      border-color: var(--accent);
+      background: rgba(180,242,100,0.06);
+    }
+    .cat-toggle.enabled .cat-check { background: var(--accent); }
+    .cat-toggle.enabled .cat-label { color: var(--text); }
+    .cat-check {
+      width: 16px; height: 16px;
+      border-radius: 4px;
+      background: var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 10px;
+      flex-shrink: 0;
+      transition: background 0.15s;
+    }
+    .cat-label {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .cat-note {
+      margin-top: 14px;
+      font-size: 12px;
+      color: var(--muted);
+      font-family: 'DM Mono', monospace;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 14px;
+    }
+    .cat-note span { color: var(--accent); }
+
+    /* TOAST */
+    .toast {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      background: var(--accent);
+      color: #0f0f0f;
+      font-weight: 600;
+      font-size: 13px;
+      padding: 12px 20px;
+      border-radius: 10px;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.25s;
+      pointer-events: none;
+      z-index: 100;
+    }
+    .toast.show { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">🎯</div>
+  <h1>Focus <span>Friends</span></h1>
+  <button class="save-btn" onclick="saveAll()">Guardar cambios</button>
+</header>
+
+<main>
+
+  <!-- PENALIZACIÓN -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">⏱</div>
+      <h2>Tiempo de penalización</h2>
+    </div>
+    <div class="section-body">
+      <div class="penalty-display" id="penaltyDisplay">30s</div>
+      <div class="penalty-label">Bloqueo tras fallo o tiempo agotado</div>
+      <div class="slider-wrap">
+        <input type="range" id="penaltySlider" min="30" max="600" step="10" value="30" oninput="updatePenalty(this.value)">
+        <div class="slider-ticks">
+          <span>30s</span><span>2m</span><span>5m</span><span>10m</span>
+        </div>
+      </div>
+      <div class="preset-row">
+        <button class="preset-btn" onclick="setPreset(30)">30s</button>
+        <button class="preset-btn" onclick="setPreset(60)">1 min</button>
+        <button class="preset-btn" onclick="setPreset(120)">2 min</button>
+        <button class="preset-btn" onclick="setPreset(300)">5 min</button>
+        <button class="preset-btn" onclick="setPreset(600)">10 min</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SITIOS BLOQUEADOS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">🚫</div>
+      <h2>Sitios restringidos</h2>
+    </div>
+    <div class="section-body">
+      <div class="sites-list" id="sitesList"></div>
+      <div class="add-row">
+        <input class="add-input" id="siteInput" type="text" placeholder="ejemplo: reddit.com" onkeydown="if(event.key==='Enter') addSite()">
+        <button class="add-btn" onclick="addSite()">+</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORÍAS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">🏷</div>
+      <h2>Categorías de preguntas</h2>
+    </div>
+    <div class="section-body">
+      <div class="cat-grid" id="catGrid"></div>
+      <div class="cat-note" id="catNote"></div>
+    </div>
+  </div>
+
+</main>
+
+<div class="toast" id="toast">✓ Ajustes guardados</div>
+
+<script src="options.js"></script>
+</body>
+</html>

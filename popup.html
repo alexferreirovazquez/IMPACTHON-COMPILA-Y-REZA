@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body { font-family: Arial, sans-serif; width: 220px; padding: 16px; margin: 0; background: #fff; }
+    h3 { margin: 0 0 12px; font-size: 15px; color: #1a1a1a; }
+    .stat { display: flex; justify-content: space-between; font-size: 13px; padding: 7px 0; border-bottom: 1px solid #f0f0f0; color: #555; }
+    .val { font-weight: bold; color: #185FA5; }
+    .settings-btn {
+      display: block;
+      width: 100%;
+      margin-top: 14px;
+      padding: 9px 0;
+      background: #0f0f0f;
+      color: #b4f264;
+      border: none;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      letter-spacing: 0.01em;
+    }
+    .settings-btn:hover { opacity: 0.85; }
+    .footer { font-size: 11px; color: #aaa; margin-top: 10px; text-align: center; }
+  </style>
+</head>
+<body>
+  <h3>🎯 Focus Friends</h3>
+  <div class="stat"><span>Puntuación</span><span class="val" id="score">—</span></div>
+  <div class="stat"><span>Racha</span><span class="val" id="streak">—</span></div>
+  <div class="stat"><span>Penalización</span><span class="val" id="penalty">—</span></div>
+  <button class="settings-btn" id="openOptions">⚙ Ajustes</button>
+  <p class="footer">El pop-up aparece a los 10s</p>
+  <script>
+    chrome.storage.local.get(["score","streak","ff_penalty"], (d) => {
+      document.getElementById("score").textContent   = (d.score   || 0)  + " pts";
+      document.getElementById("streak").textContent  = (d.streak  || 0)  + " días";
+      const p = d.ff_penalty || 30;
+      const label = p < 60 ? p+"s" : Math.floor(p/60)+"m"+(p%60 ? " "+(p%60)+"s" : "");
+      document.getElementById("penalty").textContent = label;
+    });
+    document.getElementById("openOptions").addEventListener("click", () => {
+      chrome.runtime.openOptionsPage();
+    });
+  </script>
+</body>
+</html>
