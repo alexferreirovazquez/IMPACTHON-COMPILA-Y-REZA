@@ -1685,7 +1685,1473 @@ B: 54
 C: 50
 D: 52
 CORRECTA: D
- 
+
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué metal tiene el punto de fusión más alto?
+A: Tungsteno
+B: Carbono
+C: Osmio
+D: Renio
+CORRECTA: A
+
+CATEGORIA: Historia
+PREGUNTA: ¿En qué año se firmó el Tratado de Versalles (fin I Guerra Mundial)?
+A: 1917
+B: 1918
+C: 1919
+D: 1920
+CORRECTA: C
+
+CATEGORIA: Geografía
+PREGUNTA: ¿Qué país tiene el mayor número de fronteras terrestres?
+A: Rusia
+B: China
+C: Brasil
+D: Francia
+CORRECTA: B
+
+CATEGORIA: Mates
+PREGUNTA: ¿Cuál es el número primo más pequeño de 3 cifras?
+A: 101
+B: 103
+C: 107
+D: 111
+CORRECTA: A
+
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué planeta tiene la mayor cantidad de lunas confirmadas?
+A: Júpiter
+B: Saturno
+C: Urano
+D: Neptuno
+CORRECTA: B
+
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es el único país sin ríos?
+A: Arabia Saudita
+B: Kuwait
+C: Omán
+D: Catar
+CORRECTA: A
+
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué elemento químico tiene el punto de ebullición más bajo?
+A: Helio
+B: Hidrógeno
+C: Neón
+D: Nitrógeno
+CORRECTA: A
+
+CATEGORIA: Arte
+PREGUNTA: ¿Quién esculpió 'El pensador'?
+A: Miguel Ángel
+B: Rodin
+C: Bernini
+D: Donatello
+CORRECTA: B
+
+CATEGORIA: Geografía
+PREGUNTA: ¿Qué río nace en Suiza y desemboca en el Mar Negro?
+A: Danubio
+B: Dniéper
+C: Don
+D: Volga
+CORRECTA: A
+
+CATEGORIA: Historia
+PREGUNTA: ¿En qué año se produjo el accidente nuclear de Fukushima?
+A: 2009
+B: 2010
+C: 2011
+D: 2012
+CORRECTA: C
+
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué instrumento mide la velocidad del viento?
+A: Barómetro
+B: Anemómetro
+C: Hidrómetro
+D: Termómetro
+CORRECTA: B
+
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la montaña más alta de América del Norte?
+A: Monte Logan
+B: Monte McKinley (Denali)
+C: Monte Whitney
+D: Monte Elbert
+CORRECTA: B
+
+CATEGORIA: Historia
+PREGUNTA: ¿Qué batalla detuvo la expansión musulmana en Francia (732)?
+A: Tours
+B: Poitiers
+C: Covadonga
+D: Las Navas de Tolosa
+CORRECTA: A
+
+CATEGORIA: Literatura
+PREGUNTA: ¿Quién escribió 'El extranjero'?
+A: Sartre
+B: Camus
+C: Kafka
+D: Beckett
+CORRECTA: B
+
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué parte del ojo humano tiene más conos (visión de color)?
+A: Mácula
+B: Fóvea
+C: Retina periférica
+D: Córnea
+CORRECTA: B
+
+CATEGORIA: Geografía
+PREGUNTA: ¿Qué país tiene la capital más fría del mundo?
+A: Islandia (Reikiavik)
+B: Kazajistán (Nur-Sultán)
+C: Mongolia (Ulán Bator)
+D: Rusia (Moscú)
+CORRECTA: C
+
+CATEGORIA: Mates
+PREGUNTA: ¿Cuál es el resultado de 9! / 8! ?
+A: 8
+B: 9
+C: 10
+D: 72
+CORRECTA: B
+
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué gas se usa en los globos aerostáticos para ascender?
+A: Helio
+B: Hidrógeno
+C: Aire caliente
+D: Nitrógeno
+CORRECTA: C
+
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuántos países tienen costa en el Mar Caspio?
+A: 3
+B: 4
+C: 5
+D: 6
+CORRECTA: C
+
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué deportista ganó 8 medallas de oro en una sola edición de los Juegos Olímpicos?
+A: Mark Spitz
+B: Usain Bolt
+C: Michael Phelps
+D: Carl Lewis
+CORRECTA: C
+
+CATEGORIA: Deporte
+PREGUNTA: ¿En qué año se jugó el primer Mundial de fútbol?
+A: 1928
+B: 1930
+C: 1934
+D: 1938
+CORRECTA: B
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué actor interpretó al Joker en 'The Dark Knight'?
+A: Jack Nicholson
+B: Jared Leto
+C: Heath Ledger
+D: Joaquin Phoenix
+CORRECTA: C
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué banda lanzó el álbum 'Nevermind'?
+A: Pearl Jam
+B: Soundgarden
+C: Nirvana
+D: Alice in Chains
+CORRECTA: C
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Cuál es el videojuego con mayor presupuesto de desarrollo (ajustado a inflación)?
+A: Cyberpunk 2077
+B: Red Dead Redemption 2
+C: GTA V
+D: Star Citizen
+CORRECTA: D
+
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué jugador de la NBA tiene el récord de más asistencias en un partido (30)?
+A: Stockton
+B: Magic
+C: Scott Skiles
+D: Isiah Thomas
+CORRECTA: C
+
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué tenista femenina ganó el Roland Garros 2024?
+A: Swiatek
+B: Gauff
+C: Sabalenka
+D: Rybakina
+CORRECTA: A
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué director de cine rodó 'Stalker' basado en los hermanos Strugatsky?
+A: Tarkovski
+B: Eisenstein
+C: Parajanov
+D: Mikhalkov
+CORRECTA: A
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué serie de TV terminó con la frase 'Not great, not terrible'?
+A: Chernobyl
+B: The Last of Us
+C: Succession
+D: The Crown
+CORRECTA: A
+
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué país ganó el Mundial de fútbol de 1966 en casa?
+A: Inglaterra
+B: Alemania
+C: Brasil
+D: Italia
+CORRECTA: A
+
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué ciclista ganó el Giro de Italia 2023?
+A: Roglic
+B: Thomas
+C: Evenepoel
+D: Pogacar
+CORRECTA: A
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué empresa creó la consola Dreamcast?
+A: Sega
+B: Nintendo
+C: Sony
+D: Microsoft
+CORRECTA: A
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué cantante es conocida por el álbum 'Back to Black' (2006)?
+A: Amy Winehouse
+B: Adele
+C: Duffy
+D: Lana Del Rey
+CORRECTA: A
+
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué luchador de la WWE tuvo el personaje 'Mankind'?
+A: Mick Foley
+B: The Rock
+C: Stone Cold
+D: Triple H
+CORRECTA: A
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué película ganó el Oscar a Mejor Película Extranjera en 2018 ('Roma')?
+A: Roma
+B: Parásitos
+C: Cold War
+D: Shoplifters
+CORRECTA: A
+
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué futbolista uruguayo ganó el Balón de Oro 1960?
+A: Suárez (Luis Suárez Miramontes)
+B: Di Stéfano
+C: Puskás
+D: Kopa
+CORRECTA: A
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué rapero lanzó el álbum 'The College Dropout'?
+A: Kanye West
+B: Jay-Z
+C: Eminem
+D: 50 Cent
+CORRECTA: A
+
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué país tiene la liga de fútbol llamada 'Eredivisie'?
+A: Países Bajos
+B: Bélgica
+C: Dinamarca
+D: Suecia
+CORRECTA: A
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué actor dijo 'I'll be back' en 'The Terminator'?
+A: Arnold Schwarzenegger
+B: Michael Biehn
+C: Linda Hamilton
+D: Edward Furlong
+CORRECTA: A
+
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué equipo de la MLB tiene el apodo 'Los Cardenales'?
+A: St. Louis Cardinals
+B: Arizona Cardinals (NFL)
+C: Cincinnati Reds
+D: Pittsburgh Pirates
+CORRECTA: A
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué cantante femenina es la 'Reina del Tejano' asesinada en 1995?
+A: Selena Quintanilla
+B: Gloria Trevi
+C: Thalía
+D: Paulina Rubio
+CORRECTA: A
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué videojuego tiene como protagonista a una cazarrecompensas llamada Samus Aran?
+A: Metroid
+B: Castlevania
+C: Mega Man
+D: Contra
+CORRECTA: A
+
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué país ganó la Eurocopa 2004?
+A: Grecia
+B: Portugal
+C: República Checa
+D: Holanda
+CORRECTA: A
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué serie de animación incluye a Stan, Kyle, Cartman y Kenny?
+A: South Park
+B: Family Guy
+C: Los Simpson
+D: Futurama
+CORRECTA: A
+
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué boxeador derrotó a Sonny Liston por KO en 1964?
+A: Muhammad Ali (Cassius Clay)
+B: Joe Frazier
+C: George Foreman
+D: Floyd Patterson
+CORRECTA: A
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué película de DC recaudó más en taquilla (sin ajustar inflación)?
+A: Aquaman
+B: The Dark Knight
+C: Joker
+D: Batman v Superman
+CORRECTA: A
+
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué tenista masculino tiene el récord de más títulos ATP (109)?
+A: Jimmy Connors
+B: Roger Federer
+C: Novak Djokovic
+D: Ivan Lendl
+CORRECTA: A
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué personaje de 'Friends' dijo 'How you doin'?'?
+A: Joey
+B: Chandler
+C: Ross
+D: Monica
+CORRECTA: A
+
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué equipo de la NFL tiene a Joe Burrow como QB?
+A: Bengals
+B: Bills
+C: Chargers
+D: Dolphins
+CORRECTA: A
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué cantante solista lanzó el álbum '1989'?
+A: Taylor Swift
+B: Katy Perry
+C: Lady Gaga
+D: Beyoncé
+CORRECTA: A
+
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué piloto de F1 tiene el récord de más poles (104)?
+A: Lewis Hamilton
+B: Michael Schumacher
+C: Ayrton Senna
+D: Sebastian Vettel
+CORRECTA: A
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué director de cine dirigió 'Pulp Fiction'?
+A: Quentin Tarantino
+B: Robert Rodriguez
+C: Coen
+D: Fincher
+CORRECTA: A
+
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué selección de rugby ganó el Mundial 2023?
+A: Sudáfrica
+B: Nueva Zelanda
+C: Inglaterra
+D: Francia
+CORRECTA: A
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué actor interpretó a Gandalf en 'El Señor de los Anillos'?
+A: Ian McKellen
+B: Christopher Lee
+C: Ian Holm
+D: John Rhys-Davies
+CORRECTA: A
+
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué equipo de fútbol alemán tiene el apodo 'Die Roten' (Los Rojos)?
+A: Bayern Múnich
+B: Borussia Dortmund
+C: Bayer Leverkusen
+D: Schalke 04
+CORRECTA: A
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué videojuego de Valve es un shooter en equipo con bombas y rehenes?
+A: Counter-Strike
+B: Team Fortress 2
+C: Half-Life
+D: Left 4 Dead
+CORRECTA: A
+
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué atleta olímpico ganó 3 oros en natación en 2004 (Phelps)?
+A: Michael Phelps
+B: Ian Thorpe
+C: Pieter van den Hoogenband
+D: Grant Hackett
+CORRECTA: A
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué serie de TV presentó a Sheldon Cooper?
+A: The Big Bang Theory
+B: Young Sheldon
+C: Two and a Half Men
+D: Friends
+CORRECTA: A
+
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué futbolista francés ganó el Balón de Oro 1991?
+A: Jean-Pierre Papin
+B: Zinedine Zidane
+C: Michel Platini
+D: Raymond Kopa
+CORRECTA: A
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué cantante de rock es conocido como 'The Thin White Duke'?
+A: David Bowie
+B: Mick Jagger
+C: Jim Morrison
+D: Freddie Mercury
+CORRECTA: A
+
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué equipo de la NBA tiene a Luka Doncic (2024)?
+A: Mavericks
+B: Lakers
+C: Bulls
+D: Heat
+CORRECTA: A
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué película animada de Disney de 1991 tiene a la Bestia?
+A: La bella y la bestia
+B: Aladdín
+C: La sirenita
+D: El rey león
+CORRECTA: A
+
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué nadador olímpico ganó 5 oros en 2016 (Phelps)?
+A: Michael Phelps
+B: Katie Ledecky
+C: Ryan Lochte
+D: Caeleb Dressel
+CORRECTA: A
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué actor interpretó a James Bond en 'Casino Royale' (2006)?
+A: Daniel Craig
+B: Pierce Brosnan
+C: Sean Connery
+D: Roger Moore
+CORRECTA: A
+
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué equipo de fútbol español tiene la 'Masia' como academia?
+A: FC Barcelona
+B: Real Madrid
+C: Atlético de Madrid
+D: Athletic Bilbao
+CORRECTA: A
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué videojuego tiene a un soldado llamado 'Master Chief'?
+A: Halo
+B: Gears of War
+C: Call of Duty
+D: Battlefield
+CORRECTA: A
+
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué tenista femenina ganó el US Open 2024?
+A: Gauff
+B: Swiatek
+C: Sabalenka
+D: Pegula
+CORRECTA: A
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué serie de HBO mostró la casa de los Stark?
+A: Game of Thrones
+B: House of the Dragon
+C: The Witcher
+D: Vikings
+CORRECTA: A
+
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué piloto de F1 ganó el campeonato 2024?
+A: Verstappen
+B: Hamilton
+C: Norris
+D: Leclerc
+CORRECTA: A
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué cantante pop lanzó el álbum 'Teenage Dream'?
+A: Katy Perry
+B: Taylor Swift
+C: Lady Gaga
+D: Rihanna
+CORRECTA: A
+
+(He mantenido el patrón, pero para que la respuesta correcta no sea casi nunca 0 (A), en las siguientes las he distribuido en B, C, D intencionadamente. Aquí van las restantes para completar 250, con correctas variadas)
+
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué glándula endocrina se llama 'silla turca' por su ubicación ósea?
+A: Tiroides
+B: Hipófisis
+C: Pineal
+D: Hipotálamo
+CORRECTA: B
+
+CATEGORIA: Historia
+PREGUNTA: ¿En qué año se fundó la Liga Hanseática?
+A: 1241
+B: 1356
+C: 1158
+D: 1282
+CORRECTA: D
+
+CATEGORIA: Geografía
+PREGUNTA: ¿Qué país africano tiene la forma de una lágrima invertida?
+A: Benín
+B: Togo
+C: Ghana
+D: Costa de Marfil
+CORRECTA: C
+
+CATEGORIA: Mates
+PREGUNTA: ¿Cuál es el número de la constante de Euler (e) redondeado a 4 decimales?
+A: 2.7182
+B: 2.7183
+C: 2.7181
+D: 2.7180
+CORRECTA: B
+
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué planeta tiene el viento más rápido del sistema solar (hasta 2.100 km/h)?
+A: Júpiter
+B: Saturno
+C: Neptuno
+D: Urano
+CORRECTA: C
+
+CATEGORIA: Geografía
+PREGUNTA: ¿Qué país tiene más de 1.000 islas habitadas en el Báltico?
+A: Suecia
+B: Finlandia
+C: Noruega
+D: Dinamarca
+CORRECTA: B
+
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué elemento químico fue nombrado por el 'demonio del polvo' alemán?
+A: Cobalto
+B: Níquel
+C: Wolframio
+D: Cadmio
+CORRECTA: A
+
+CATEGORIA: Arte
+PREGUNTA: ¿Quién pintó el retablo 'El jardín de las delicias'?
+A: El Bosco
+B: Brueghel
+C: Memling
+D: Van Eyck
+CORRECTA: A
+
+CATEGORIA: Geografía
+PREGUNTA: ¿Qué río australiano es el más largo pero no el más caudaloso?
+A: Murray
+B: Darling
+C: Murrumbidgee
+D: Lachlan
+CORRECTA: A
+
+CATEGORIA: Historia
+PREGUNTA: ¿En qué año murió Gengis Kan?
+A: 1227
+B: 1206
+C: 1241
+D: 1215
+CORRECTA: A
+
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué instrumento mide la humedad relativa?
+A: Higrómetro
+B: Psicrómetro
+C: Termohigrógrafo
+D: Hidrógrafo
+CORRECTA: B
+
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la montaña más alta de Oceanía (excluyendo el Himalaya asiático)?
+A: Puncak Jaya
+B: Monte Cook
+C: Monte Kosciuszko
+D: Monte Wilhelm
+CORRECTA: A
+
+CATEGORIA: Historia
+PREGUNTA: ¿Qué batalla de la antigüedad enfrentó a romanos y cartagineses en 216 a.C.?
+A: Zama
+B: Cannas
+C: Trebia
+D: Lago Trasimeno
+CORRECTA: B
+
+CATEGORIA: Literatura
+PREGUNTA: ¿Quién escribió 'Pedro Páramo'?
+A: Juan Rulfo
+B: Carlos Fuentes
+C: Octavio Paz
+D: Mario Vargas Llosa
+CORRECTA: A
+
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué hueso de la muñeca es el más grande?
+A: Escafoides
+B: Semilunar
+C: Piramidal
+D: Gancho
+CORRECTA: A
+
+CATEGORIA: Geografía
+PREGUNTA: ¿Qué país europeo tiene la ciudad de Rovaniemi (oficial de Papá Noel)?
+A: Suecia
+B: Noruega
+C: Finlandia
+D: Islandia
+CORRECTA: C
+
+CATEGORIA: Mates
+PREGUNTA: ¿Cuál es el resultado de la integral de 0 a 1 de x^2 dx?
+A: 1/3
+B: 1/2
+C: 2/3
+D: 1/4
+CORRECTA: A
+
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué gas noble tiene el mayor punto de ebullición?
+A: Radón
+B: Xenón
+C: Kriptón
+D: Argón
+CORRECTA: A
+
+CATEGORIA: Geografía
+PREGUNTA: ¿Qué país centroamericano tiene dos costas (Atlántico y Pacífico) pero la capital no está en ninguna?
+A: Guatemala
+B: Honduras
+C: Nicaragua
+D: Costa Rica
+CORRECTA: D
+
+CATEGORIA: Deporte
+PREGUNTA: ¿Qué deporte olímpico se practica sobre un campo de 91.44 m de largo?
+A: Hockey hierba
+B: Lacrosse
+C: Fútbol americano
+D: Rugby
+CORRECTA: A
+
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué hueso humano no está conectado a otro hueso?
+A: Hioides
+B: Estribo
+C: Rótula
+D: Omóplato
+CORRECTA: A
+
+CATEGORIA: Geografía
+PREGUNTA: ¿Qué país tiene la bandera más antigua del mundo aún en uso?
+A: Francia
+B: Dinamarca
+C: Países Bajos
+D: Reino Unido
+CORRECTA: B
+
+CATEGORIA: Historia
+PREGUNTA: ¿Qué rey inglés fue decapitado en 1649?
+A: Carlos I
+B: Enrique VIII
+C: Ricardo III
+D: Jaime I
+CORRECTA: A
+
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué animal tiene la sangre azul?
+A: Pulpo
+B: Calamar
+C: Langosta
+D: Todos los anteriores
+CORRECTA: D
+
+CATEGORIA: Geografía
+PREGUNTA: ¿Qué desierto es el más seco del mundo (excluyendo polos)?
+A: Sahara
+B: Atacama
+C: Gobi
+D: Namibia
+CORRECTA: B
+
+CATEGORIA: Mates
+PREGUNTA: ¿Cuánto es el logaritmo natural de e^3?
+A: 1
+B: e
+C: 3
+D: ln3
+CORRECTA: C
+
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué estrella está más cerca del Sol?
+A: Sirio
+B: Próxima Centauri
+C: Alfa Centauri A
+D: Barnard
+CORRECTA: B
+
+CATEGORIA: Historia
+PREGUNTA: ¿En qué año explotó el reactor de Chernóbil?
+A: 1984
+B: 1985
+C: 1986
+D: 1987
+CORRECTA: C
+
+CATEGORIA: Geografía
+PREGUNTA: ¿Qué país africano tiene el PIB per cápita más alto?
+A: Nigeria
+B: Sudáfrica
+C: Seychelles
+D: Marruecos
+CORRECTA: C
+
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué enfermedad mata más mosquitos al año?
+A: Malaria
+B: Dengue
+C: Fiebre amarilla
+D: Virus del Nilo
+CORRECTA: A
+
+CATEGORIA: Arte
+PREGUNTA: ¿Quién pintó 'La ronda de noche'?
+A: Vermeer
+B: Rembrandt
+C: Hals
+D: Rubens
+CORRECTA: B
+
+CATEGORIA: Geografía
+PREGUNTA: ¿Qué país tiene la mayor costa continua sin cortes por ríos?
+A: Canadá
+B: Indonesia
+C: Rusia
+D: Australia
+CORRECTA: A
+
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué planeta tiene el día más largo (rotación) del sistema solar?
+A: Júpiter
+B: Venus
+C: Mercurio
+D: Urano
+CORRECTA: B
+
+CATEGORIA: Literatura
+PREGUNTA: ¿Quién escribió 'Ficciones'?
+A: Borges
+B: Cortázar
+C: Bioy Casares
+D: Sabato
+CORRECTA: A
+
+CATEGORIA: Geografía
+PREGUNTA: ¿Qué país africano fue nunca colonizado por Europa?
+A: Etiopía
+B: Liberia
+C: Sudán
+D: Marruecos
+CORRECTA: A
+
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué gas compone la mayor parte de la atmósfera de Marte?
+A: Oxígeno
+B: Nitrógeno
+C: Dióxido de carbono
+D: Argón
+CORRECTA: C
+
+CATEGORIA: Historia
+PREGUNTA: ¿Qué emperador romano construyó el muro de Adriano?
+A: Trajano
+B: Adriano
+C: Antonino Pío
+D: Marco Aurelio
+CORRECTA: B
+
+CATEGORIA: Geografía
+PREGUNTA: ¿Cuál es la montaña más alta de los Alpes?
+A: Matterhorn
+B: Mont Blanc
+C: Monte Rosa
+D: Gran Paradiso
+CORRECTA: B
+
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué metal tiene el símbolo químico 'Sn'?
+A: Plata
+B: Estaño
+C: Antimonio
+D: Silicio
+CORRECTA: B
+
+CATEGORIA: Geografía
+PREGUNTA: ¿Qué país tiene la letra 'Q' al inicio?
+A: Qatar
+B: Quebec (no país)
+C: Quirguistán
+D: Kuwait
+CORRECTA: C
+
+CATEGORIA: Mates
+PREGUNTA: ¿Cuál es el número más pequeño que no puede expresarse como suma de dos cuadrados?
+A: 1
+B: 2
+C: 3
+D: 4
+CORRECTA: C
+
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué hueso del oído se llama 'yunque'?
+A: Martillo
+B: Yunque
+C: Estribo
+D: Lenticular
+CORRECTA: B
+
+CATEGORIA: Historia
+PREGUNTA: ¿Qué guerra duró exactamente 100 años?
+A: Guerra de los Cien Años
+B: Guerra de los Treinta Años
+C: Guerra de los Siete Años
+D: Guerra de sucesión
+CORRECTA: A
+
+CATEGORIA: Geografía
+PREGUNTA: ¿Qué país sudamericano tiene dos capitales?
+A: Argentina
+B: Bolivia
+C: Chile
+D: Perú
+CORRECTA: B
+
+CATEGORIA: Ciencia
+PREGUNTA: ¿Quién desarrolló la teoría heliocéntrica antes de Galileo?
+A: Copérnico
+B: Kepler
+C: Ptolomeo
+D: Aristarco
+CORRECTA: A
+
+CATEGORIA: Geografía
+PREGUNTA: ¿Qué color NO aparece en la bandera de Sudáfrica?
+A: Negro
+B: Verde
+C: Azul
+D: Rojo
+CORRECTA: D
+
+CATEGORIA: Ciencia
+PREGUNTA: ¿Cuántos dientes tiene un adulto humano promedio?
+A: 28
+B: 30
+C: 32
+D: 34
+CORRECTA: C
+
+CATEGORIA: Geografía
+PREGUNTA: ¿Qué lago tiene la mayor superficie de agua dulce del mundo?
+A: Titicaca
+B: Michigan
+C: Superior
+D: Victoria
+CORRECTA: C
+
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué científico ganó dos Premios Nobel en dos ciencias distintas?
+A: Curie
+B: Pauling
+C: Bardeen
+D: Sanger
+CORRECTA: A
+
+CATEGORIA: Historia
+PREGUNTA: ¿Qué año nació la Unión Europea como tal?
+A: 1957
+B: 1973
+C: 1986
+D: 1993
+CORRECTA: D
+
+CATEGORIA: Filosofía
+PREGUNTA: ¿Qué filósofo escribió 'Así habló Zaratustra'?
+A: Kant
+B: Nietzsche
+C: Schopenhauer
+D: Heidegger
+CORRECTA: B
+
+CATEGORIA: Geografía
+PREGUNTA: ¿Qué isla caribeña se divide en dos países?
+A: Cuba
+B: La Española
+C: Puerto Rico
+D: Jamaica
+CORRECTA: B
+
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué planeta NO tiene lunas?
+A: Marte
+B: Venus
+C: Mercurio
+D: Tierra
+CORRECTA: C
+
+CATEGORIA: Literatura
+PREGUNTA: ¿Qué escritor ruso escribió 'Crimen y castigo'?
+A: Tolstoi
+B: Dostoievski
+C: Chéjov
+D: Gogol
+CORRECTA: B
+
+CATEGORIA: Geografía
+PREGUNTA: ¿Qué país europeo tiene más volcanes activos?
+A: Italia
+B: Islandia
+C: Grecia
+D: España
+CORRECTA: B
+
+CATEGORIA: Mates
+PREGUNTA: ¿Cuánto suman los ángulos internos de un pentágono?
+A: 360°
+B: 540°
+C: 720°
+D: 900°
+CORRECTA: B
+
+CATEGORIA: Ciencia
+PREGUNTA: ¿Quién fue el primer humano en pisar la fosa de las Marianas?
+A: Piccard
+B: Cameron
+C: Walsh
+D: Cousteau
+CORRECTA: A
+
+CATEGORIA: Historia
+PREGUNTA: ¿Qué imperio construyó Machu Picchu?
+A: Azteca
+B: Inca
+C: Maya
+D: Olmeca
+CORRECTA: B
+
+CATEGORIA: Geografía
+PREGUNTA: ¿Qué país tiene más de 7,000 islas?
+A: Filipinas
+B: Indonesia
+C: Japón
+D: Suecia
+CORRECTA: B
+
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué matemático griego murió arrojado al mar?
+A: Pitágoras
+B: Arquímedes
+C: Euclides
+D: Tales
+CORRECTA: B
+
+CATEGORIA: Geografía
+PREGUNTA: ¿Qué país tiene la línea de costa más larga?
+A: Canadá
+B: Rusia
+C: EE.UU.
+D: Australia
+CORRECTA: A
+
+CATEGORIA: Historia
+PREGUNTA: ¿Qué año fue la primera vuelta al mundo de Elcano?
+A: 1519
+B: 1522
+C: 1525
+D: 1530
+CORRECTA: B
+
+CATEGORIA: Ciencia
+PREGUNTA: ¿Qué vitamina produce la piel con el sol?
+A: A
+B: B12
+C: C
+D: D
+CORRECTA: D
+
+CATEGORIA: Geografía
+PREGUNTA: ¿Qué río separa Europa de Asia?
+A: Volga
+B: Ural
+C: Danubio
+D: Don
+CORRECTA: B
+
+CATEGORIA: Historia
+PREGUNTA: ¿Qué inventó Gutenberg?
+A: Papel
+B: Imprenta de tipos móviles
+C: Tinta
+D: Prensa hidráulica
+CORRECTA: B
+
+CATEGORIA: Ciencia
+PREGUNTA: ¿Cuál es el número atómico del oro?
+A: 78
+B: 79
+C: 80
+D: 81
+CORRECTA: B
+
+CATEGORIA: Filosofía
+PREGUNTA: ¿Qué filósofo escribió 'La República'?
+A: Aristóteles
+B: Sócrates
+C: Platón
+D: Epicuro
+CORRECTA: C
+
+CATEGORIA: Filosofía
+PREGUNTA: ¿Qué corriente filosófica propone que la experiencia es la única fuente de conocimiento?
+A: Racionalismo
+B: Idealismo
+C: Empirismo
+D: Existencialismo
+CORRECTA: C
+
+CATEGORIA: Filosofía
+PREGUNTA: ¿Quién escribió 'Crítica de la razón pura'?
+A: Hegel
+B: Kant
+C: Schopenhauer
+D: Hume
+CORRECTA: B
+
+CATEGORIA: Filosofía
+PREGUNTA: ¿Qué filósofo es conocido por el 'imperativo categórico'?
+A: Nietzsche
+B: Bentham
+C: Kant
+D: Mill
+CORRECTA: C
+
+CATEGORIA: Filosofía
+PREGUNTA: ¿Quién acuñó el término 'plusvalía' en su crítica al capitalismo?
+A: Engels
+B: Lenin
+C: Marx
+D: Bakunin
+CORRECTA: C
+
+CATEGORIA: Filosofía
+PREGUNTA: ¿Qué filósofo francés escribió 'El ser y la nada'?
+A: Camus
+B: Foucault
+C: Derrida
+D: Sartre
+CORRECTA: D
+
+CATEGORIA: Filosofía
+PREGUNTA: ¿Qué escuela filosófica griega predicaba la indiferencia al placer y al dolor?
+A: Estoicismo
+B: Epicureísmo
+C: Cinismo
+D: Escepticismo
+CORRECTA: A
+
+CATEGORIA: Filosofía
+PREGUNTA: ¿Quién escribió 'El Príncipe'?
+A: Maquiavelo
+B: Hobbes
+C: Locke
+D: Rousseau
+CORRECTA: A
+
+CATEGORIA: Filosofía
+PREGUNTA: ¿Qué filósofo dijo 'Pienso, luego existo'?
+A: Pascal
+B: Spinoza
+C: Leibniz
+D: Descartes
+CORRECTA: D
+
+CATEGORIA: Filosofía
+PREGUNTA: ¿Qué obra escribió Tomás de Aquino?
+A: La Ciudad de Dios
+B: Suma Teológica
+C: Confesiones
+D: Ética a Nicómaco
+CORRECTA: B
+
+CATEGORIA: Filosofía
+PREGUNTA: ¿Qué filósofo alemán escribió 'El mundo como voluntad y representación'?
+A: Hegel
+B: Schelling
+C: Schopenhauer
+D: Fichte
+CORRECTA: C
+
+CATEGORIA: Filosofía
+PREGUNTA: ¿Qué corriente filosófica sostiene que Dios no existe?
+A: Agnosticismo
+B: Ateísmo
+C: Deísmo
+D: Panteísmo
+CORRECTA: B
+
+CATEGORIA: Filosofía
+PREGUNTA: ¿Quién escribió 'El segundo sexo'?
+A: Simone de Beauvoir
+B: Hannah Arendt
+C: Judith Butler
+D: Julia Kristeva
+CORRECTA: A
+
+CATEGORIA: Filosofía
+PREGUNTA: ¿Qué filósofo chino escribió 'El arte de la guerra'?
+A: Confucio
+B: Lao Tsé
+C: Mencio
+D: Sun Tzu
+CORRECTA: D
+
+CATEGORIA: Filosofía
+PREGUNTA: ¿Qué filósofo desarrolló el concepto de 'plusvalía' y 'lucha de clases' junto a Marx?
+A: Lenin
+B: Trotsky
+C: Engels
+D: Luxemburgo
+CORRECTA: C
+
+CATEGORIA: Tecnología
+PREGUNTA: ¿Qué significa SSD en informática?
+A: Solid State Drive
+B: Super Speed Data
+C: System Storage Device
+D: Secure Digital Drive
+CORRECTA: A
+
+CATEGORIA: Tecnología
+PREGUNTA: ¿Qué empresa desarrolló el sistema operativo Windows?
+A: Apple
+B: IBM
+C: Microsoft
+D: Google
+CORRECTA: C
+
+CATEGORIA: Tecnología
+PREGUNTA: ¿Qué lenguaje de programación es conocido por su mascota una serpiente?
+A: Java
+B: C++
+C: Ruby
+D: Python
+CORRECTA: D
+
+CATEGORIA: Tecnología
+PREGUNTA: ¿Qué empresa fundó Elon Musk además de Tesla?
+A: PayPal
+B: SpaceX
+C: Neuralink
+D: The Boring Company
+CORRECTA: B
+
+CATEGORIA: Tecnología
+PREGUNTA: ¿Qué tecnología permite conectar dispositivos sin cables a corta distancia?
+A: Wi-Fi
+B: Bluetooth
+C: NFC
+D: LTE
+CORRECTA: B
+
+CATEGORIA: Tecnología
+PREGUNTA: ¿Qué significa RAM en informática?
+A: Read Access Memory
+B: Random Access Memory
+C: Rapid Access Module
+D: Readily Available Memory
+CORRECTA: B
+
+CATEGORIA: Tecnología
+PREGUNTA: ¿En qué año se lanzó el primer iPhone?
+A: 2006
+B: 2007
+C: 2008
+D: 2009
+CORRECTA: B
+
+CATEGORIA: Tecnología
+PREGUNTA: ¿Qué empresa fabrica los procesadores de la serie Ryzen?
+A: Intel
+B: AMD
+C: NVIDIA
+D: Qualcomm
+CORRECTA: B
+
+CATEGORIA: Tecnología
+PREGUNTA: ¿Qué sistema operativo móvil desarrolla Google?
+A: iOS
+B: Android
+C: HarmonyOS
+D: Tizen
+CORRECTA: B
+
+CATEGORIA: Tecnología
+PREGUNTA: ¿Qué protocolo se usa para enviar correos electrónicos?
+A: HTTP
+B: FTP
+C: SMTP
+D: SSH
+CORRECTA: C
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿En qué videojuego aparecen por primera vez los personajes Crash y Coco?
+A: Spyro the Dragon
+B: Crash Bandicoot
+C: Jak and Daxter
+D: Ratchet & Clank
+CORRECTA: B
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué saga de videojuegos tiene como protagonista a un cazador llamado Aloy?
+A: Horizon
+B: The Last of Us
+C: God of War
+D: Uncharted
+CORRECTA: A
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué empresa desarrolló el juego 'The Legend of Zelda: Breath of the Wild'?
+A: Sony
+B: Microsoft
+C: Nintendo
+D: Sega
+CORRECTA: C
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿En qué videojuego controlas una nave llamada Normandy?
+A: Halo
+B: Mass Effect
+C: Dead Space
+D: Starfield
+CORRECTA: B
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué personaje de videojuegos dice la frase 'It's-a me, Mario!'?
+A: Luigi
+B: Wario
+C: Mario
+D: Yoshi
+CORRECTA: C
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Cuál es el nombre del mundo principal en el juego 'Minecraft'?
+A: Nether
+B: End
+C: Overworld
+D: Aether
+CORRECTA: C
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué videojuego de terror presenta a un pirómano llamado 'The Ink Demon'?
+A: Outlast
+B: Amnesia
+C: Bendy and the Ink Machine
+D: Little Nightmares
+CORRECTA: C
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿En qué franquicia aparece el arma llamada 'BFG 9000'?
+A: Quake
+B: Wolfenstein
+C: Doom
+D: Duke Nukem
+CORRECTA: C
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Qué estudio desarrolló 'Red Dead Redemption 2'?
+A: Rockstar Games
+B: Ubisoft
+C: Bethesda
+D: CD Projekt Red
+CORRECTA: A
+
+CATEGORIA: Entretenimiento
+PREGUNTA: ¿Cuál es el nombre del asistente robótico en el juego 'Stray'?
+A: B-12
+B: Z-11
+C: X-42
+D: R-23
+CORRECTA: A
+
+CATEGORIA: Arte
+PREGUNTA: ¿Qué artista español es famoso por sus pinturas negras y 'El 3 de mayo en Madrid'?
+A: Velázquez
+B: Goya
+C: El Greco
+D: Murillo
+CORRECTA: B
+
+CATEGORIA: Arte
+PREGUNTA: ¿Qué movimiento artístico fundó André Breton con su 'Manifiesto surrealista'?
+A: Dadaísmo
+B: Surrealismo
+C: Cubismo
+D: Fauvismo
+CORRECTA: B
+
+CATEGORIA: Arte
+PREGUNTA: ¿Qué escultor francés creó 'El beso' y 'El pensador'?
+A: Rodin
+B: Maillol
+C: Claudel
+D: Bourdelle
+CORRECTA: A
+
+CATEGORIA: Arte
+PREGUNTA: ¿Qué arquitecto diseñó la Sagrada Familia de Barcelona?
+A: Gaudí
+B: Domènech i Montaner
+C: Puig i Cadafalch
+D: Calatrava
+CORRECTA: A
+
+CATEGORIA: Arte
+PREGUNTA: ¿Qué pintor holandés es famoso por sus autorretratos y 'La ronda de noche'?
+A: Vermeer
+B: Rembrandt
+C: Hals
+D: Van Dyck
+CORRECTA: B
+
+CATEGORIA: Arte
+PREGUNTA: ¿Qué artista pop estadounidense pintó latas de sopa Campbell's?
+A: Roy Lichtenstein
+B: Andy Warhol
+C: Robert Rauschenberg
+D: Jasper Johns
+CORRECTA: B
+
+CATEGORIA: Arte
+PREGUNTA: ¿Qué periodo artístico incluye a Botticelli, Leonardo y Miguel Ángel?
+A: Barroco
+B: Renacimiento
+C: Romanticismo
+D: Neoclasicismo
+CORRECTA: B
+
+CATEGORIA: Arte
+PREGUNTA: ¿Qué pintora mexicana es conocida por sus autorretratos y cejas unidas?
+A: Remedios Varo
+B: María Izquierdo
+C: Frida Kahlo
+D: Leonora Carrington
+CORRECTA: C
+
+CATEGORIA: Arte
+PREGUNTA: ¿Qué museo de Madrid alberga 'El jardín de las delicias' de El Bosco?
+A: Museo Reina Sofía
+B: Museo Thyssen-Bornemisza
+C: Museo del Prado
+D: Museo Sorolla
+CORRECTA: C
+
+CATEGORIA: Arte
+PREGUNTA: ¿Qué estilo arquitectónico se caracteriza por los arcos apuntados y las vidrieras?
+A: Románico
+B: Gótico
+C: Bizantino
+D: Mudéjar
+CORRECTA: B
+
+CATEGORIA: Geografía
+PREGUNTA: ¿Qué país tiene el código ISO 3166-1 alfa-3 'XKX' y no es miembro de la ONU?
+A: Transnistria
+B: Kosovo
+C: Somalilandia
+D: Abjasia
+CORRECTA: B
+
+CATEGORIA: Geografía
+PREGUNTA: ¿Qué ciudad es la capital del estado de Mato Grosso do Sul en Brasil?
+A: Cuiabá
+B: Campo Grande
+C: Goiânia
+D: Palmas
+CORRECTA: B
+
+CATEGORIA: Geografía
+PREGUNTA: ¿Qué territorio no autónomo dependiente de Francia tiene el código ISO 3166-1 'TF' y su capital es Saint-Pierre?
+A: San Pedro y Miquelón
+B: Tierras Australes y Antárticas Francesas
+C: Mayotte
+D: San Bartolomé
+CORRECTA: B
+
  /*questions.txt — todas las preguntas originales migradas al nuevo formato. Cada bloque
   tiene CATEGORIA:, PREGUNTA:, A: B: C: D: y CORRECTA:. Para añadir una pregunta nueva, copias un bloque, lo editas y guardas. Para crear una categoría nueva 
   (por ejemplo CATEGORIA: Programación) simplemente la escribes y aparecerá sola en el panel de opciones.
