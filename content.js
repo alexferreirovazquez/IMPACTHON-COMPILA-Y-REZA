@@ -90,22 +90,22 @@ function getPlayerInfo(callback) {
       nameOverlay.style = "position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 2147483647; display: flex; align-items: center; justify-content: center; font-family: -apple-system, Arial, sans-serif;";
 
       nameOverlay.innerHTML = `
-        <div class="ff-card" style="text-align: center; padding: 40px 32px; background: oklab(87.603% -0.03785 0.10292); border-radius: 16px; max-width: 400px; width: 90vw;">
-          <div style="font-size: 48px; margin-bottom: 16px;">🎮</div>
-          <h2 style="color: #1a1a1a; margin: 0 0 8px;">¡Modo Multijugador!</h2>
-          <p style="color: #555; margin: 0 0 24px; font-size: 14px;">Únete a una sala para competir con tus amigos:</p>
+        <div class="ff-room-card">
+          <div class="ff-room-emoji">🎮</div>
+          <h2 class="ff-room-title">¡Modo Multijugador!</h2>
+          <p class="ff-room-sub">Únete a una sala para competir con tus amigos:</p>
 
-          <div style="text-align: left; margin-bottom: 12px;">
-            <label style="font-size: 12px; font-weight: bold; color: #185FA5; margin-left: 4px;">Tu Nombre</label>
-            <input type="text" id="ff-name-input" placeholder="Ej: Alex..." style="width: 100%; padding: 12px; border: 2px solid rgba(0,0,0,0.1); border-radius: 8px; font-size: 16px; box-sizing: border-box; background: rgba(255,255,255,0.6); margin-top: 4px; color: #1a1a1a;">
+          <div class="ff-room-field">
+            <label class="ff-room-label">Tu Nombre</label>
+            <input type="text" id="ff-name-input" placeholder="Ej: Alex..." class="ff-room-input">
           </div>
 
-          <div style="text-align: left; margin-bottom: 24px;">
-            <label style="font-size: 12px; font-weight: bold; color: #185FA5; margin-left: 4px;">Código de Sala</label>
-            <input type="text" id="ff-room-input" placeholder="Ej: IMPACTHON24..." style="width: 100%; padding: 12px; border: 2px solid rgba(0,0,0,0.1); border-radius: 8px; font-size: 16px; box-sizing: border-box; background: rgba(255,255,255,0.6); margin-top: 4px; text-transform: uppercase; color: #1a1a1a;">
+          <div class="ff-room-field">
+            <label class="ff-room-label">Código de Sala</label>
+            <input type="text" id="ff-room-input" placeholder="Ej: IMPACTHON24..." class="ff-room-input ff-room-input-upper">
           </div>
 
-          <button id="ff-start-btn" style="background: #185FA5; color: white; border: none; padding: 12px 24px; border-radius: 8px; font-size: 16px; cursor: pointer; font-weight: bold; width: 100%;">¡Entrar a la Sala!</button>
+          <button id="ff-start-btn" class="ff-room-btn">¡Entrar a la Sala!</button>
         </div>
       `;
 
@@ -284,6 +284,7 @@ function showConfirm() {
         <button id="ff-confirm-no" style="
           flex:1; max-width:140px;
           background:#f1f1f0; border:1px solid #ddd;
+          display: flex; align-items: center; justify-content: center;
           border-radius:10px; padding:12px 0;
           font-size:14px; font-weight:600; color:#555;
           cursor:pointer;">
@@ -293,6 +294,7 @@ function showConfirm() {
           flex:1; max-width:140px;
           background:#185FA5; border:none;
           border-radius:10px; padding:12px 0;
+          display: flex; align-items: center; justify-content: center;
           font-size:14px; font-weight:600; color:#fff;
           cursor:pointer;">
           Entrar
