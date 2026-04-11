@@ -118,10 +118,13 @@ function getPlayerInfo(callback) {
         if (!name) name = "Jugador_" + Math.floor(Math.random() * 1000);
         if (!room) room = "GLOBAL";
 
-        chrome.storage.local.set({ ff_playerName: name, ff_roomCode: room }, () => {
-            nameOverlay.remove();
-            if (mainOverlay) mainOverlay.style.display = "flex";
-            callback(name, room);
+        const initialScore = 100;
+        chrome.storage.local.set({ ff_playerName: name, ff_roomCode: room, score: initialScore, streak: 0 }, () => {
+          // Subir los 100 puntos iniciales al servidor nada más unirse
+          saveScoreToCloud(name, initialScore, 0, room);
+          nameOverlay.remove();
+          if (mainOverlay) mainOverlay.style.display = "flex";
+          callback(name, room);
         });
       });
     }
@@ -366,16 +369,18 @@ function showPopup() {
   let timeLeft = 15;
   let answered = false;
 
-  // 1. OBTENEMOS TUS PUNTOS LOCALES
-  chrome.storage.local.get(["score","streak"], (data) => {
-    const myScore = data.score  || 0;
-    const streak  = data.streak || 0;
+  // 1. PEDIMOS NOMBRE Y SALA (Automático si ya los pusiste una vez)
+  // IMPORTANTE: leer el score DESPUÉS de getPlayerInfo, porque al unirse
+  // por primera vez getPlayerInfo escribe 100 pts en storage.
+  getPlayerInfo(async (myName, myRoom) => {
 
-    // 2. PEDIMOS NOMBRE Y SALA (Automático si ya los pusiste una vez)
-    getPlayerInfo(async (myName, myRoom) => {
+    // 2. OBTENEMOS TUS PUNTOS LOCALES (ya con los 100 iniciales si es la primera vez)
+    const freshData = await new Promise(res => chrome.storage.local.get(["score","streak"], res));
+    const myScore = (freshData.score != null) ? freshData.score : 0;
+    const streak  = freshData.streak || 0;
 
-      // 3. DESCARGAMOS EL PODIO DE TU SALA DESDE FIREBASE
-      const leaderboard = await getRoomLeaderboard(myRoom);
+    // 3. DESCARGAMOS EL PODIO DE TU SALA DESDE FIREBASE
+    const leaderboard = await getRoomLeaderboard(myRoom);
 
       const overlay = document.createElement("div");
       overlay.id = "ff-overlay";
@@ -475,14 +480,21 @@ function showPopup() {
         const lockedUntil = Date.now() + (PENALTY_SECONDS * 1000);
         const currentSite = location.hostname;
         sessionStorage.setItem("lockedUntil", lockedUntil.toString());
-        chrome.storage.local.set({
-          [currentSite]: lockedUntil,
-          score:  Math.max(0, (myScore || 0) - 15),
-          streak: 0
+        // Leemos el score actual del storage para operar sobre el valor real, no el cacheado
+        chrome.storage.local.get(["score"], (d) => {
+          const currentScore = (d.score != null) ? d.score : 0;
+          const newScore = Math.max(0, currentScore - 10);
+          chrome.storage.local.set({
+            [currentSite]: lockedUntil,
+            score: newScore,
+            streak: 0
+          });
+          // Subir el nuevo score al servidor inmediatamente
+          saveScoreToCloud(myName, newScore, 0, myRoom);
+          showMinusPointsToast();
+          setTimeout(() => showLockScreen(PENALTY_SECONDS), 900);
         });
-        showLockScreen(PENALTY_SECONDS);
       }
-    });
   });
 }
 
@@ -511,4 +523,42 @@ function showSuccessScreen() {
     const el = document.getElementById("ff-overlay");
     if (el) el.remove();
   }, 2500);
+}
+
+// ── Notificación -10 puntos ───────────────────────────────
+function showMinusPointsToast() {
+  const toast = document.createElement("div");
+  toast.id = "ff-minus-toast";
+  toast.style.cssText = `
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    z-index: 2147483648;
+    background: #E24B4A;
+    color: #fff;
+    font-family: -apple-system, Arial, sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    padding: 14px 28px;
+    border-radius: 14px;
+    box-shadow: 0 6px 28px rgba(226,75,74,0.45);
+    letter-spacing: -0.5px;
+    opacity: 0;
+    transform: translateY(-12px) scale(0.92);
+    transition: opacity 0.22s ease, transform 0.22s ease;
+    pointer-events: none;
+  `;
+  toast.textContent = "−10 puntos 💀";
+  document.body.appendChild(toast);
+
+  // Forzar reflow para que arranque la transición
+  toast.getBoundingClientRect();
+  toast.style.opacity = "1";
+  toast.style.transform = "translateY(0) scale(1)";
+
+  setTimeout(() => {
+    toast.style.opacity = "0";
+    toast.style.transform = "translateY(-12px) scale(0.92)";
+    setTimeout(() => toast.remove(), 300);
+  }, 1800);
 }

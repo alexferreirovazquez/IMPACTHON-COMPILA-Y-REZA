@@ -143,7 +143,7 @@
 
   <script>
     chrome.storage.local.get(["score","streak","ff_penalty","ff_roomCode"], (d) => {
-      document.getElementById("score").textContent  = d.score  || 0;
+      document.getElementById("score").textContent  = (d.score != null) ? d.score : 100;
       document.getElementById("streak").textContent = (d.streak || 0) + "d";
       const p = d.ff_penalty || 30;
       document.getElementById("penalty").textContent = p < 60 ? p+"s" : Math.floor(p/60)+"m"+(p%60 ? (p%60)+"s" : "");
