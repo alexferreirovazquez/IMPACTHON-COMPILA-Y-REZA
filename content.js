@@ -198,11 +198,27 @@ function mountOverlay(overlay) {
 // ── Inicia (o reinicia) el temporizador periódico ─────────
 function startPeriodicTimer() {
   if (periodicTimer) clearInterval(periodicTimer);
-  periodicTimer = setInterval(() => {
-    if (!document.getElementById("ff-overlay") && !scrollLocked) {
-      showPopup();
+
+  // Guardamos el timestamp de inicio solo si no hay uno previo
+  // Así Reddit (y otras SPAs que recargan) no reinician el contador desde cero
+  chrome.storage.local.get(["ff_last_popup_time"], (d) => {
+    if (!d.ff_last_popup_time) {
+      chrome.storage.local.set({ ff_last_popup_time: Date.now() });
     }
-  }, PERIODIC_INTERVAL_MS);
+  });
+
+  // Chequeamos cada 5s si ya pasó el intervalo configurado
+  periodicTimer = setInterval(() => {
+    if (document.getElementById("ff-overlay") || scrollLocked) return;
+
+    chrome.storage.local.get(["ff_last_popup_time"], (d) => {
+      const elapsed = Date.now() - (d.ff_last_popup_time || Date.now());
+      if (elapsed >= PERIODIC_INTERVAL_MS) {
+        chrome.storage.local.set({ ff_last_popup_time: Date.now() });
+        showPopup();
+      }
+    });
+  }, 5000);
 }
 
 // ── Boot: load questions + settings then start ────────────
@@ -466,6 +482,7 @@ function showPopup() {
             saveScoreToCloud(myName, newScore, newStreak, myRoom);
 
             startPeriodicTimer(); // ── Reinicia el contador tras respuesta correcta
+            chrome.storage.local.set({ ff_last_popup_time: Date.now() });
 
             setTimeout(() => { showSuccessScreen(); }, 600);
           } else {
