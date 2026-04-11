@@ -82,6 +82,8 @@
   margin: 0;
   line-height: 1.5;
   color: #1a1a1a;
+  text-align: center; /* Asegura el centrado horizontal */
+  width: 100%;
 }
 .ff-answers {
   display: grid;
@@ -91,7 +93,9 @@
 }
 .ff-ans {
   all: unset;
-  display: block;
+  display: flex;         /* Cambiado de block a flex */
+  align-items: center;   /* Centrado vertical */
+  justify-content: center; /* Centrado horizontal */
   box-sizing: border-box;
   width: 100%;
   background: rgba(255, 255, 255, 0.4);
@@ -100,12 +104,13 @@
   padding: 12px;
   font-size: 13px;
   font-family: -apple-system, Arial, sans-serif;
-  line-height: 1.4;
+  line-height: 1.2;      /* Ajustado para evitar saltos */
   cursor: pointer;
-  text-align: left;
+  text-align: center;    /* Backup para navegadores viejos */
   transition: background 0.15s, transform 0.1s;
   color: #1a1a1a;
   font-weight: 500;
+  min-height: 45px;      /* Altura mínima para que siempre luzcan igual */
 }
 .ff-ans:hover { 
   background: rgba(255, 255, 255, 0.7); /* Se ilumina más al pasar el ratón */
@@ -195,6 +200,72 @@
 .ff-confirm-no,
 .ff-confirm-yes {
   all: unset;
+  display: flex;         /* Cambiado para centrar contenido */
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  flex: 1;
+  max-width: 140px;
+  border-radius: 10px;
+  padding: 12px 0;
+  font-size: 14px;
+  font-family: -apple-system, Arial, sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  text-align: center;
+}
+.ff-confirm-no {
+  background: #f1f1f0;
+  border: 1px solid #ddd;
+  color: #555;
+}
+.ff-confirm-yes {
+  background: #185FA5;
+  color: #fff;
+}
+.ff-confirm-no:hover,
+.ff-confirm-yes:hover { opacity: 0.85; }
+
+/* ── Pantalla de confirmación ──────────────────────────── */
+.ff-confirm-card {
+  text-align: center !important;
+  padding: 48px 36px !important;
+}
+.ff-confirm-emoji {
+  all: unset;
+  display: block;
+  font-size: 48px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+.ff-confirm-title {
+  all: unset;
+  display: block;
+  font-family: -apple-system, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0 0 8px;
+  text-align: center;
+}
+.ff-confirm-sub {
+  all: unset;
+  display: block;
+  font-family: -apple-system, Arial, sans-serif;
+  font-size: 13px;
+  color: #888;
+  margin: 0 0 32px;
+  text-align: center;
+}
+.ff-confirm-btns {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+.ff-confirm-no,
+.ff-confirm-yes {
+  all: unset;
   display: inline-block;
   box-sizing: border-box;
   flex: 1;
@@ -220,3 +291,100 @@
 }
 .ff-confirm-no:hover,
 .ff-confirm-yes:hover { opacity: 0.85; }
+
+/* ── Pantalla de entrada a sala ────────────────────────── */
+.ff-room-card {
+  background: oklab(87.603% -0.03785 0.10292);
+  border-radius: 16px;
+  padding: 40px 32px;
+  max-width: 400px;
+  width: 90vw;
+  box-sizing: border-box;
+  text-align: center;
+}
+.ff-room-emoji {
+  all: unset;
+  display: block;
+  font-size: 48px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+.ff-room-title {
+  all: unset;
+  display: block;
+  font-family: -apple-system, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0 0 8px;
+  text-align: center;
+}
+.ff-room-sub {
+  all: unset;
+  display: block;
+  font-family: -apple-system, Arial, sans-serif;
+  font-size: 14px;
+  color: #555;
+  margin: 0 0 24px;
+  text-align: center;
+}
+.ff-room-field {
+  text-align: left;
+  margin-bottom: 12px;
+}
+.ff-room-field:last-of-type {
+  margin-bottom: 24px;
+}
+.ff-room-label {
+  all: unset;
+  display: block;
+  font-family: -apple-system, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #185FA5;
+  margin-left: 4px;
+  margin-bottom: 4px;
+  text-align: left;
+}
+.ff-room-input {
+  all: unset;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px;
+  border: 2px solid rgba(0,0,0,0.1);
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: -apple-system, Arial, sans-serif;
+  background: rgba(255,255,255,0.6);
+  color: #1a1a1a;
+  margin-top: 4px;
+  text-align: left;
+}
+.ff-room-input-upper {
+  text-transform: uppercase;
+}
+.ff-room-input:focus {
+  border-color: #185FA5;
+  outline: none;
+}
+.ff-room-btn {
+  all: unset;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  background: #185FA5;
+  color: #fff;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-family: -apple-system, Arial, sans-serif;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ff-room-btn:hover { opacity: 0.85; }
