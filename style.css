@@ -74,10 +74,14 @@
   margin-bottom: 10px;
 }
 .ff-q {
+  all: unset;
+  display: block;
+  font-family: -apple-system, Arial, sans-serif;
   font-size: 16px;
   font-weight: 500;
   margin: 0;
   line-height: 1.5;
+  color: #1a1a1a;
 }
 .ff-answers {
   display: grid;
@@ -86,11 +90,17 @@
   margin-bottom: 14px;
 }
 .ff-ans {
-  background: rgba(255, 255, 255, 0.4); /* Blanco al 40% de opacidad */
-  border: 1px solid rgba(0, 0, 0, 0.08); /* Borde muy sutil */
+  all: unset;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 8px;
   padding: 12px;
   font-size: 13px;
+  font-family: -apple-system, Arial, sans-serif;
+  line-height: 1.4;
   cursor: pointer;
   text-align: left;
   transition: background 0.15s, transform 0.1s;
@@ -180,3 +190,33 @@
   font-weight: 700;
   color: #E24B4A;
 }
+
+/* ── Botones pantalla de confirmación ──────────────────── */
+.ff-confirm-no,
+.ff-confirm-yes {
+  all: unset;
+  display: inline-block;
+  box-sizing: border-box;
+  flex: 1;
+  max-width: 140px;
+  border-radius: 10px;
+  padding: 12px 0;
+  font-size: 14px;
+  font-family: -apple-system, Arial, sans-serif;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.ff-confirm-no {
+  background: #f1f1f0;
+  border: 1px solid #ddd;
+  color: #555;
+}
+.ff-confirm-yes {
+  background: #185FA5;
+  color: #fff;
+}
+.ff-confirm-no:hover,
+.ff-confirm-yes:hover { opacity: 0.85; }
