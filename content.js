@@ -1,4 +1,3 @@
-// ── Config defaults ───────────────────────────────────────
 const DEFAULT_PENALTY  = 30;
 const DEFAULT_SITES    = ["instagram.com","tiktok.com","x.com","twitter.com","facebook.com","youtube.com"];
 const DEFAULT_INTERVAL_MS = 5 * 60 * 1000; // 5 minutos por defecto
@@ -28,20 +27,20 @@ const CONFIRM_MESSAGES = [
 const DELAY_MS = 10;
 const SCROLL_TIME_LIMIT_MS = 30 * 1000;
 let PERIODIC_INTERVAL_MS = DEFAULT_INTERVAL_MS; // ── Se actualiza desde storage
-
+ 
 // ── State ─────────────────────────────────────────────────
 let questions        = [];
 let BLOCKED_SITES    = [...DEFAULT_SITES];
 let PENALTY_SECONDS  = DEFAULT_PENALTY;
 let ENABLED_CATS     = null;
-
+ 
 let scrollTimeAccum  = 0;
 let lastScrollTime   = null;
 let scrollDecayTimer = null;
 let scrollLocked     = false;
 
 let periodicTimer    = null; // ── Referencia al intervalo periódico
-
+ 
 // ── Parse questions.txt ───────────────────────────────────
 function parseQuestions(text) {
   return text
@@ -64,7 +63,7 @@ function parseQuestions(text) {
     })
     .filter(q => q.q && q.answers.some(a => a) && q.correct >= 0);
 }
-
+ 
 async function loadQuestions() {
   try {
     const url  = chrome.runtime.getURL("questions.txt");
@@ -75,87 +74,7 @@ async function loadQuestions() {
     console.error("[FocusFriends] No se pudo cargar questions.txt:", e);
   }
 }
-
-// ── FUNCIONES DE MULTIJUGADOR Y FIREBASE ──────────────────
-function getPlayerInfo(callback) {
-  chrome.storage.local.get(["ff_playerName", "ff_roomCode"], (data) => {
-    if (data.ff_playerName && data.ff_roomCode) {
-      callback(data.ff_playerName, data.ff_roomCode);
-    } else {
-      const mainOverlay = document.getElementById("ff-overlay");
-      if (mainOverlay) mainOverlay.style.display = "none";
-
-      const nameOverlay = document.createElement("div");
-      nameOverlay.id = "ff-name-overlay";
-      nameOverlay.style = "position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 2147483647; display: flex; align-items: center; justify-content: center; font-family: -apple-system, Arial, sans-serif;";
-
-      nameOverlay.innerHTML = `
-        <div class="ff-card" style="text-align: center; padding: 40px 32px; background: oklab(87.603% -0.03785 0.10292); border-radius: 16px; max-width: 400px; width: 90vw;">
-          <div style="font-size: 48px; margin-bottom: 16px;">🎮</div>
-          <h2 style="color: #1a1a1a; margin: 0 0 8px;">¡Modo Multijugador!</h2>
-          <p style="color: #555; margin: 0 0 24px; font-size: 14px;">Únete a una sala para competir con tus amigos:</p>
-
-          <div style="text-align: left; margin-bottom: 12px;">
-            <label style="font-size: 12px; font-weight: bold; color: #185FA5; margin-left: 4px;">Tu Nombre</label>
-            <input type="text" id="ff-name-input" placeholder="Ej: Alex..." style="width: 100%; padding: 12px; border: 2px solid rgba(0,0,0,0.1); border-radius: 8px; font-size: 16px; box-sizing: border-box; background: rgba(255,255,255,0.6); margin-top: 4px; color: #1a1a1a;">
-          </div>
-
-          <div style="text-align: left; margin-bottom: 24px;">
-            <label style="font-size: 12px; font-weight: bold; color: #185FA5; margin-left: 4px;">Código de Sala</label>
-            <input type="text" id="ff-room-input" placeholder="Ej: IMPACTHON24..." style="width: 100%; padding: 12px; border: 2px solid rgba(0,0,0,0.1); border-radius: 8px; font-size: 16px; box-sizing: border-box; background: rgba(255,255,255,0.6); margin-top: 4px; text-transform: uppercase; color: #1a1a1a;">
-          </div>
-
-          <button id="ff-start-btn" style="background: #185FA5; color: white; border: none; padding: 12px 24px; border-radius: 8px; font-size: 16px; cursor: pointer; font-weight: bold; width: 100%;">¡Entrar a la Sala!</button>
-        </div>
-      `;
-
-      document.body.appendChild(nameOverlay);
-
-      document.getElementById("ff-start-btn").addEventListener("click", () => {
-        let name = document.getElementById("ff-name-input").value.trim();
-        let room = document.getElementById("ff-room-input").value.trim().toUpperCase();
-
-        if (!name) name = "Jugador_" + Math.floor(Math.random() * 1000);
-        if (!room) room = "GLOBAL";
-
-        chrome.storage.local.set({ ff_playerName: name, ff_roomCode: room }, () => {
-            nameOverlay.remove();
-            if (mainOverlay) mainOverlay.style.display = "flex";
-            callback(name, room);
-        });
-      });
-    }
-  });
-}
-
-// Descarga el podio SOLO de tu sala (Pide ayuda al background para saltar bloqueo)
-async function getRoomLeaderboard(roomCode) {
-  return new Promise((resolve) => {
-    const safeRoom = encodeURIComponent(roomCode.trim());
-    chrome.runtime.sendMessage({ action: "getLeaderboard", room: safeRoom }, (data) => {
-      if (!data || !data.documents) return resolve([]);
-      let players = data.documents.map(doc => {
-        return {
-          name: doc.fields.name.stringValue,
-          score: parseInt(doc.fields.score.integerValue)
-        };
-      });
-      resolve(players.sort((a, b) => b.score - a.score).slice(0, 4));
-    });
-  });
-}
-
-// Sube tus puntos y racha a TU sala
-function saveScoreToCloud(name, score, streak, roomCode) {
-  chrome.runtime.sendMessage({
-    action: "saveScore",
-    name: name,
-    score: score,
-    streak: streak,
-    room: roomCode
-  });
-}
-
+ 
 // ── Espera a que document.body exista ────────────────────
 function waitForBody() {
   return new Promise(resolve => {
@@ -166,10 +85,10 @@ function waitForBody() {
     obs.observe(document.documentElement, { childList: true });
   });
 }
-
+ 
 // ── MutationObserver: evita que SPAs eliminen el overlay ──
 let overlayGuard = null;
-
+ 
 function startOverlayGuard() {
   if (overlayGuard) return;
   overlayGuard = new MutationObserver(() => {
@@ -185,7 +104,7 @@ function startOverlayGuard() {
   });
   overlayGuard.observe(document.body, { childList: true, subtree: false });
 }
-
+ 
 // ── Insertar overlay de forma segura ─────────────────────
 function mountOverlay(overlay) {
   const parent = document.body || document.documentElement;
@@ -201,7 +120,7 @@ function startPeriodicTimer() {
     }
   }, PERIODIC_INTERVAL_MS);
 }
-
+ 
 // ── Boot: load questions + settings then start ────────────
 loadQuestions().then(() => {
   chrome.storage.local.get(["ff_penalty","ff_interval","ff_sites","ff_categories"], (d) => {
@@ -209,14 +128,14 @@ loadQuestions().then(() => {
     if (d.ff_interval)   PERIODIC_INTERVAL_MS = d.ff_interval * 1000;
     if (d.ff_sites)      BLOCKED_SITES        = d.ff_sites;
     if (d.ff_categories) ENABLED_CATS         = new Set(d.ff_categories);
-
+ 
     const currentSite   = location.hostname;
     const isBlockedSite = BLOCKED_SITES.some(site => currentSite.includes(site));
-
+ 
     chrome.storage.local.get([currentSite], (data) => {
       const now          = Date.now();
       const siteLockTime = data[currentSite];
-
+ 
       if (siteLockTime && siteLockTime > now) {
         const secondsLeft = Math.ceil((siteLockTime - now) / 1000);
         waitForBody().then(() => {
@@ -229,7 +148,7 @@ loadQuestions().then(() => {
           startOverlayGuard();
           startPeriodicTimer(); // ── Arranca el temporizador periódico
         });
-
+ 
         document.addEventListener("visibilitychange", () => {
           if (document.visibilityState === "visible") {
             chrome.storage.local.get(["lockedUntil"], (d2) => {
@@ -238,7 +157,7 @@ loadQuestions().then(() => {
           }
           if (document.visibilityState === "hidden") lastScrollTime = null;
         });
-
+ 
         window.addEventListener("scroll", onScroll, true);
         document.addEventListener("scroll", onScroll, true);
         document.addEventListener("wheel", onScroll, { passive: true });
@@ -246,18 +165,18 @@ loadQuestions().then(() => {
     });
   });
 });
-
+ 
 // ── Scroll tracker ────────────────────────────────────────
 function onScroll() {
   if (scrollLocked || document.getElementById("ff-overlay")) return;
-
+ 
   const now = Date.now();
   if (lastScrollTime !== null) scrollTimeAccum += now - lastScrollTime;
   lastScrollTime = now;
-
+ 
   clearTimeout(scrollDecayTimer);
   scrollDecayTimer = setTimeout(() => { lastScrollTime = null; }, 500);
-
+ 
   if (scrollTimeAccum >= SCROLL_TIME_LIMIT_MS) {
     scrollTimeAccum = 0;
     lastScrollTime  = null;
@@ -265,11 +184,12 @@ function onScroll() {
     showPopup();
   }
 }
-
+ 
 // ── Pantalla de confirmación ──────────────────────────────
 function showConfirm() {
   if (document.getElementById("ff-overlay")) return;
 
+  // Seleccionamos una variante aleatoria
   const variant = CONFIRM_MESSAGES[Math.floor(Math.random() * CONFIRM_MESSAGES.length)];
 
   const overlay = document.createElement("div");
@@ -281,29 +201,16 @@ function showConfirm() {
       <p style="font-size:20px; font-weight:800; color:#1a1a1a; margin:0 0 8px;">${variant.t}</p>
       <p style="font-size:13px; color:#888; margin:0 0 32px;"><strong>${location.hostname}</strong> ${variant.s}</p>
       <div style="display:flex; gap:12px; justify-content:center;">
-        <button id="ff-confirm-no" style="
-          flex:1; max-width:140px;
-          background:#f1f1f0; border:1px solid #ddd;
-          border-radius:10px; padding:12px 0;
-          font-size:14px; font-weight:600; color:#555;
-          cursor:pointer;">
-          Salir
-        </button>
-        <button id="ff-confirm-yes" style="
-          flex:1; max-width:140px;
-          background:#185FA5; border:none;
-          border-radius:10px; padding:12px 0;
-          font-size:14px; font-weight:600; color:#fff;
-          cursor:pointer;">
-          Entrar
-        </button>
+        <button id="ff-confirm-no" class="ff-confirm-no">Salir</button>
+        <button id="ff-confirm-yes" class="ff-confirm-yes">Entrar</button>
       </div>
-    </div>`;
-
+    </div>`; 
+  
   mountOverlay(overlay);
 
   document.getElementById("ff-confirm-no").addEventListener("click", () => {
     overlay.remove();
+    // Intenta cerrar la pestaña o ir atrás
     if (history.length > 1) {
       history.back();
     } else {
@@ -316,7 +223,7 @@ function showConfirm() {
     showPopup();
   });
 }
-
+ 
 // ── Lock screen ───────────────────────────────────────────
 function showLockScreen(lockLeft) {
   let overlay = document.getElementById("ff-overlay");
@@ -325,7 +232,7 @@ function showLockScreen(lockLeft) {
     overlay.id = "ff-overlay";
     mountOverlay(overlay);
   }
-
+ 
   overlay.innerHTML = `
     <div class="ff-card ff-lockout">
       <div class="ff-lock-icon">🔒</div>
@@ -334,11 +241,11 @@ function showLockScreen(lockLeft) {
       <div class="ff-lock-bar-wrap"><div class="ff-lock-bar" id="ff-lock-bar"></div></div>
       <div class="ff-lock-countdown" id="ff-lock-countdown">${lockLeft}s</div>
     </div>`;
-
+ 
   const lockCountEl = document.getElementById("ff-lock-countdown");
   const lockBarEl   = document.getElementById("ff-lock-bar");
   const initialLock = lockLeft;
-
+ 
   const lockInterval = setInterval(() => {
     lockLeft--;
     if (lockCountEl) lockCountEl.textContent = lockLeft + "s";
@@ -346,155 +253,127 @@ function showLockScreen(lockLeft) {
     if (lockLeft <= 0) { clearInterval(lockInterval); overlay.remove(); scrollLocked = false; }
   }, 1000);
 }
-
-// ── TRIVIA POPUP MULTIJUGADOR ──────────────────────────────
+ 
+// ── Trivia popup ──────────────────────────────────────────
 function showPopup() {
   if (document.getElementById("ff-overlay")) return;
   if (!chrome?.storage?.local) return;
-
+ 
   if (!questions.length) {
     console.warn("[FocusFriends] Sin preguntas disponibles.");
     return;
   }
-
+ 
   const pool       = ENABLED_CATS ? questions.filter(q => ENABLED_CATS.has(q.category)) : questions;
   const activePool = pool.length ? pool : questions;
   const q          = activePool[Math.floor(Math.random() * activePool.length)];
-
+ 
   let timeLeft = 15;
   let answered = false;
-
-  // 1. OBTENEMOS TUS PUNTOS LOCALES
-  chrome.storage.local.get(["score","streak"], (data) => {
-    const myScore = data.score  || 0;
-    const streak  = data.streak || 0;
-
-    // 2. PEDIMOS NOMBRE Y SALA (Automático si ya los pusiste una vez)
-    getPlayerInfo(async (myName, myRoom) => {
-
-      // 3. DESCARGAMOS EL PODIO DE TU SALA DESDE FIREBASE
-      const leaderboard = await getRoomLeaderboard(myRoom);
-
-      const overlay = document.createElement("div");
-      overlay.id = "ff-overlay";
-
-      const allPlayers = [...leaderboard, { name: myName, score: myScore, isMe: true }]
-        .sort((a, b) => b.score - a.score);
-
-      // Limpiamos duplicados y nos quedamos con el Top 4
-      const uniquePlayers = Array.from(new Set(allPlayers.map(a => a.name)))
-        .map(name => {
-          return allPlayers.find(a => a.name === name);
-        }).slice(0, 4);
-
-      const rankHTML = uniquePlayers.map((p, i) => {
-        const medals = ["🥇","🥈","🥉"];
-        return `<div class="ff-row ${p.isMe ? "ff-me" : ""}">
-          <span class="ff-rank">${medals[i] || (i+1)}</span>
-          <span class="ff-name">${p.name}${p.isMe ? ' <span class="ff-tag">tú</span>' : ""}</span>
-          <span class="ff-pts">${p.score} pts</span>
-        </div>`;
-      }).join("");
-
-      overlay.innerHTML = `
-        <div class="ff-card">
-          <div class="ff-top">
-            <div>
-              <span class="ff-site">${location.hostname}</span>
-              <span class="ff-streak">🔥 Racha: ${streak} días</span>
-            </div>
-            <div class="ff-timer" id="ff-timer">${timeLeft}</div>
+ 
+  chrome.storage.local.get(["score","streak","leaderboard"], (data) => {
+    const myScore     = data.score       || 0;
+    const streak      = data.streak      || 0;
+    const leaderboard = data.leaderboard || [
+      { name: "Laura M.",  score: 320 },
+      { name: "Carlos R.", score: 280 },
+      { name: "Manuel D.", score: 238 },
+    ];
+ 
+    const overlay = document.createElement("div");
+    overlay.id = "ff-overlay";
+ 
+    const allPlayers = [...leaderboard, { name: "Tú", score: myScore, isMe: true }]
+      .sort((a, b) => b.score - a.score);
+ 
+    const rankHTML = allPlayers.map((p, i) => {
+      const medals = ["🥇","🥈","🥉"];
+      return `<div class="ff-row ${p.isMe ? "ff-me" : ""}">
+        <span class="ff-rank">${medals[i] || (i+1)}</span>
+        <span class="ff-name">${p.name}${p.isMe ? ' <span class="ff-tag">tú</span>' : ""}</span>
+        <span class="ff-pts">${p.score} pts</span>
+      </div>`;
+    }).join("");
+ 
+    overlay.innerHTML = `
+      <div class="ff-card">
+        <div class="ff-top">
+          <div>
+            <span class="ff-site">${location.hostname}</span>
+            <span class="ff-streak">🔥 Racha: ${streak} días</span>
           </div>
-          <div class="ff-question-box">
-            <span class="ff-cat">${q.category}</span>
-            <p class="ff-q">${q.q}</p>
-          </div>
-          <div class="ff-answers">
-            ${q.answers.map((a, idx) => `<button class="ff-ans" data-index="${idx}">${a}</button>`).join("")}
-          </div>
-          <div class="ff-warning">⚠️ Si fallas, <strong>${formatSeconds(PENALTY_SECONDS)}</strong> de bloqueo</div>
-          <div class="ff-podium">
-            <p class="ff-podium-label" style="display: flex; justify-content: space-between; align-items: center;">
-              <span>SALA: <strong>${myRoom}</strong></span>
-              <span id="ff-change-room" style="color: #185FA5; cursor: pointer; text-transform: none;">Cambiar sala</span>
-            </p>
-            ${rankHTML}
-          </div>
-        </div>`;
-
-      mountOverlay(overlay);
-
-      // Botón para cambiar de sala (borra memoria, puntos y recarga la página de golpe)
-      document.getElementById("ff-change-room").addEventListener("click", () => {
-        chrome.storage.local.remove(["ff_playerName", "ff_roomCode", "score", "streak"], () => {
-          window.location.reload();
-        });
+          <div class="ff-timer" id="ff-timer">${timeLeft}</div>
+        </div>
+        <div class="ff-question-box">
+          <span class="ff-cat">${q.category}</span>
+          <p class="ff-q">${q.q}</p>
+        </div>
+        <div class="ff-answers">
+          ${q.answers.map((a, idx) => `<button class="ff-ans" data-index="${idx}">${a}</button>`).join("")}
+        </div>
+        <div class="ff-warning">⚠️ Si fallas, <strong>${formatSeconds(PENALTY_SECONDS)}</strong> de bloqueo</div>
+        <div class="ff-podium">
+          <p class="ff-podium-label">Clasificación semanal</p>
+          ${rankHTML}
+        </div>
+      </div>`;
+ 
+    mountOverlay(overlay);
+ 
+    const timerEl  = document.getElementById("ff-timer");
+    const interval = setInterval(() => {
+      timeLeft--;
+      if (timerEl) timerEl.textContent = timeLeft;
+      if (timeLeft <= 5 && timerEl) timerEl.style.color = "#E24B4A";
+      if (timeLeft <= 0) { clearInterval(interval); penalize(); }
+    }, 1000);
+ 
+    overlay.querySelectorAll(".ff-ans").forEach(btn => {
+      btn.addEventListener("click", () => {
+        if (answered) return;
+        answered = true;
+        clearInterval(interval);
+        const chosen  = parseInt(btn.dataset.index);
+        const allBtns = overlay.querySelectorAll(".ff-ans");
+ 
+        if (chosen === q.correct) {
+          allBtns[chosen].classList.add("ff-correct");
+          chrome.storage.local.set({ score: myScore + 10, streak: streak + 1 });
+          startPeriodicTimer(); // ── Reinicia el contador tras respuesta correcta
+          setTimeout(() => { showSuccessScreen(); }, 600);
+        } else {
+          btn.classList.add("ff-wrong");
+          allBtns[q.correct].classList.add("ff-correct");
+          penalize();
+        }
       });
-
-      const timerEl  = document.getElementById("ff-timer");
-      const interval = setInterval(() => {
-        timeLeft--;
-        if (timerEl) timerEl.textContent = timeLeft;
-        if (timeLeft <= 5 && timerEl) timerEl.style.color = "#E24B4A";
-        if (timeLeft <= 0) { clearInterval(interval); penalize(); }
-      }, 1000);
-
-      overlay.querySelectorAll(".ff-ans").forEach(btn => {
-        btn.addEventListener("click", () => {
-          if (answered) return;
-          answered = true;
-          clearInterval(interval);
-          const chosen  = parseInt(btn.dataset.index);
-          const allBtns = overlay.querySelectorAll(".ff-ans");
-
-          if (chosen === q.correct) {
-            allBtns[chosen].classList.add("ff-correct");
-
-            const newScore  = myScore + 10;
-            const newStreak = streak + 1;
-
-            chrome.storage.local.set({ score: newScore, streak: newStreak });
-
-            // 4. SUBIMOS LOS PUNTOS Y LA RACHA A TU SALA DE FIREBASE
-            saveScoreToCloud(myName, newScore, newStreak, myRoom);
-
-            startPeriodicTimer(); // ── Reinicia el contador tras respuesta correcta
-
-            setTimeout(() => { showSuccessScreen(); }, 600);
-          } else {
-            btn.classList.add("ff-wrong");
-            allBtns[q.correct].classList.add("ff-correct");
-            penalize();
-          }
-        });
-      });
-
-      function penalize() {
-        const lockedUntil = Date.now() + (PENALTY_SECONDS * 1000);
-        const currentSite = location.hostname;
-        sessionStorage.setItem("lockedUntil", lockedUntil.toString());
-        chrome.storage.local.set({
-          [currentSite]: lockedUntil,
-          score:  Math.max(0, (myScore || 0) - 15),
-          streak: 0
-        });
-        showLockScreen(PENALTY_SECONDS);
-      }
     });
+ 
+    function penalize() {
+      const lockedUntil = Date.now() + (PENALTY_SECONDS * 1000);
+      const currentSite = location.hostname;
+      sessionStorage.setItem("lockedUntil", lockedUntil.toString());
+      chrome.storage.local.set({
+        [currentSite]: lockedUntil,
+        score:  Math.max(0, (myScore || 0) - 15),
+        streak: 0
+      });
+      showLockScreen(PENALTY_SECONDS);
+    }
   });
 }
-
+ 
 function formatSeconds(s) {
   if (s < 60) return s + "s";
   const m = Math.floor(s / 60), r = s % 60;
   return m + "m" + (r ? " " + r + "s" : "");
 }
-
+ 
 // ── Pantalla de éxito ─────────────────────────────────────
 function showSuccessScreen() {
   let overlay = document.getElementById("ff-overlay");
   if (!overlay) return;
-
+ 
   overlay.innerHTML = `
     <div class="ff-card" style="text-align: center; padding: 50px 32px;">
       <div style="font-size: 64px; margin-bottom: 16px;">🎉</div>
@@ -504,7 +383,7 @@ function showSuccessScreen() {
         +10 Puntos 🔥
       </div>
     </div>`;
-
+ 
   setTimeout(() => {
     const el = document.getElementById("ff-overlay");
     if (el) el.remove();
