@@ -1,5 +1,6 @@
 const DEFAULT_PENALTY  = 30;
 const DEFAULT_SITES    = ["instagram.com","tiktok.com","x.com","twitter.com","facebook.com","youtube.com"];
+const DEFAULT_INTERVAL_MS = 5 * 60 * 1000; // 5 minutos por defecto
 const CONFIRM_MESSAGES = [
   { t: "¿De verdad quieres entrar?", s: "Es una distracción. ¿Tienes algo mejor que hacer?" },
   { t: "¿Seguro que es necesario?", s: "Tu 'yo' del futuro te agradecería que cerraras esta pestaña." },
@@ -25,7 +26,7 @@ const CONFIRM_MESSAGES = [
 
 const DELAY_MS = 10;
 const SCROLL_TIME_LIMIT_MS = 30 * 1000;
-const PERIODIC_INTERVAL_MS = 60 * 1000; // ── Intervalo periódico: 1 minuto
+let PERIODIC_INTERVAL_MS = DEFAULT_INTERVAL_MS; // ── Se actualiza desde storage
  
 // ── State ─────────────────────────────────────────────────
 let questions        = [];
@@ -122,10 +123,11 @@ function startPeriodicTimer() {
  
 // ── Boot: load questions + settings then start ────────────
 loadQuestions().then(() => {
-  chrome.storage.local.get(["ff_penalty","ff_sites","ff_categories"], (d) => {
-    if (d.ff_penalty)    PENALTY_SECONDS = d.ff_penalty;
-    if (d.ff_sites)      BLOCKED_SITES   = d.ff_sites;
-    if (d.ff_categories) ENABLED_CATS    = new Set(d.ff_categories);
+  chrome.storage.local.get(["ff_penalty","ff_interval","ff_sites","ff_categories"], (d) => {
+    if (d.ff_penalty)    PENALTY_SECONDS      = d.ff_penalty;
+    if (d.ff_interval)   PERIODIC_INTERVAL_MS = d.ff_interval * 1000;
+    if (d.ff_sites)      BLOCKED_SITES        = d.ff_sites;
+    if (d.ff_categories) ENABLED_CATS         = new Set(d.ff_categories);
  
     const currentSite   = location.hostname;
     const isBlockedSite = BLOCKED_SITES.some(site => currentSite.includes(site));

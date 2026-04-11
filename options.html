@@ -355,6 +355,31 @@
     </div>
   </div>
 
+  <!-- INTERVALO ENTRE PREGUNTAS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">🔁</div>
+      <h2>Intervalo entre preguntas</h2>
+    </div>
+    <div class="section-body">
+      <div class="penalty-display" id="intervalDisplay">5m</div>
+      <div class="penalty-label">Tiempo entre preguntas periódicas en sitios bloqueados</div>
+      <div class="slider-wrap">
+        <input type="range" id="intervalSlider" min="60" max="900" step="60" value="300">
+        <div class="slider-ticks">
+          <span>1m</span><span>5m</span><span>10m</span><span>15m</span>
+        </div>
+      </div>
+      <div class="preset-row">
+        <button class="preset-btn interval-preset-btn" data-preset="60">1 min</button>
+        <button class="preset-btn interval-preset-btn" data-preset="120">2 min</button>
+        <button class="preset-btn interval-preset-btn active" data-preset="300">5 min</button>
+        <button class="preset-btn interval-preset-btn" data-preset="600">10 min</button>
+        <button class="preset-btn interval-preset-btn" data-preset="900">15 min</button>
+      </div>
+    </div>
+  </div>
+
   <!-- SITIOS BLOQUEADOS -->
   <div class="section">
     <div class="section-header">

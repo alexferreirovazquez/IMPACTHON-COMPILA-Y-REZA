@@ -1,12 +1,14 @@
 // ── Defaults ──────────────────────────────────────────────
-const DEFAULT_PENALTY = 30;
-const DEFAULT_SITES   = ["instagram.com","tiktok.com","x.com","twitter.com","facebook.com","youtube.com"];
+const DEFAULT_PENALTY  = 30;
+const DEFAULT_INTERVAL = 300; // 5 minutos
+const DEFAULT_SITES    = ["instagram.com","tiktok.com","x.com","twitter.com","facebook.com","youtube.com"];
 
 // state
-let penaltySeconds = DEFAULT_PENALTY;
-let sites          = [...DEFAULT_SITES];
-let enabledCats    = new Set();
-let allCategories  = [];
+let penaltySeconds  = DEFAULT_PENALTY;
+let intervalSeconds = DEFAULT_INTERVAL;
+let sites           = [...DEFAULT_SITES];
+let enabledCats     = new Set();
+let allCategories   = [];
 
 // ── Parse questions.txt ───────────────────────────────────
 function parseQuestions(text) {
@@ -38,9 +40,10 @@ async function loadCategories() {
 
 // ── Boot ──────────────────────────────────────────────────
 loadCategories().then(() => {
-  chrome.storage.local.get(["ff_penalty","ff_sites","ff_categories"], (d) => {
-    if (d.ff_penalty != null) penaltySeconds = d.ff_penalty;
-    if (d.ff_sites)           sites          = d.ff_sites;
+  chrome.storage.local.get(["ff_penalty","ff_interval","ff_sites","ff_categories"], (d) => {
+    if (d.ff_penalty  != null) penaltySeconds  = d.ff_penalty;
+    if (d.ff_interval != null) intervalSeconds = d.ff_interval;
+    if (d.ff_sites)            sites           = d.ff_sites;
 
     // Si hay categorías guardadas las respetamos; si no, activamos todas
     if (d.ff_categories && d.ff_categories.length) {
@@ -52,6 +55,10 @@ loadCategories().then(() => {
     const slider = document.getElementById("penaltySlider");
     slider.value = penaltySeconds;
     updatePenalty(penaltySeconds);
+
+    const islider = document.getElementById("intervalSlider");
+    islider.value = intervalSeconds;
+    updateInterval(intervalSeconds);
 
     renderSites();
     renderCategories();
@@ -82,7 +89,25 @@ function updatePenalty(val) {
 
 function setPreset(v) { updatePenalty(v); }
 
-// ── Sites ─────────────────────────────────────────────────
+// ── Interval ──────────────────────────────────────────────
+function updateInterval(val) {
+  intervalSeconds = parseInt(val);
+  document.getElementById("intervalSlider").value = intervalSeconds;
+
+  const m = Math.floor(intervalSeconds / 60);
+  const s = intervalSeconds % 60;
+  const label = m + "m" + (s ? " " + s + "s" : "");
+
+  document.getElementById("intervalDisplay").textContent = label;
+
+  document.querySelectorAll(".interval-preset-btn").forEach(b => {
+    b.classList.toggle("active", parseInt(b.dataset.preset) === intervalSeconds);
+  });
+}
+
+function setIntervalPreset(v) { updateInterval(v); }
+
+
 function renderSites() {
   const list = document.getElementById("sitesList");
   list.innerHTML = sites.map((s, i) => `
@@ -227,6 +252,7 @@ function showToast(msg) {
 function saveAll() {
   chrome.storage.local.set({
     ff_penalty:    penaltySeconds,
+    ff_interval:   intervalSeconds,
     ff_sites:      sites,
     ff_categories: [...enabledCats]
   }, () => {
@@ -258,6 +284,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelectorAll(".preset-btn").forEach(btn => {
     btn.addEventListener("click", () => setPreset(parseInt(btn.dataset.preset)));
+  });
+
+  document.getElementById("intervalSlider")
+    .addEventListener("input", e => updateInterval(e.target.value));
+
+  document.querySelectorAll(".interval-preset-btn").forEach(btn => {
+    btn.addEventListener("click", () => setIntervalPreset(parseInt(btn.dataset.preset)));
   });
 
   document.getElementById("addSiteBtn")
