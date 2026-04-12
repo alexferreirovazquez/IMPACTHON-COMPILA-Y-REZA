@@ -1,6 +1,8 @@
 # IMPACTHON-COMPILA-Y-REZA
 5 alumnos de 1º, 0 idea de qué estamos haciendo y una fe ciega en Ctrl+C y Ctrl+V 
 
+La última versión es 'Luis3'
+
 Para activar la extensión:
 1. Usa un navegador que use el motor Chromium
 2. Clickar en los 3 puntos
